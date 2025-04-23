@@ -1,0 +1,13 @@
+Atualização v 1.0
+
+-Criação das Estruturas de dados do Elenco, jogadores,goleiro,time,presidente.
+
+-Criação das Estruturas de dados Arvore ABB para os elencos serem Armazenados (Estrutura usada para treino de matéria de universidade).
+
+- Adicionado Elencos (10) e seus Jogadores (60) e seus presidentes (10).
+
+- Adicionado Função exibir dados dos Elencos (Nome,gols,defesas o goleiro etc...).
+
+- Adicionado Overall e Valores aos jogadores (Devem ocorrer alterações ao passar dos dias...)
+
+-Adicionado Inserção dos Dados automática.
