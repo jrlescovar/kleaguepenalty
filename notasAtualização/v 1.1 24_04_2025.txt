@@ -1,0 +1,9 @@
+Atualização v 1.1
+
+-Criação da Tela Inicial
+
+-Criação das Escrita da Tela Inicial
+
+-Implementado sistema de atualização de cor para estética da tela Inicial.
+
+-Implementado Tela Terminal abrir em 120 por 30, Pode haver bugs de exibição em Windows inferior ao 10.
