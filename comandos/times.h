@@ -7,6 +7,7 @@ typedef struct Jogador {
     int errou;
     float valor;
     int overall;
+    char posicao[5];
 } jogador;
 
 typedef struct Presidente {
@@ -21,6 +22,7 @@ typedef struct Goleiro {
     int defesa;
     float valor;
     int overall;
+    char posicao[4];
 } goleiro;
 
 typedef struct Times {
@@ -33,6 +35,8 @@ typedef struct Times {
     jogador jogador5;
     goleiro goleiro1;
     presidente presida;
+    int cor1;
+    int cor2;
 } times;
 
 typedef struct tree {
@@ -70,6 +74,18 @@ void insereABBrecursivo(tree **raiz, times time) {
             insereABBrecursivo(&(*raiz)->esq, time);  // Insere à esquerda
         else  // Se o código é maior ou igual ao código do nó atual
             insereABBrecursivo(&(*raiz)->dir, time);  // Insere à direita
+    }
+}
+
+tree* buscaPorCodigo(tree* raiz, int codigo) {
+    if (codigo == raiz->time.codigo) {
+        return raiz; // Encontrado!
+    }
+
+    if (codigo < raiz->time.codigo) {
+        return buscaPorCodigo(raiz->esq, codigo); // Busca na subárvore esquerda
+    } else {
+        return buscaPorCodigo(raiz->dir, codigo); // Busca na subárvore direita
     }
 }
 

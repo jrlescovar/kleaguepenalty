@@ -170,6 +170,7 @@ void tela1(void)
     padrao();
 }
 char tela2(void){
+	clrscr();
     Moldura(1, 1, 120, 30);
     textcolor(12);
     gotoxy(4,3);
@@ -237,6 +238,7 @@ char tela2(void){
 }
 
 char telaBrasil(void){
+	clrscr();
 	Moldura(1, 1, 120, 30);
 	
 	gotoxy(85,3);
@@ -431,4 +433,134 @@ LIGHTRED = 12
 LIGHTMAGENTA = 13
 YELLOW = 14
 WHITE = 15*/
+void teclaInvalida(void){
+	gotoxy(41, 29);
+    printf("TECLA INVALIDA, APERTA UMA TECLA VALIDA!");
+    Sleep(1000);
+    gotoxy(41,29);
+    printf("                                        ");
+}
+
+/*
+char teladoTime(tree *resultado){
+	clrscr();
+	Moldura(1, 1, 120, 30);
+	Moldura(20,6,101,24);
+	gotoxy(49, 3);
+	textcolor(14);
+	printf("KL PENALTY - BRASIL");
+	textcolor(15);
+	gotoxy(48, 4);
+	printf("SELECIONANDO A EQUIPE");
+	MolduraColorida(65,26,77,28,10,10,10,10);
+	gotoxy(68,27);
+	textcolor(10);
+	printf("[S] SIM");
+	MolduraColorida(81,26,93,28,12,12,12,12);
+	gotoxy(83,27);
+	textcolor(12);
+	printf("[ESC] NAO");
+	textcolor(resultado->time.cor1);
+	gotoxy(22,7);
+	printf("Time %s", resultado->time.nomeEquipe);
+	gotoxy(70,7);
+    printf("  Presidente: %s [%d]", resultado->time.presida.nome,resultado->time.presida.overall);
+    textcolor(resultado->time.cor2);
+    gotoxy(32,10);
+    printf("[%s] - %s [%d]", resultado->time.jogador1.posicao,resultado->time.jogador1.nome,resultado->time.jogador1.overall);
+    gotoxy(60,12);
+    printf("[%s] - %s [%d]", resultado->time.jogador2.posicao,resultado->time.jogador2.nome,resultado->time.jogador2.overall);
+    gotoxy(32,14);
+    printf("[%s] - %s [%d]", resultado->time.jogador3.posicao,resultado->time.jogador3.nome,resultado->time.jogador3.overall);
+    gotoxy(60,16);
+    printf("[%s] - %s [%d]", resultado->time.jogador4.posicao,resultado->time.jogador4.nome,resultado->time.jogador4.overall);
+    gotoxy(32,18);
+    printf("[%s] - %s [%d]", resultado->time.jogador5.posicao,resultado->time.jogador5.nome,resultado->time.jogador5.overall);
+    gotoxy(60,20);
+    printf("[%s] - %s [%d]", resultado->time.goleiro1.posicao,resultado->time.goleiro1.nome,resultado->time.goleiro1.overall);
+    textcolor(15);
+    gotoxy(28,27);
+    printf("Confirma a Escolha do Time  ------>");
+    
+    gotoxy(119,29);
+    return toupper(getch());
+}*/
+
+char teladoTime(tree *resultado) {
+    clrscr();
+    Moldura(1, 1, 120, 30);
+    Moldura(20,6,101,24);
+
+    gotoxy(49, 3);
+    textcolor(14);
+    printf("KL PENALTY - BRASIL");
+    textcolor(15);
+    gotoxy(48, 4);
+    printf("SELECIONANDO A EQUIPE");
+
+    MolduraColorida(65,26,77,28,10,10,10,10);
+    gotoxy(68,27);
+    textcolor(10);
+    printf("[S] SIM");
+
+    MolduraColorida(81,26,93,28,12,12,12,12);
+    gotoxy(83,27);
+    textcolor(12);
+    printf("[ESC] NAO");
+
+    char tecla;
+    int toggle = 0;
+
+    do {
+        // Cor do nome do time e presidente
+        if (toggle == 0)
+            textcolor(resultado->time.cor1);
+        else
+            textcolor(resultado->time.cor2);
+        gotoxy(22,7);
+        printf("Time %s", resultado->time.nomeEquipe); 
+        gotoxy(70,7);
+        printf("Presidente: %s [%d]", resultado->time.presida.nome, resultado->time.presida.overall);
+
+        // Cor dos jogadores e goleiro (invertida da do time)
+        if (toggle == 0)
+            textcolor(resultado->time.cor2);
+        else
+            textcolor(resultado->time.cor1);
+        gotoxy(32,10);
+        printf("[%s] - %s [%d]", resultado->time.jogador1.posicao, resultado->time.jogador1.nome, resultado->time.jogador1.overall);
+        gotoxy(60,12);
+        printf("[%s] - %s [%d]", resultado->time.jogador2.posicao, resultado->time.jogador2.nome, resultado->time.jogador2.overall);
+        gotoxy(32,14);
+        printf("[%s] - %s [%d]", resultado->time.jogador3.posicao, resultado->time.jogador3.nome, resultado->time.jogador3.overall);
+        gotoxy(60,16);
+        printf("[%s] - %s [%d]", resultado->time.jogador4.posicao, resultado->time.jogador4.nome, resultado->time.jogador4.overall);
+        gotoxy(32,18);
+        printf("[%s] - %s [%d]", resultado->time.jogador5.posicao, resultado->time.jogador5.nome, resultado->time.jogador5.overall);
+        gotoxy(60,20);
+        printf("[%s] - %s [%d]", resultado->time.goleiro1.posicao, resultado->time.goleiro1.nome, resultado->time.goleiro1.overall);
+
+		
+		textcolor(10);
+        gotoxy(28,27);
+        printf("Confirma a Escolha do Time  ------>");
+        gotoxy(119,29);
+
+        toggle = !toggle;
+        int tempoEspera = 1500; // em milissegundos
+		int tempoPassado = 0;
+		int passo = 10; // 10ms de cada vez
+		
+		while (tempoPassado < tempoEspera) {
+		    if (kbhit()) break; // Se alguma tecla for pressionada, sai na hora
+		    Sleep(passo);
+		    tempoPassado += passo;
+}
+    } while (!kbhit());
+
+    tecla = toupper(getch());
+    textcolor(15); // volta cor padrão
+    return tecla;
+}
+
 #endif

@@ -1,0 +1,17 @@
+Notas da Atualização 1.3
+
+-Criado sistema após selecionar o time que deseja jogar, irá exibir a escalação com seus jogadores e overall podendo assim confirmar ou voltar ao menu de escolha de time.
+
+-Novo sistema de troca de cores da equipe, cada equipe agora com sua cor principal e sua cor secundaria.
+
+-Adicionado posições [ATA - MEI - DEF - GOL].
+
+-Adicionado sistema de Busca da Equipe para exibição da mesma.
+
+-Adicionado mensagem de tecla Invalida.
+
+-Adicionado Selecionar equipe para jogo.
+
+-Corrigido bug de escolher a equipe 0 e o jogo craschar e fechar.
+
+-Corrigido bug de exibição dos overall.
