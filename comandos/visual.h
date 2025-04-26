@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <time.h>
+void padrao(void){
+	textcolor(7);//cor padrão
+	textbackground(0);//fundo padrão
+}
 void Moldura(int CI, int LI, int CF, int LF)
 {
     int i;
@@ -119,16 +123,312 @@ void apresentacao(void){
 	mudarcorautomatico();
 
 }
+#include <conio2.h>
+#include <stdio.h>
+
+void MolduraColorida(int CI, int LI, int CF, int LF, int corTopo, int corBase, int corEsquerda, int corDireita) {
+    int i;
+    // Canto superior esquerdo
+    textcolor(corEsquerda);
+    gotoxy(CI, LI);
+    printf("%c", 201);
+    gotoxy(CI, LF);
+    printf("%c", 200);
+    textcolor(corDireita);
+    gotoxy(CF, LI);
+    printf("%c", 187);
+    gotoxy(CF, LF);
+    printf("%c", 188);
+    textcolor(corTopo);
+    for (i = CI + 1; i < CF; i++) {
+        gotoxy(i, LI);
+        printf("%c", 205);
+    }
+    textcolor(corBase);
+    for (i = CI + 1; i < CF; i++) {
+        gotoxy(i, LF);
+        printf("%c", 205);
+    }
+    textcolor(corEsquerda);
+    for (i = LI + 1; i < LF; i++) {
+        gotoxy(CI, i);
+        printf("%c", 186);
+    }
+    textcolor(corDireita);
+    for (i = LI + 1; i < LF; i++) {
+        gotoxy(CF, i);
+        printf("%c", 186);
+    }
+    textcolor(WHITE);
+} 
 
 void tela1(void)
 {
     system("cls");
     Moldura(1, 1, 120, 30);
-    //logodoJogo();
     apresentacao();
-	textcolor(7);//cor padrão
-	textbackground(0);//fundo padrão
-   
+    padrao();
+}
+char tela2(void){
+    Moldura(1, 1, 120, 30);
+    textcolor(12);
+    gotoxy(4,3);
+    printf("[ESC] FECHAR JOGO");
+    textcolor(15);
+    gotoxy(48,3);
+    printf("BEM VINDO AO KL PENALTY");
+    gotoxy(39,4);
+    printf("SELECIONE A NACIONALIDADE QUE DESEJA JOGAR");
+    gotoxy(31,28);
+    printf("[APERTE] O NUMERO DA NACIONALIDADE QUE DESEJA SELECIONAR");
+    //molduras de cima 
+    //brazil
+    gotoxy(20,15);
+    printf("[ APERTE  1 ]");
+    gotoxy(21,9);
+    textcolor(14);
+    printf("B R A S I L");
+    gotoxy(21,11);
+    textcolor(2);
+    printf("EQUIPES: 10");
+    MolduraColorida(16, 6, 36, 14, 2, 2, 14, 14);
+    gotoxy(44,9);
+    printf("C O M I N G");
+    gotoxy(46,11);
+    printf("S O O N");
+	MolduraColorida(39, 6, 59, 14, 14, 14, 4, 4);
+	gotoxy(67,9);
+    printf("C O M I N G");
+    gotoxy(69,11);
+    printf("S O O N");
+	MolduraColorida(62, 6, 82, 14, 2, 11, 12, 6);
+	gotoxy(90,9);
+    printf("C O M I N G");
+    gotoxy(92,11);
+    printf("S O O N");
+	MolduraColorida(85, 6, 105, 14, 7, 7, 2, 4);
+	//molduras de baixo
+	gotoxy(21,20);
+    printf("C O M I N G");
+    gotoxy(23,22);
+    printf("S O O N");
+	MolduraColorida(16, 17, 36, 25, 15, 4, 15, 14);
+	gotoxy(44,20);
+    printf("C O M I N G");
+    gotoxy(46,22);
+    printf("S O O N");
+	MolduraColorida(39, 17, 59, 25, 15, 15, 9, 4);
+	gotoxy(67,20);
+    printf("C O M I N G");
+    gotoxy(69,22);
+    printf("S O O N");
+	MolduraColorida(62, 17, 82, 25, 7, 7, 7, 7);
+	gotoxy(90,20);
+    printf("C O M I N G");
+    gotoxy(92,22);
+    printf("S O O N");
+	MolduraColorida(85, 17, 105, 25, 7, 7, 7, 7);
+	
+	
+	gotoxy(119,29);
+	fflush(stdin);
+    return getch();
+	
 }
 
+char telaBrasil(void){
+	Moldura(1, 1, 120, 30);
+	
+	gotoxy(85,3);
+	printf("P: Presidente");
+	gotoxy(100,3);
+	printf("#: Jogador Estrela");
+	gotoxy(92,4);
+	printf("$: Valor de Mercado");
+	gotoxy(95,2);
+	printf("[??]: Overall ");
+	
+	textcolor(12);
+    gotoxy(4,3);
+    printf("[ESC] VOLTAR");
+    textcolor(15);
+	gotoxy(49, 3);
+	textcolor(14);
+	printf("KL PENALTY - BRASIL");
+	textcolor(15);
+	gotoxy(42, 4);
+	printf("SELECIONE A EQUIPE QUE DESEJA JOGAR");
+	gotoxy(35, 28);
+	printf("[APERTE] O NUMERO DA EQUIPE QUE DESEJA SELECIONAR");
+
+	
+	gotoxy(8,15);
+    printf("[ APERTE  1 ]");
+    gotoxy(10,7);
+    textcolor(11);
+    printf("CAPIM FC");
+    gotoxy(9,9);
+    textcolor(3);
+    printf("P: JonVlogs");
+    gotoxy(8,11);
+    printf("#: Barata [90]");
+    gotoxy(13,13);
+    printf("$: XXX.XXX");
+	MolduraColorida(4, 6, 24, 14, 11, 2, 8, 8);
+	
+	gotoxy(31,15);
+    printf("[ APERTE  2 ]");
+    gotoxy(33	,7);
+    textcolor(1);
+    printf("DENDELE FC");
+    gotoxy(32,9);
+    textcolor(14);
+    printf("P: Luquet4");
+    gotoxy(28,11);
+    printf("#: Marcelin Jr [83]");
+    gotoxy(36,13);
+    textcolor(1);
+    printf("$: XXX.XXX");
+	MolduraColorida(27, 6, 47, 14, 1, 1, 14, 14);
+	
+	gotoxy(54,15);
+    printf("[ APERTE  3 ]");
+    gotoxy(52,7);
+    textcolor(1);
+    printf("DESIMPEDIDOS GOTI");
+    gotoxy(56,9);
+    textcolor(1);
+    printf("P: Yuri 22");
+    gotoxy(53,11);
+    printf("#: J. Pedro [88]");
+    gotoxy(59,13);
+    printf("$: XXX.XXX");
+	MolduraColorida(50, 6, 70, 14, 2, 2, 1, 1);
+	
+	gotoxy(77,15);
+    printf("[ APERTE  4 ]");
+    gotoxy(77,7);
+    textcolor(9);
+    printf("FC REAL ELITE");
+    gotoxy(77,9);
+    textcolor(9);
+    printf("P: Allan Stag");
+    gotoxy(76,11);
+    printf("#: Davi .I [89]");
+    gotoxy(82,13);
+    textcolor(13);
+    printf("$: XXX.XXX");
+	MolduraColorida(73, 6, 93, 14, 13, 13, 9, 9);
+	
+	gotoxy(101,15);
+    printf("[ APERTE 5 ]");
+    gotoxy(103,7);
+    textcolor(15);
+    printf("FLUXO FC");
+    gotoxy(103,9);
+    textcolor(8);
+    printf("P: Nobru");
+    gotoxy(100,11);
+    printf("#: Boolt [84]");
+    gotoxy(106,13);
+    textcolor(4);
+    printf("$: XXX.XXX");
+	MolduraColorida(96, 6, 117, 14, 8, 4, 15, 15);
+	
+	gotoxy(8,26);
+    printf("[ APERTE  6 ]");
+    gotoxy(8,18);
+    textcolor(5);
+    printf("FUNKBOL CLUBE");
+    gotoxy(8,20);
+    textcolor(14);
+    printf("P: MC Hariel");
+    gotoxy(6,22);
+    printf("#: Douglinha [87]");
+    gotoxy(13,24);
+    textcolor(5);
+    printf("$: XXX.XXX");
+	MolduraColorida(4, 17, 24, 25, 5, 5, 14, 14);
+	
+	gotoxy(31,26);
+    printf("[ APERTE  7 ]");
+    gotoxy(33,18);
+    textcolor(15);
+    printf("FURIA FC");
+    gotoxy(30,20);
+    textcolor(7);
+    printf("P: Cris Guedes");
+    gotoxy(30,22);
+    printf("#: Leleti [92]");
+    gotoxy(36,24);
+    printf("$: XXX.XXX");
+	MolduraColorida(27, 17, 47, 25, 7, 15, 15, 7);
+	
+	gotoxy(54,26);
+    printf("[ APERTE  8 ]");
+    gotoxy(57,18);
+    textcolor(15);
+    printf("G3X FC");
+    gotoxy(56,20);
+    textcolor(1);
+    printf("P: Gaules");
+    gotoxy(52,22);
+    printf("#: Kelvin K9 [95]");
+    gotoxy(59,24);
+    textcolor(14);
+    printf("$: XXX.XXX");
+	MolduraColorida(50, 17, 70, 25, 15, 15, 1, 14);
+	
+	gotoxy(77,26);
+    printf("[ APERTE  9 ]");
+    gotoxy(80,18);
+    textcolor(2);
+    printf("LOUD SC");
+    gotoxy(79,20);
+    textcolor(10);
+    printf("P: Coringa");
+    gotoxy(78,22);
+    printf("#: ?????? [??]");
+    gotoxy(82,24);
+    textcolor(2);
+    printf("$: XXX.XXX");
+	MolduraColorida(73, 17, 93, 25, 2, 2, 10, 10);
+	
+	gotoxy(101,26);
+    printf("[ APERTE 0 ]");
+    gotoxy(101,18);
+    textcolor(15);
+    printf("Nyvelados FC");
+    gotoxy(103,20);
+    textcolor(8);
+    printf("P: Nyvi");
+    gotoxy(100,22);
+    printf("#: Leo Gol [88]");
+    gotoxy(106,24);
+    textcolor(15);
+    printf("$: XXX.XXX");
+	MolduraColorida(96, 17, 117, 25, 8, 8, 15, 15);
+
+	gotoxy(119,29);
+	fflush(stdin);
+	return toupper(getch());
+}
+/* Tabela de cores (textcolor()):
+
+BLACK = 0
+BLUE = 1
+GREEN = 2
+CYAN = 3
+RED = 4
+MAGENTA = 5
+BROWN = 6
+LIGHTGRAY = 7
+DARKGRAY = 8
+LIGHTBLUE = 9
+LIGHTGREEN = 10
+LIGHTCYAN = 11
+LIGHTRED = 12
+LIGHTMAGENTA = 13
+YELLOW = 14
+WHITE = 15*/
 #endif

@@ -1,0 +1,23 @@
+-Criado Menu selecionar Nacionalidade (Liga).
+
+-Criado Menu selecionar Time.
+
+-Adicionado Nacionalidade Brasil.
+
+-Adicionado 10 times a Liga Brasil.
+	! Capim FC.
+	! Dendele FC.
+	! Desinmpedidos Goti.
+	! FC Real Elite.
+	! Fluxo FC.
+	! Funkbol Clube.
+	! Furia FC.
+	! G3X FC.
+	! LOUD SC.
+	! Nyvelados FC.
+
+-Adicionado possibilidade de voltar.
+
+-Adicionado Cores personalizadas aos respectivas Nacionalidade e seus time.
+
+

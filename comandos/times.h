@@ -87,7 +87,7 @@ void insereABBrecursivo(tree **raiz, times time) {
 void imprimeEmOrdem(tree *raiz) {
     if (raiz != NULL) {
         imprimeEmOrdem(raiz->esq);
-        printf("Time %s (Código: %d)\n", raiz->time.nomeEquipe, raiz->time.codigo);
+        printf("Time %s (Cod: %d)\n", raiz->time.nomeEquipe, raiz->time.codigo);
         printf("  Presidente: %s | Gol: %d | Errou: %d\n", raiz->time.presida.nome, raiz->time.presida.gols,raiz->time.presida.errou);
         printf("  Goleiro: %s | Defesas: %d | Overall: %d\n", raiz->time.goleiro1.nome, raiz->time.goleiro1.defesa, raiz->time.goleiro1.overall);
         printf("  Jogadores:\n");
