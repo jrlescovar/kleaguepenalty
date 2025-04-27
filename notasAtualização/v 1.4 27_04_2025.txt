@@ -1,0 +1,27 @@
+Atualização 1.4
+
+
+-Adicionado COR com base no time na MOLDURA de exibição da confirmação do time.
+
+-Adicionado sistema de Valor de mercado.
+
+-Adicionado Valor de mercado da equipe na tela de confirmar EQUIPE.
+
+-Adicionado Overall geral da Equipe.
+
+-Adicionado Personalização na Nacionalidade Brasil.
+
+-Adicionado Sistema de centralização de Mensagem.
+
+-Adicionado MENU do jogo pós confirmação da Equipe.
+  	^ Tabela Geral
+  	^ Próximos Jogos
+  	^ Dados do time
+  	^ Sessões ELENCO, TROCAS, ESTATISTICAS, entre outas. ( Apenas Visuais por enquanto) .
+
+
+-Adicionado COR com base no time a MOLDURA de exibição da confirmação do time.
+
+-Adicionado Cores da Nacionalidade nas Moldura principal 
+
+-Adicionado Mudança automática da cor da borda da tela de apresentação conforme a cor da LOGO do jogo.

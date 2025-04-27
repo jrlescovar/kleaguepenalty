@@ -7,9 +7,10 @@
 #include "./comandos/dadosAutomaticos.h"
 #include "./comandos/times.h"
 #include "./comandos/visual.h"
+#include "./comandos/ligaBrasil.h"
 
 int main(void){
-	char confirmaLocal,confirmaTime,timeConfirmado;
+	char confirmaLocal,confirmaTime,timeConfirmado,menuSelecionado;
 	system("mode con: cols=120 lines=30");
 	tree *raiz = NULL;
 	tree *resultado = NULL;
@@ -18,13 +19,16 @@ int main(void){
 	//imprimeEmOrdem(raiz);
 	tela1();
 	system("cls");
+	
 	while (kbhit()) {
         getch();  // Descarta as teclas pendentes na fila de entrada
     }
+    
+    
+    //jogo começa aqui " "
 	do {
 	    fflush(stdin);
-	    confirmaLocal = tela2();
-	
+	    confirmaLocal = tela2(); // TELA DE CONFIRMAR NACIONALIDADE
 	    if (confirmaLocal == 27) {
 	        break; // Sai do loop sem mostrar mensagem
 	    }
@@ -32,12 +36,12 @@ int main(void){
 	    switch (confirmaLocal) {
 	        case '1':
 	           do {
-				    confirmaTime = telaBrasil();
-				
+				    confirmaTime = telaBrasil();//TELA DE CONFIRMAR TIME 
 				    if (confirmaTime == 27)
-				        break; // sair da seleção de times
+				        break; // sai da seleção de time volta para seleção de NACIONALIDADE
 				
-				    if (confirmaTime >= '0' && confirmaTime <= '9') {
+				
+				    if (confirmaTime >= '0' && confirmaTime <= '9') {  //TECLA DE 0 a 10 for apertada
 				        buscar = confirmaTime - '0';
 				
 				        // Se o código for 0, muda para 10
@@ -45,19 +49,30 @@ int main(void){
 				            buscar = 10;  // Muda o ID para 10 quando escolher '0'
 				        }
 				
-				        resultado = buscaPorCodigo(raiz, buscar);
+				        resultado = buscaPorCodigo(raiz, buscar);  //Busca na arvore o TIME.
 				
 				        do {
-				            timeConfirmado = teladoTime(resultado);
-				            if (timeConfirmado == 'S') {
-				                clrscr();
-				                printf("TELA DE JOGO AQUI");
-				                getch();
+				            timeConfirmado = teladoTime(resultado,"KL PENALTY - BRASIL",14,2,2,14,14);
+				            if (timeConfirmado == 'S'){
+				            	//Jogo "Roda aqui dentro".
+				            	
+				            	
+				            	
+				            	
+				                do{
+				                	menuSelecionado = ligaBrasil(); //Tera Alteração
+				                	
+				                }while(menuSelecionado != 27);
+				                
+				                
+				                
+				                
+				                
+				                
 				            }
-				            else if (timeConfirmado != 27) {
+				            else if (timeConfirmado != 27){//Se aperta tecla errada exibe msg, aperta ESC fecha o JOGO
 				                teclaInvalida();
-				            }
-				
+				        	}
 				        } while (timeConfirmado != 27);
 				    }
 				

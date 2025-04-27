@@ -37,6 +37,7 @@ typedef struct Times {
     presidente presida;
     int cor1;
     int cor2;
+    float valorMercado;
 } times;
 
 typedef struct tree {
