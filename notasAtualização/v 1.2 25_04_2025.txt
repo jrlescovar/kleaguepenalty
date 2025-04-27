@@ -1,3 +1,4 @@
+Atualização 1.2
 -Criado Menu selecionar Nacionalidade (Liga).
 
 -Criado Menu selecionar Time.
