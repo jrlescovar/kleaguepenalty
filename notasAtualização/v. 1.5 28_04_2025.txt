@@ -1,0 +1,16 @@
+-Adicionado Classificação em Tempo real,
+
+-Adicionado Dados da equipe selecionada na tela de jogo.
+
+-Adicionado sistema de cor de classificação liga Brasil
+1- Classificado semi-final (verde),
+2 ao 7- Classificado quartas de final(amarelo),
+8 ao 10- Eliminados(Vermelho).
+
+-Adicionado tecla H em menu de jogo para acessar a dicas,ajudas,duvidas.
+
+-Adicionado 9 rodadas liga Brasileiras (aleatório as rodadas), cada rodada 5 jogos.
+
+-Adicionado paleta de cor aos times em tabela e rodadas.
+
+-reajuste de pequenos bug e melhorias.

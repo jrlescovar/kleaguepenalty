@@ -1,5 +1,259 @@
 #ifndef LIGABRASIL_H
 #define LIGABRASIL_H
+#include "listaEncadeada.h"
+
+#define NUM_TIMES 10
+#define NUM_RODADAS 9 
+
+
+// Estruturas
+
+typedef struct Confronto {
+    char timeCasa[20];
+    int cor1;
+    char placarCasa[3]; // 2 dígitos + \0
+    char timeFora[20];
+    int cor2;
+    char placarFora[3];
+    struct Confronto* prox;
+    struct Confronto* ant;
+} Confronto;
+
+typedef struct SemanaBrasil {
+    int numeroRodada;
+    Confronto* primeiroConfronto;
+    struct SemanaBrasil* prox;
+    struct SemanaBrasil* ant;
+} SemanaBrasil;
+
+// Funções de criação
+
+Confronto* criarConfronto(char* casa, char* fora) {
+    Confronto* novo = (Confronto*)malloc(sizeof(Confronto));
+    if(strcmp(casa,"Capim FC") == 0 )
+    	novo->cor1 = 11;
+    if(strcmp(casa,"Dendele FC") == 0 )
+    	novo->cor1 = 1;
+    if(strcmp(casa,"Desimpedidos Goti") == 0 )
+    	novo->cor1 = 2;
+    if(strcmp(casa,"FC Real Elite") == 0 )
+    	novo->cor1 = 13;
+    if(strcmp(casa,"Fluxo FC") == 0 )
+    	novo->cor1 = 4;
+    if(strcmp(casa,"Funkbol Clube") == 0 )
+    	novo->cor1 = 5;
+    if(strcmp(casa,"Furia FC") == 0 )
+    	novo->cor1 = 7;
+    if(strcmp(casa,"G3X FC") == 0 )
+    	novo->cor1 = 15;
+    if(strcmp(casa,"LOUD SC") == 0 )
+    	novo->cor1 = 2;
+    if(strcmp(casa,"Nyvelados FC") == 0 )
+    	novo->cor1 = 8;
+    	
+    if(strcmp(fora,"Capim FC") == 0 )
+    	novo->cor2 = 11;
+    if(strcmp(fora,"Dendele FC") == 0 )
+    	novo->cor2 = 1;
+    if(strcmp(fora,"Desimpedidos Goti") == 0 )
+    	novo->cor2 = 2;
+    if(strcmp(fora,"FC Real Elite") == 0 )
+    	novo->cor2 = 13;
+    if(strcmp(fora,"Fluxo FC") == 0 )
+    	novo->cor2 = 4;
+    if(strcmp(fora,"Funkbol Clube") == 0 )
+    	novo->cor2 = 5;
+    if(strcmp(fora,"Furia FC") == 0 )
+    	novo->cor2 = 7;
+    if(strcmp(fora,"G3X FC") == 0 )
+    	novo->cor2 = 15;
+    if(strcmp(fora,"LOUD SC") == 0 )
+    	novo->cor2 = 2;
+    if(strcmp(fora,"Nyvelados FC") == 0 )
+    	novo->cor2 = 8;
+    
+    strcpy(novo->timeCasa, casa);
+    strcpy(novo->placarCasa, "  "); // Espaço em branco nos dois caracteres
+    strcpy(novo->timeFora, fora);
+    strcpy(novo->placarFora, "  ");
+    novo->prox = NULL;
+    novo->ant = NULL;
+    return novo;
+}
+
+SemanaBrasil* criarSemana(int numero) {
+    SemanaBrasil* nova = (SemanaBrasil*)malloc(sizeof(SemanaBrasil));
+    nova->numeroRodada = numero;
+    nova->primeiroConfronto = NULL;
+    nova->prox = NULL;
+    nova->ant = NULL;
+    return nova;
+}
+
+// Função para gerar todas as partidas (9 semanas)
+
+SemanaBrasil* gerarPartidas() {
+	 srand(time(NULL));
+    char* allTimes1[NUM_TIMES] = {
+        "Capim FC", "Dendele FC", "Desimpedidos Goti", "FC Real Elite", "Fluxo FC",
+        "Funkbol Clube", "Furia FC", "G3X FC", "LOUD SC", "Nyvelados FC"
+    };
+    char* allTimes2[NUM_TIMES] = {
+        "Dendele FC", "Nyvelados FC", "Fluxo FC", "LOUD SC", "Funkbol Clube",
+        "FC Real Elite", "Furia FC", "Desimpedidos Goti", "Capim FC", "G3X FC"
+    };
+    char* allTimes3[NUM_TIMES] = {
+        "Funkbol Clube", "FC Real Elite", "Furia FC", "Nyvelados FC", "LOUD SC",
+        "Capim FC", "Dendele FC", "Desimpedidos Goti", "G3X FC", "Fluxo FC"
+    };
+    char* allTimes4[NUM_TIMES] = {
+        "Nyvelados FC", "Funkbol Clube", "Dendele FC", "G3X FC", "FC Real Elite",
+        "Fluxo FC", "LOUD SC", "Capim FC", "Desimpedidos Goti", "Furia FC"
+    };
+    char* allTimes5[NUM_TIMES] = {
+        "Fluxo FC", "Capim FC", "Furia FC", "Desimpedidos Goti", "Funkbol Clube",
+        "G3X FC", "Nyvelados FC", "FC Real Elite", "Dendele FC", "LOUD SC"
+    };
+    char* allTimes6[NUM_TIMES] = {
+        "G3X FC", "LOUD SC", "Nyvelados FC", "Capim FC", "Dendele FC",
+        "FC Real Elite", "Fluxo FC", "Furia FC", "Desimpedidos Goti", "Funkbol Clube"
+    };
+    char* allTimes7[NUM_TIMES] = {
+        "FC Real Elite", "Desimpedidos Goti", "LOUD SC", "Furia FC", "Nyvelados FC",
+        "Capim FC", "Fluxo FC", "Funkbol Clube", "Dendele FC", "G3X FC"
+    };
+    char* allTimes8[NUM_TIMES] = {
+        "Desimpedidos Goti", "Fluxo FC", "G3X FC", "Nyvelados FC", "Furia FC",
+        "LOUD SC", "Capim FC", "Funkbol Clube", "FC Real Elite", "Dendele FC"
+    };
+    char* allTimes9[NUM_TIMES] = {
+        "LOUD SC", "Capim FC", "FC Real Elite", "Desimpedidos Goti", "Fluxo FC",
+        "Nyvelados FC", "G3X FC", "Furia FC", "Funkbol Clube", "Dendele FC"
+    };
+    char* allTimes10[NUM_TIMES] = {
+    "Furia FC", "Desimpedidos Goti", "Fluxo FC", "LOUD SC", "G3X FC",
+    "Capim FC", "FC Real Elite", "Dendele FC", "Nyvelados FC", "Funkbol Clube"
+	};
+
+    // Lista de todas as tabelas
+    char** allTimesList[10] = {allTimes1, allTimes2, allTimes3, allTimes4, allTimes5, allTimes6, allTimes7, allTimes8, allTimes9, allTimes10};
+
+
+    int escolha = rand() % 10;
+    char** allTimes = allTimesList[escolha];
+
+    int tabela[NUM_TIMES];
+    for (int i = 0; i < NUM_TIMES; i++) {
+        tabela[i] = i;
+    }
+
+    SemanaBrasil* primeiraSemana = NULL;
+    SemanaBrasil* semanaAtual = NULL;
+
+    for (int rodada = 0; rodada < NUM_RODADAS; rodada++) {
+        SemanaBrasil* novaSemana = criarSemana(rodada + 1);
+
+        for (int i = 0; i < NUM_TIMES / 2; i++) {
+            int casa = tabela[i];
+            int fora = tabela[NUM_TIMES - 1 - i];
+
+            Confronto* novoConfronto = criarConfronto(allTimes[casa], allTimes[fora]);
+            
+            if (novaSemana->primeiroConfronto == NULL) {
+                novaSemana->primeiroConfronto = novoConfronto;
+            } else {
+                Confronto* atual = novaSemana->primeiroConfronto;
+                while (atual->prox != NULL) {
+                    atual = atual->prox;
+                }
+                atual->prox = novoConfronto;
+                novoConfronto->ant = atual;
+            }
+        }
+
+        if (primeiraSemana == NULL) {
+            primeiraSemana = novaSemana;
+        } else {
+            semanaAtual->prox = novaSemana;
+            novaSemana->ant = semanaAtual;
+        }
+        semanaAtual = novaSemana;
+
+        // Rotacionar os times
+        int ultimo = tabela[NUM_TIMES - 1];
+        for (int i = NUM_TIMES - 1; i > 1; i--) {
+            tabela[i] = tabela[i - 1];
+        }
+        tabela[1] = ultimo;
+    }
+
+    return primeiraSemana;
+}
+
+
+
+// Função para buscar uma semana específica
+SemanaBrasil* buscarSemana(SemanaBrasil* inicio, int numeroRodada) {
+    SemanaBrasil* atual = inicio;
+    while (atual != NULL) {
+        if (atual->numeroRodada == numeroRodada) {
+            return atual;
+        }
+        atual = atual->prox;
+    }
+    return NULL; // Não encontrou
+}
+void exibirSemana(SemanaBrasil* inicio, int numeroRodada) {
+    SemanaBrasil* semana = buscarSemana(inicio, numeroRodada);
+
+    if (semana == NULL) {
+        printf("Rodada %d não encontrada.\n", numeroRodada);
+        return;
+    }
+
+    gotoxy(87, 6); // Centralizado para título
+    printf("RODADA %d", semana->numeroRodada);
+
+    Confronto* confronto = semana->primeiroConfronto;
+    
+    int y = 8;
+    while (confronto != NULL) {
+		
+		textcolor(confronto->cor1);
+		if(strlen(confronto->timeCasa) > 14){
+			gotoxy(70, y);
+        	printf("%s",confronto->timeCasa);
+		}else if(strlen(confronto->timeCasa) <= 14){
+			gotoxy(74,y);
+			printf("%s",confronto->timeCasa);
+		}
+		gotoxy(88,y);
+		textcolor(15);
+        printf("%s",confronto->placarCasa);
+        gotoxy(90,y);
+        printf("X");
+        gotoxy(92,y);
+        printf("%s",confronto->placarFora);
+        textcolor(confronto->cor2);
+        if(strlen(confronto->timeFora) > 14){
+			gotoxy(94, y);
+        	printf("%s",confronto->timeFora);
+		}else{
+			gotoxy(95,y);
+			printf("%s",confronto->timeFora);
+		}
+        y += 2;
+        confronto = confronto->prox;
+    }
+    textcolor(15);
+}
+
+
+void registrarPlacar(Confronto* confronto, int golsCasa, int golsFora) {
+    snprintf(confronto->placarCasa, sizeof(confronto->placarCasa), "%2d", golsCasa);
+    snprintf(confronto->placarFora, sizeof(confronto->placarFora), "%2d", golsFora);
+}
+
 char telaBrasil(void){
 	clrscr();
 	MolduraColorida(1, 1, 120, 30,2,2,14,14);
@@ -148,8 +402,8 @@ char telaBrasil(void){
     gotoxy(79,20);
     textcolor(10);
     printf("P: Coringa");
-    gotoxy(78,22);
-    printf("#: ?????? [??]");
+    gotoxy(76,22);
+    printf("#: Lukinhas [85]");
     gotoxy(82,24);
     textcolor(2);
     printf("$: XXX.XXX");
@@ -175,8 +429,9 @@ char telaBrasil(void){
 	return toupper(getch());
 }
 
-char ligaBrasil(){
+char ligaBrasil(listaDupla *lista, int buscar,SemanaBrasil* campeonato,int rodada){
 	clrscr();
+	listaDupla *aux = buscarTimeNaLista(lista, buscar);
 	int y,x,i;
 	
 	i = 0;
@@ -204,7 +459,6 @@ char ligaBrasil(){
 	textcolor(15);
 	gotoxy(11,6);
 	printf("POS");
-	
 	y = 6;
 	while(y <= 17){
 		gotoxy(14, y); 
@@ -225,7 +479,8 @@ char ligaBrasil(){
     	printf("%c", 186);
     	y++;
 	}
-
+	
+	
 	gotoxy(22,6);
 	printf("EQUIPE");
 	
@@ -259,11 +514,21 @@ char ligaBrasil(){
 	}
 	
 	
-	
-	
+
 	Moldura(69, 5, 111, 18);
-	gotoxy(83,4);
-	printf("PROXIMOS JOGOS");
+	
+	if(rodada == 1)
+	{	
+		gotoxy(84,4);
+		printf("PROXIMOS JOGOS --> [M]");
+		
+	}else if(rodada == 9){
+		gotoxy(76,4);
+		printf("[N] <-- PROXIMOS JOGOS");
+	}else{
+		gotoxy(76,4);
+		printf("[N] <-- PROXIMOS JOGOS --> [M]");
+	}
 	
 	
 	Moldura(10, 20, 27, 23);
@@ -303,7 +568,7 @@ char ligaBrasil(){
 	Moldura(30, 24, 48, 27);
 	gotoxy(34,25);
 	printf("ESTATISTICAS");
-	gotoxy(33,26);
+	gotoxy(36,26);
 	printf("POR TIME [G]");
 	
 	Moldura(51, 24, 69, 27);
@@ -328,14 +593,24 @@ char ligaBrasil(){
 	printf("[J]");
 	textcolor(15);
 	
+	printCentralizado("APERTA [H] PARA ACESSAR MENU 'AJUDA' ",29,15);
 	gotoxy(10,2);
-	textcolor(11);
-	printf("CAPIM FC   PRESIDENTE: Jon Vlogs");
+	textcolor(aux->info.elenco.cor1);
+	printf("%s  PRESIDENTE: %s",aux->info.elenco.nomeEquipe, aux->info.elenco.presida.nome);
 	textcolor(15);
-	gotoxy(65,2);
-	printf("VALOR DE MERCADO: $ 000.000   SALDO ATUAL $ 000.000");
+	gotoxy(69,2);
+	if(aux->info.saldo < 1000){
+		printf("VALOR DE MERCADO: $ %.3f   SALDO: $ %.0f", aux->info.elenco.valorMercado/1000, aux->info.saldo);
+	}else if(aux->info.saldo <= 9999)
+		printf("VALOR DE MERCADO: $ %.3f   SALDO: $ %.3f", aux->info.elenco.valorMercado/1000, aux->info.saldo/1000);
+	else if(aux->info.saldo > 9999 && aux->info.saldo < 99999)
+	{
+		printf("VALOR DE MERCADO: $ %.3f   SALDO: $ %.3f", aux->info.elenco.valorMercado/1000, aux->info.saldo/1000);
+	}else
+		printf("VALOR DE MERCADO: $ %.3f   SALDO: $ %.3f", aux->info.elenco.valorMercado/1000, aux->info.saldo/1000);
 	
-	
+	exibirTabela(lista, 8);
+	exibirSemana(campeonato,rodada);
 	
 	gotoxy(119,29);
 	return toupper(getch());

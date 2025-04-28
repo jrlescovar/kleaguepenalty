@@ -137,8 +137,7 @@ void apresentacao(void){
 	mudarcorautomatico();
 
 }
-#include <conio2.h>
-#include <stdio.h>
+
 
 void MolduraColorida(int CI, int LI, int CF, int LF, int corTopo, int corBase, int corEsquerda, int corDireita) {
     int i;

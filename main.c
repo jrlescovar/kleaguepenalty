@@ -1,6 +1,7 @@
 #include <conio2.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <windows.h>
 #include <time.h>
 
@@ -8,14 +9,20 @@
 #include "./comandos/times.h"
 #include "./comandos/visual.h"
 #include "./comandos/ligaBrasil.h"
+#include "./comandos/listaEncadeada.h"
 
 int main(void){
+	int rodada;
+	int buscar;
 	char confirmaLocal,confirmaTime,timeConfirmado,menuSelecionado;
 	system("mode con: cols=120 lines=30");
-	tree *raiz = NULL;
-	tree *resultado = NULL;
-	int buscar;
-	dadosAutomaticos(&raiz);
+	tree *raiz = NULL; //Times Brasilerios
+	tree *resultado = NULL; // times Brasilerios
+	tree *moverTimesParaLista = NULL; //Pegar os times da Arvore e inserir na Lista de times 
+	dadosAutomaticos(&raiz); // INSERIR DADOS LIGA BRASIL
+	SemanaBrasil* campeonatoBrasil = gerarPartidas();// gerar partidas  Ligas BRasil;
+	listaDupla *listaBrasil = NULL; //CRIAR A LISTA PARA OS TIME BR
+	//exibirLista(lista);
 	//imprimeEmOrdem(raiz);
 	tela1();
 	system("cls");
@@ -50,24 +57,41 @@ int main(void){
 				        }
 				
 				        resultado = buscaPorCodigo(raiz, buscar);  //Busca na arvore o TIME.
+				        
 				
 				        do {
 				            timeConfirmado = teladoTime(resultado,"KL PENALTY - BRASIL",14,2,2,14,14);
 				            if (timeConfirmado == 'S'){
 				            	//Jogo "Roda aqui dentro".
-				            	
-				            	
-				            	
-				            	
+
+				            	int x = 1;
+								while( x <= 10){
+									moverTimesParaLista = buscaPorCodigo(raiz, x);
+									inserirLista(&listaBrasil, moverTimesParaLista);
+									x++;
+									
+								}
+				            	rodada = 1;
 				                do{
-				                	menuSelecionado = ligaBrasil(); //Tera Alteração
-				                	
+				                	menuSelecionado = ligaBrasil(listaBrasil,buscar,campeonatoBrasil,rodada);
+				                	switch(menuSelecionado){
+				                		case 'N':
+				                			if(rodada != 1){
+				                				rodada--;
+				                			}
+				                		break;
+				                		case 'M':
+				                			if(rodada < 9){
+				                				rodada++;
+				                			}
+				                		break;
+				                		default:
+				                				if(menuSelecionado == 27)
+				                					menuSelecionado = 'o';
+				                			break;
+				                			
+				                	}
 				                }while(menuSelecionado != 27);
-				                
-				                
-				                
-				                
-				                
 				                
 				            }
 				            else if (timeConfirmado != 27){//Se aperta tecla errada exibe msg, aperta ESC fecha o JOGO

@@ -72,7 +72,7 @@ void dadosAutomaticos(tree **raiz) {
     jogador j7_4 =  {"Vitinho Ruas", 0, 0, 21000, 79,"MEI"};
     jogador j7_5 = {"MlkJhoow", 0, 0, 42000, 83,"DEF"};
     goleiro g7 = {"Gui Barros", 0, 13000, 75,"GOL"};
-    presidente p7 = {"Mc Hariel", 0, 0, 68};
+    presidente p7 = {"Michel Elias", 0, 0, 68};
     valorMercado = j7_1.valor + j7_2.valor + j7_3.valor + j7_4.valor + j7_5.valor + g7.valor;
     times t7 = {6, "Funkbol Clube", j7_1, j7_2, j7_3, j7_4, j7_5, g7, p7,5,14,valorMercado};
     insereABBrecursivo(raiz, t7);

@@ -46,8 +46,8 @@ typedef struct tree {
     struct tree *dir;
 } tree;
 
-typedef struct inGame {
-    times elenco;
+typedef struct Jogar {
+    times elenco; //vai vim para LISTA um struct do ELENCO
     int partidas;
     int pontos;
     int vitoria;
@@ -56,7 +56,13 @@ typedef struct inGame {
     int golsFeitos;
     int golsSofridos;
     int saldoDegols;
-} ingame;
+    float saldo;
+} jogar;
+
+struct Lista{
+	jogar info;
+	struct Lista *prox, *ant;
+};typedef struct Lista listaDupla;
 
 tree* criaNo(times time) {
     tree* novoNo = (tree*)malloc(sizeof(tree));
@@ -116,7 +122,6 @@ void imprimeEmOrdem(tree *raiz) {
         imprimeEmOrdem(raiz->dir);
     }
 }						
-
 
 
 #endif
