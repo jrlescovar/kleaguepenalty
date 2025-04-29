@@ -55,10 +55,7 @@ int main(void){
 				        if (buscar == 0) {
 				            buscar = 10;  // Muda o ID para 10 quando escolher '0'
 				        }
-				
 				        resultado = buscaPorCodigo(raiz, buscar);  //Busca na arvore o TIME.
-				        
-				
 				        do {
 				            timeConfirmado = teladoTime(resultado,"KL PENALTY - BRASIL",14,2,2,14,14);
 				            if (timeConfirmado == 'S'){
@@ -73,8 +70,11 @@ int main(void){
 								}
 				            	rodada = 1;
 				                do{
+				                	//                           listaTimes  codtime  jogosRodadas    NumRodada
 				                	menuSelecionado = ligaBrasil(listaBrasil,buscar,campeonatoBrasil,rodada);
 				                	switch(menuSelecionado){
+				                		case 'E':
+				                			gerenciarElenco(&listaBrasil,resultado);
 				                		case 'N':
 				                			if(rodada != 1){
 				                				rodada--;
@@ -109,7 +109,7 @@ int main(void){
 	            }
 	            break;
 	    }
-	} while (confirmaLocal != 27);
+	} while(confirmaLocal != 27);
 
 	clrscr();
     printf("\nEntrar Tela de Encerramento aqui.");

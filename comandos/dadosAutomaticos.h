@@ -6,10 +6,10 @@ void dadosAutomaticos(tree **raiz) {
 	float valorMercado;
     // Fluxo
     jogador j8_1 = {"Boolt", 0, 0, 39000, 85,"ATA"};
-    jogador j8_2 = {"Helber Jr", 0, 0, 30000, 81,"ATA"};
+    jogador j8_2 = {"Helber Jr", 0, 0, 30000, 83,"ATA"};
     jogador j8_3 = {"Victor Bueno", 0, 0, 21000, 80,"ATA"};
     jogador j8_4 = {"Chaveirinho", 0, 0, 28000, 80,"MEI"};
-    jogador j8_5 = {"Melequinha", 0, 0, 28000, 79,"DEF"};
+    jogador j8_5 = {"Melequinha", 0, 0, 28000, 81,"DEF"};
     goleiro g8 = {"Julio Carvalho", 0, 19000, 78,"GOL"};
     presidente p8 = {"Nobru", 0, 0, 76};
     valorMercado = j8_1.valor + j8_2.valor + j8_3.valor + j8_4.valor + j8_5.valor + g8.valor;
@@ -18,14 +18,14 @@ void dadosAutomaticos(tree **raiz) {
     
     // Goti
     jogador j9_1 = {"Marcelin Jr", 0, 0, 33200, 83,"ATA"};
-    jogador j9_2 = {"Caio Miranda", 0, 0, 31000, 83,"ATA"};
+    jogador j9_2 = {"Luisinho Alves", 0, 0, 31000, 82,"ATA"};
     jogador j9_3 = {"Batman", 0, 0, 28000, 82,"MEI"};
     jogador j9_4 = {"Victor Bolt", 0, 0, 19000, 79,"MEI"};
     jogador j9_5 = {"Bernardinello", 0, 0, 22000, 77,"DEF"};
-    goleiro g9 = {"Joao Pedro", 0, 59000, 88,"GOL"};
+    goleiro g9 = {"Joao Pedro", 0, 59000, 90,"GOL"};
     presidente p9 = {"Yuri 22", 0, 0, 65};
     valorMercado = j9_1.valor + j9_2.valor + j9_3.valor + j9_4.valor + j9_5.valor + g9.valor;
-    times t9 = {3, "Desimpedidos Goti", j9_1, j9_2, j9_3, j9_4, j9_5, g9, p9,2,1,valorMercado};
+    times t9 = {3, "DesimpedidosGoti", j9_1, j9_2, j9_3, j9_4, j9_5, g9, p9,2,1,valorMercado};
     insereABBrecursivo(raiz, t9);
     
     
@@ -42,12 +42,12 @@ void dadosAutomaticos(tree **raiz) {
     insereABBrecursivo(raiz, t2);
 	
 	 // Dendele
-    jogador j6_1 = {"Kaka", 0, 0, 51000, 86,"MEI"};
+    jogador j6_1 = {"Canhoto", 0, 0, 51000, 85,"MEI"};
     jogador j6_2 = {"Lucas Hector", 0, 0, 49000, 86,"MEI"};
     jogador j6_3 = {"Assump", 0, 0, 15000, 76,"MEI"};
     jogador j6_4 = {"Lyncoln", 0, 0, 40000, 85,"DEF"};
     jogador j6_5 = {"G. Carvalho", 0, 0, 9800, 74,"DEF"};
-    goleiro g6 = {"Maikon", 0, 14000, 76,"GOL"};
+    goleiro g6 = {"Thales", 0, 24000, 80,"GOL"};
     presidente p6 = {"LuquEt4", 0, 0, 65};
     valorMercado = j6_1.valor + j6_2.valor + j6_3.valor + j6_4.valor + j6_5.valor + g6.valor;
     times t6 = {2, "Dendele FC", j6_1, j6_2, j6_3, j6_4, j6_5, g6, p6,1,14,valorMercado};
@@ -58,7 +58,7 @@ void dadosAutomaticos(tree **raiz) {
     jogador j4_2 = {"Davi Ilario", 0, 0, 80000, 89,"MEI"};
     jogador j4_3 = {"Well", 0, 0, 30000, 81,"MEI"};
     jogador j4_4 = {"Matheus Bueno", 0, 0, 16000, 75,"MEI"};
-    jogador j4_5 = {"?????", 0, 0, 0, 0,"???"};
+    jogador j4_5 = {"Vassoura", 0, 0, 35000, 84,"MEI"};
     goleiro g4 = {"Gustavo Rocha", 0, 14000, 75,"GOL"};
     presidente p4 = {"Allan Stag", 0, 0, 82};
     valorMercado = j4_1.valor + j4_2.valor + j4_3.valor + j4_4.valor + j4_5.valor + g4.valor;
@@ -68,7 +68,7 @@ void dadosAutomaticos(tree **raiz) {
     // Funk
     jogador j7_1 = {"Douglinhas", 0, 0, 68000, 87,"ATA"};
     jogador j7_2 = {"Ibrahim", 0, 0, 30000, 84,"MEI"};
-    jogador j7_3 = {"Davisson", 0, 0, 25000, 79,"MEI"};
+    jogador j7_3 = {"Betao Ribeiro", 0, 0, 27000, 80,"MEI"};
     jogador j7_4 =  {"Vitinho Ruas", 0, 0, 21000, 79,"MEI"};
     jogador j7_5 = {"MlkJhoow", 0, 0, 42000, 83,"DEF"};
     goleiro g7 = {"Gui Barros", 0, 13000, 75,"GOL"};
@@ -106,6 +106,7 @@ void dadosAutomaticos(tree **raiz) {
     jogador j1_2 = {"Ton", 0, 0, 69000, 87,"ATA"};
     jogador j1_3 = {"Andreas Vaz", 0, 0, 75000, 90,"MEI"};
     jogador j1_4 = {"Kenu", 0, 0, 34000, 83,"MEI"};
+    //jogador j1_4 = {"Rufino", 0, 0, 54000, 86,"MEI"};
     jogador j1_5 = {"Wembley", 0, 0, 40000, 84,"DEF"};
     goleiro g1 = {"Igor Rezende", 0, 50000, 88,"GOL"};
     presidente p1 = {"Gaules", 0, 0, 73};

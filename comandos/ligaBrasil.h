@@ -34,7 +34,7 @@ Confronto* criarConfronto(char* casa, char* fora) {
     	novo->cor1 = 11;
     if(strcmp(casa,"Dendele FC") == 0 )
     	novo->cor1 = 1;
-    if(strcmp(casa,"Desimpedidos Goti") == 0 )
+    if(strcmp(casa,"DesimpedidosGoti") == 0 )
     	novo->cor1 = 2;
     if(strcmp(casa,"FC Real Elite") == 0 )
     	novo->cor1 = 13;
@@ -55,7 +55,7 @@ Confronto* criarConfronto(char* casa, char* fora) {
     	novo->cor2 = 11;
     if(strcmp(fora,"Dendele FC") == 0 )
     	novo->cor2 = 1;
-    if(strcmp(fora,"Desimpedidos Goti") == 0 )
+    if(strcmp(fora,"DesimpedidosGoti") == 0 )
     	novo->cor2 = 2;
     if(strcmp(fora,"FC Real Elite") == 0 )
     	novo->cor2 = 13;
@@ -95,43 +95,43 @@ SemanaBrasil* criarSemana(int numero) {
 SemanaBrasil* gerarPartidas() {
 	 srand(time(NULL));
     char* allTimes1[NUM_TIMES] = {
-        "Capim FC", "Dendele FC", "Desimpedidos Goti", "FC Real Elite", "Fluxo FC",
+        "Capim FC", "Dendele FC", "DesimpedidosGoti", "FC Real Elite", "Fluxo FC",
         "Funkbol Clube", "Furia FC", "G3X FC", "LOUD SC", "Nyvelados FC"
     };
     char* allTimes2[NUM_TIMES] = {
         "Dendele FC", "Nyvelados FC", "Fluxo FC", "LOUD SC", "Funkbol Clube",
-        "FC Real Elite", "Furia FC", "Desimpedidos Goti", "Capim FC", "G3X FC"
+        "FC Real Elite", "Furia FC", "DesimpedidosGoti", "Capim FC", "G3X FC"
     };
     char* allTimes3[NUM_TIMES] = {
         "Funkbol Clube", "FC Real Elite", "Furia FC", "Nyvelados FC", "LOUD SC",
-        "Capim FC", "Dendele FC", "Desimpedidos Goti", "G3X FC", "Fluxo FC"
+        "Capim FC", "Dendele FC", "DesimpedidosGoti", "G3X FC", "Fluxo FC"
     };
     char* allTimes4[NUM_TIMES] = {
         "Nyvelados FC", "Funkbol Clube", "Dendele FC", "G3X FC", "FC Real Elite",
-        "Fluxo FC", "LOUD SC", "Capim FC", "Desimpedidos Goti", "Furia FC"
+        "Fluxo FC", "LOUD SC", "Capim FC", "DesimpedidosGoti", "Furia FC"
     };
     char* allTimes5[NUM_TIMES] = {
-        "Fluxo FC", "Capim FC", "Furia FC", "Desimpedidos Goti", "Funkbol Clube",
+        "Fluxo FC", "Capim FC", "Furia FC", "DesimpedidosGoti", "Funkbol Clube",
         "G3X FC", "Nyvelados FC", "FC Real Elite", "Dendele FC", "LOUD SC"
     };
     char* allTimes6[NUM_TIMES] = {
         "G3X FC", "LOUD SC", "Nyvelados FC", "Capim FC", "Dendele FC",
-        "FC Real Elite", "Fluxo FC", "Furia FC", "Desimpedidos Goti", "Funkbol Clube"
+        "FC Real Elite", "Fluxo FC", "Furia FC", "DesimpedidosGoti", "Funkbol Clube"
     };
     char* allTimes7[NUM_TIMES] = {
-        "FC Real Elite", "Desimpedidos Goti", "LOUD SC", "Furia FC", "Nyvelados FC",
+        "FC Real Elite", "DesimpedidosGoti", "LOUD SC", "Furia FC", "Nyvelados FC",
         "Capim FC", "Fluxo FC", "Funkbol Clube", "Dendele FC", "G3X FC"
     };
     char* allTimes8[NUM_TIMES] = {
-        "Desimpedidos Goti", "Fluxo FC", "G3X FC", "Nyvelados FC", "Furia FC",
+        "DesimpedidosGoti", "Fluxo FC", "G3X FC", "Nyvelados FC", "Furia FC",
         "LOUD SC", "Capim FC", "Funkbol Clube", "FC Real Elite", "Dendele FC"
     };
     char* allTimes9[NUM_TIMES] = {
-        "LOUD SC", "Capim FC", "FC Real Elite", "Desimpedidos Goti", "Fluxo FC",
+        "LOUD SC", "Capim FC", "FC Real Elite", "DesimpedidosGoti", "Fluxo FC",
         "Nyvelados FC", "G3X FC", "Furia FC", "Funkbol Clube", "Dendele FC"
     };
     char* allTimes10[NUM_TIMES] = {
-    "Furia FC", "Desimpedidos Goti", "Fluxo FC", "LOUD SC", "G3X FC",
+    "Furia FC", "DesimpedidosGoti", "Fluxo FC", "LOUD SC", "G3X FC",
     "Capim FC", "FC Real Elite", "Dendele FC", "Nyvelados FC", "Funkbol Clube"
 	};
 
@@ -220,8 +220,8 @@ void exibirSemana(SemanaBrasil* inicio, int numeroRodada) {
     while (confronto != NULL) {
 		
 		textcolor(confronto->cor1);
-		if(strlen(confronto->timeCasa) > 14){
-			gotoxy(70, y);
+		if(strlen(confronto->timeCasa) > 13){
+			gotoxy(71, y);
         	printf("%s",confronto->timeCasa);
 		}else if(strlen(confronto->timeCasa) <= 14){
 			gotoxy(74,y);
@@ -430,6 +430,7 @@ char telaBrasil(void){
 }
 
 char ligaBrasil(listaDupla *lista, int buscar,SemanaBrasil* campeonato,int rodada){
+	int jogador1, jogador2;
 	clrscr();
 	listaDupla *aux = buscarTimeNaLista(lista, buscar);
 	int y,x,i;
@@ -537,21 +538,26 @@ char ligaBrasil(listaDupla *lista, int buscar,SemanaBrasil* campeonato,int rodad
 	gotoxy(24,22);
 	printf("[E]");
 
-	Moldura(30, 20, 48, 23);
+	Moldura(30, 20, 48, 23);/*
 	gotoxy(34,21);
 	printf("ESTATISTICAS");
 	gotoxy(45,22);
-	printf("[W]");
+	printf("[W]");*/
+	gotoxy(34,21);
+	printf("? EM BREVE ?");
+	
 	
 	Moldura(51, 20, 69, 23);
 	gotoxy(55,21);
 	printf("? EM BREVE ?");
 	
-	Moldura(72, 20, 90, 23);
+	Moldura(72, 20, 90, 23);/*
 	gotoxy(76,21);
 	printf("PLAY - OFFS");
 	gotoxy(87,22);
-	printf("[P]");
+	printf("[P]");*/
+	gotoxy(76,21);
+	printf("? EM BREVE ?");
 	
 	Moldura(93, 20, 111, 23);
 	gotoxy(96,21);
@@ -559,31 +565,39 @@ char ligaBrasil(listaDupla *lista, int buscar,SemanaBrasil* campeonato,int rodad
 	
 	
 	
-	Moldura(10, 24, 27, 27);
+	Moldura(10, 24, 27, 27);/*
 	gotoxy(16,25);
 	printf("TROCAS");
 	gotoxy(24,26);
-	printf("[T]");
+	printf("[T]");*/
+	gotoxy(14,25);
+	printf("? EM BREVE ?");
 	
-	Moldura(30, 24, 48, 27);
+	Moldura(30, 24, 48, 27);/*
 	gotoxy(34,25);
 	printf("ESTATISTICAS");
 	gotoxy(36,26);
-	printf("POR TIME [G]");
+	printf("POR TIME [G]");*/
+	gotoxy(34,25);
+	printf("? EM BREVE ?");
 	
-	Moldura(51, 24, 69, 27);
+	Moldura(51, 24, 69, 27);/*
 	gotoxy(57,25);
 	printf("CARTAS");
 	gotoxy(66,26);
-	printf("[C]");
+	printf("[C]");*/
+	gotoxy(55,25);
+	printf("? EM BREVE ?");
 	
-	Moldura(72, 24, 90, 27);
+	Moldura(72, 24, 90, 27);/*
 	gotoxy(78,25);
 	printf("OUTRAS");
 	gotoxy(75,26);
 	printf("KL - LIGAS");
 	gotoxy(87,26);
-	printf("[L]");
+	printf("[L]");*/
+	gotoxy(76,25);
+	printf("? EM BREVE ?");
 	
 	MolduraColorida(93, 24, 111, 27,14,14,14,14);
 	textcolor(14);
@@ -615,5 +629,221 @@ char ligaBrasil(listaDupla *lista, int buscar,SemanaBrasil* campeonato,int rodad
 	gotoxy(119,29);
 	return toupper(getch());
 }
+
+void gerenciarElenco(listaDupla **lista, tree *resultado) {
+    clrscr();
+    textcolor(12);
+    gotoxy(7,3);
+    printf("[ESC] VOLTAR");
+    textcolor(15);
+    int i = 0;
+	while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 14 : 2); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "#" : "$");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? "#" : "$");
+	    
+	    i++;
+	}
+	textcolor(15);
+    MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+
+    if (resultado->time.codigo == 1) {
+        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, 2, resultado->time.cor2, resultado->time.cor2);
+    } else if (resultado->time.codigo == 5) {
+        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor2, 15, 15);
+    } else if (resultado->time.codigo == 7) {
+        MolduraColorida(6, 6, 82, 24, resultado->time.cor2, resultado->time.cor1, resultado->time.cor2, resultado->time.cor1);
+    } else if (resultado->time.codigo == 8) {
+        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, 1, resultado->time.cor2);
+    } else {
+        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
+    }
+
+    gotoxy(42, 5);
+    printf("$: Valor de Mercado");
+    gotoxy(65, 5);
+    printf("[??]: Overall ");
+
+    char tecla;
+    int toggle = 0;
+    listaDupla *temp = buscarTimeNaLista(*lista, resultado->time.codigo); // Usa temp, não muda *lista!
+    listaDupla *aux;
+	
+	do{
+		
+		do{
+	        if (toggle == 0)
+	            textcolor(resultado->time.cor1);
+	        else
+	            textcolor(resultado->time.cor2);
+	
+	        gotoxy(9, 7);
+	        printf("Time %s  [%d]", resultado->time.nomeEquipe,((resultado->time.jogador1.overall + resultado->time.jogador2.overall) + (resultado->time.jogador3.overall + resultado->time.jogador4.overall) + (resultado->time.jogador5.overall + resultado->time.goleiro1.overall))/6); 
+	
+	        gotoxy(51, 7);
+	        printf("Presidente: %s [%d]", resultado->time.presida.nome, resultado->time.presida.overall);
+	
+	        // Cor dos jogadores e goleiro (invertida da do time)
+	        if (toggle == 0)
+	            textcolor(resultado->time.cor2);
+	        else
+	            textcolor(resultado->time.cor1);
+	
+	        gotoxy(13, 10);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.jogador1.posicao, resultado->time.jogador1.nome, resultado->time.jogador1.overall, resultado->time.jogador1.valor/1000);
+	
+	        gotoxy(41, 12);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.jogador2.posicao, resultado->time.jogador2.nome, resultado->time.jogador2.overall, resultado->time.jogador2.valor/1000);
+	
+	        gotoxy(13, 14);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.jogador3.posicao, resultado->time.jogador3.nome, resultado->time.jogador3.overall, resultado->time.jogador3.valor/1000);
+	
+	        gotoxy(41, 16);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.jogador4.posicao, resultado->time.jogador4.nome, resultado->time.jogador4.overall, resultado->time.jogador4.valor/1000);
+	
+	        gotoxy(13, 18);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.jogador5.posicao, resultado->time.jogador5.nome, resultado->time.jogador5.overall, resultado->time.jogador5.valor/1000);
+	
+	        gotoxy(41, 20);
+	        printf("[%s] - %s [%d][$: %.3f]", resultado->time.goleiro1.posicao, resultado->time.goleiro1.nome, resultado->time.goleiro1.overall, resultado->time.goleiro1.valor/1000);
+	
+	        gotoxy(71, 23);
+	        printf("$: %.3f", temp->info.elenco.valorMercado / 1000.0);
+			
+			gotoxy(93,9);
+			printf("ORDEM PENALIDADES");
+			gotoxy(94,12);
+			printf("                  ");
+			gotoxy(94,12);
+			printf("[1] %s",temp->info.elenco.jogador1.nome);
+			gotoxy(94,14);
+			printf("                  ");
+			gotoxy(94,14);
+			printf("[2] %s",temp->info.elenco.jogador2.nome);
+			gotoxy(94,16);
+			printf("                  ");
+			gotoxy(94,16);
+			printf("[3] %s",temp->info.elenco.jogador3.nome);
+			gotoxy(94,18);
+			printf("                  ");
+			gotoxy(94,18);
+			printf("[4] %s",temp->info.elenco.jogador4.nome);
+			gotoxy(94,20);
+			printf("                  ");
+			gotoxy(94,20);
+			printf("[5] %s",temp->info.elenco.jogador5.nome);
+			
+			printCentralizado("ALTERAR ORDEM DAS PENALIDADE APERTE [Y]",29,15);
+			
+	        gotoxy(119, 29);
+	        toggle = !toggle;
+	
+	        int tempoEspera = 1500; // em milissegundos
+	        int tempoPassado = 0;
+	        int passo = 10; // 10ms de cada vez
+	
+	        while (tempoPassado < tempoEspera) {
+	            if (kbhit()) break; // Se alguma tecla for pressionada, sai na hora
+	            Sleep(passo);
+	            tempoPassado += passo;
+	        }
+	        
+	    
+	    } while(!kbhit());
+	
+	    // Aqui a parte de ler a tecla corretamente
+	    tecla = getch();
+	    tecla = toupper(tecla);
+	
+	    textcolor(15); // volta cor padrão
+	    
+	    if(tecla == 'Y')
+	    {
+	    	
+			printCentralizado("                                                                                            ",29,15);
+			printCentralizado("DIGITE OS NUMEROS DOS JOGADORES QUE DESEJAM TROCAR NA ORDEM DA PENALIDADE",26,15);
+			printCentralizado("JOGADOR 1:     TROCAR COM JOGADOR 2:    ",27,15);
+	    	gotoxy(53,27);
+	    	int pronto = 0; 
+			char jogador1, jogador2;
+	    	do{
+	    		gotoxy(53,27);
+	    		jogador1 = getche();
+	    		if( jogador1 >=49 && jogador1 <= 53)
+	    			pronto++;
+	    		else{
+	    			gotoxy(53,27);
+	    			printf("   ");
+	    			printCentralizado("NUMERO INVALIDO! DIGITE [1] [2] [3] [4] [5]",29,15);
+	    			gotoxy(119,29);
+	    			Sleep(1000);
+	    			gotoxy(30,29);
+	    			printf("                                                    ");
+	    		}
+	    		
+	    	}while(pronto != 1);
+	    	gotoxy(53,27);
+	    	printf("%c",jogador1);
+	    	
+	    	do{
+	    		pronto = 0;
+	    		gotoxy(79,27);
+	    		jogador2 = getche();
+	    		if( jogador2 >=49 && jogador2 <= 53 && jogador2 != jogador1)
+	    			pronto++;
+	    		else{
+	    			gotoxy(79,27);
+	    			printf("   ");
+	    			if(jogador1 == 49)
+	    				printCentralizado("NUMERO INVALIDO! DIGITE [2] [3] [4] [5]",29,15);
+	    			if(jogador1 == 50)
+	    				printCentralizado("NUMERO INVALIDO! DIGITE [1] [3] [4] [5]",29,15);
+	    			if(jogador1 == 51)
+	    				printCentralizado("NUMERO INVALIDO! DIGITE [1] [2] [4] [5]",29,15);
+	    			if(jogador1 == 52)
+	    				printCentralizado("NUMERO INVALIDO! DIGITE [1] [2] [3] [5]",29,15);
+	    			if(jogador1 == 53)
+	    				printCentralizado("NUMERO INVALIDO! DIGITE [1] [2] [3] [4]",29,15);
+	    			gotoxy(119,29);
+	    			Sleep(1000);
+	    			gotoxy(30,29);
+	    			printf("                                                    ");
+	    		}
+	    		
+	    	}while(pronto != 1);
+	    	
+	    	gotoxy(79,27);
+	    	printf("%c",jogador2);
+	    	
+	    	if(pronto == 1){
+	    		int jg1 = jogador1 - '0';
+				int jg2 = jogador2 - '0';
+				jogador *jogadores[5] = {
+				    &temp->info.elenco.jogador1,
+				    &temp->info.elenco.jogador2,
+				    &temp->info.elenco.jogador3,
+				    &temp->info.elenco.jogador4,
+				    &temp->info.elenco.jogador5
+				};
+				jogador aux = *jogadores[jg1 - 1];
+				*jogadores[jg1 - 1] = *jogadores[jg2 - 1];
+				*jogadores[jg2 - 1] = aux;		
+	    	}
+	    
+	    }
+	    gotoxy(20,26);
+		printf("                                                                                  ");
+		gotoxy(20,27);
+		printf("                                                                 ");
+		gotoxy(119,29);
+		
+	}while(tecla != 27);
+    
+}
+
 
 #endif

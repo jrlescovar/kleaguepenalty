@@ -123,7 +123,7 @@ void mudarcorautomatico(void){
 void apresentacao(void){
 	
 	gotoxy(49, 14);
-	printf("KL Penalty | version 1.1");
+	printf("KL Penalty | version 1.15");
 	gotoxy(36, 15);
 	printf("Copyright Joao Lescovar | 2025. All Rights Reserved");
 	gotoxy(21, 16);
@@ -133,7 +133,7 @@ void apresentacao(void){
 	gotoxy(5, 29);
 	printf("Entre em contato comigo : jrlescovar@gmail.com");
 	gotoxy(92,29);
-	printf("Ultima Att em: 24/04/2025");
+	printf("Ultima Att em: 69/69/2025");
 	mudarcorautomatico();
 
 }
@@ -201,7 +201,7 @@ char tela2(void){
     // Borda Personalizada Brasil
     int i = 0;
 	while(i<19) {
-	    textcolor((i % 2 == 0) ? 14 : 2); // Escolhe cor direto
+	    textcolor((i % 2 == 0) ? 2 : 1); // Escolhe cor direto
 	
 	    gotoxy(17 + i, 7);  
 	    printf((i % 2 == 0) ? "#" : "$");
@@ -217,27 +217,85 @@ char tela2(void){
     textcolor(2);
     printf("EQUIPES: 10");
     MolduraColorida(16, 6, 36, 14, 2, 2, 14, 14);
+    
+    i = 0;
+	while(i<19) {
+	    textcolor((i % 2 == 0) ? 4 : 14); // Escolhe cor direto
+	
+	    gotoxy(40 + i, 7);  
+	    printf((i % 2 == 0) ? "@" : "$");
+	
+	    gotoxy(40 + i, 13);
+	    printf((i % 2 == 0) ? "@" : "$");
+	    i++;
+	}
     gotoxy(44,9);
     printf("C O M I N G");
     gotoxy(46,11);
     printf("S O O N");
 	MolduraColorida(39, 6, 59, 14, 14, 14, 4, 4);
+	
+	i = 0;
+	while(i<19) {
+	    textcolor((i % 2 == 0) ? 2 : 12); // Escolhe cor direto
+	
+	    gotoxy(63 + i, 7);  
+	    printf((i % 2 == 0) ? "-" : "^");
+	
+	    gotoxy(63 + i, 13);
+	    printf((i % 2 == 0) ? "-" : "^");
+	    i++;
+	}
 	gotoxy(67,9);
     printf("C O M I N G");
     gotoxy(69,11);
     printf("S O O N");
 	MolduraColorida(62, 6, 82, 14, 2, 11, 12, 6);
+	
+	i = 0;
+	while(i<19) {
+	    textcolor((i % 2 == 0) ? 2 : 4); // Escolhe cor direto
+	
+	    gotoxy(86 + i, 7);  
+	    printf((i % 2 == 0) ? "*" : "=");
+
+	    gotoxy(86 + i, 13);
+	    printf((i % 2 == 0) ? "*" : "=");
+	    i++;
+	}
 	gotoxy(90,9);
     printf("C O M I N G");
     gotoxy(92,11);
     printf("S O O N");
 	MolduraColorida(85, 6, 105, 14, 7, 7, 2, 4);
 	//molduras de baixo
+	i = 0;
+	while(i<19) {
+	    textcolor((i % 2 == 0) ? 15 : 8); // Escolhe cor direto
+	
+	    gotoxy(17 + i, 18);  
+	    printf((i % 2 == 0) ? "+" : "!");
+
+	    gotoxy(17 + i, 24);
+	    printf((i % 2 == 0) ? "+" : "!");
+	    i++;
+	}
 	gotoxy(21,20);
     printf("C O M I N G");
     gotoxy(23,22);
     printf("S O O N");
 	MolduraColorida(16, 17, 36, 25, 15, 4, 15, 14);
+	i = 0;
+	while(i<19) {
+	    textcolor((i % 2 == 0) ? 9 : 4); // Escolhe cor direto
+	
+	    gotoxy(40 + i, 18);  
+	    printf((i % 2 == 0) ? "&" : "~");
+
+	    gotoxy(40 + i, 24);
+	    printf((i % 2 == 0) ? "&" : "~");
+	    i++;
+	}
 	gotoxy(44,20);
     printf("C O M I N G");
     gotoxy(46,22);
