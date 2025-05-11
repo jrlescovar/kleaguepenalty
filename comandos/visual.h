@@ -59,86 +59,6 @@ void printCentralizado(const char* texto, int linha, int cor) {
     printf("%s", texto);
     textcolor(15);
 }
-
-void mudarcorautomatico(void){
-	
-	//int corBORDAS;
-	int cor_banner, cor1, cor2, cor3;
-    int cores_permitidas[] = {1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14};
-    int total_cores = sizeof(cores_permitidas) / sizeof(cores_permitidas[0]);
-
-    srand(time(NULL)); // inicializa aleatoriedade
-
-    do {
-        // Cor aleatória para o banner
-        cor_banner = cores_permitidas[rand() % total_cores];
-        //corBORDAS = cores_permitidas[rand () % total_cores];
-
-        // Três cores diferentes para as mensagens
-        int idx1, idx2, idx3;
-        do {
-            idx1 = rand() % total_cores;
-            idx2 = rand() % total_cores;
-            idx3 = rand() % total_cores;
-        } while (idx1 == idx2 || idx1 == idx3 || idx2 == idx3);
-
-        cor1 = cores_permitidas[idx1];
-        cor2 = cores_permitidas[idx2];
-        cor3 = cores_permitidas[idx3];
-
-        // Imprime o banner com cor animada
-        MolduraColorida(1, 1, 120, 30,cor_banner,cor_banner,cor_banner,cor_banner);
-        textcolor(cor_banner);
-        gotoxy(23,5);
-	    printf("___  _  ___        ____     ____  _____    _____  ____    ________  ___ ___    \n");
-	    gotoxy(23,6);
-		printf("|  |/ ] | |       |    \\   /  __] |    \\  /     \\ |  |    |      |  |  |  |    \n");
-	    gotoxy(23,7);
-		printf("|  ' /  | |       |  o  ) /  [___ |_ |  \\ |  o  | |  |    |      |  |  |  |     \n");
-	    gotoxy(23,8);
-		printf("|    \\  | |___    |   _/  |    _] |  |  | |     | |  |___ |_|  |_|  |  ~  |     \n");
-	    gotoxy(23,9);
-		printf("|     | |    |    |  |    |   [_  |  |  | |  _  | |     |   |  |    |  ___,     \n");
-	    gotoxy(23,10);
-		printf("|  .  | |    |    |  |    |     | |  |  | |  |  | |     |   |  |    |   |       \n");
-	    gotoxy(23,11);
-		printf("|__|\\_| |____|    |__|    |_____| |__|__| |__|__| |_____|   |__|    |____/      \n");
-
-        // Mensagens piscando embaixo
-        gotoxy(31, 20);
-        textcolor(cor1);
-        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
-
-        gotoxy(31, 22);
-        textcolor(cor2);
-        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
-
-        gotoxy(31, 24);
-        textcolor(cor3);
-        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
-
-        Sleep(500); // tempo de espera entre animações
-    } while (!kbhit());
-}
-void apresentacao(void){
-	
-	gotoxy(49, 14);
-	printf("KL Penalty | version 1.15");
-	gotoxy(36, 15);
-	printf("Copyright Joao Lescovar | 2025. All Rights Reserved");
-	gotoxy(21, 16);
-	printf("Jogo Desenvolvido com base nas Estruturas de dados apresentadas na Universidade");
-	gotoxy(39, 17);
-	printf("Desenvolvido para treinar Estrutura de dados");
-	gotoxy(5, 29);
-	printf("Entre em contato comigo : jrlescovar@gmail.com");
-	gotoxy(92,29);
-	printf("Ultima Att em: 69/69/2025");
-	mudarcorautomatico();
-
-}
-
-
 void MolduraColorida(int CI, int LI, int CF, int LF, int corTopo, int corBase, int corEsquerda, int corDireita) {
     int i;
     // Canto superior esquerdo
@@ -173,7 +93,122 @@ void MolduraColorida(int CI, int LI, int CF, int LF, int corTopo, int corBase, i
         printf("%c", 186);
     }
     textcolor(15);
+}
+
+void MolduraColoridaTrave(int CI, int LI, int CF, int LF, int corTopo, int corBase, int corEsquerda, int corDireita) {
+    int i;
+    // Canto superior esquerdo
+    textcolor(corEsquerda);
+    gotoxy(CI, LI);
+    printf("%c", 201);
+    //gotoxy(CI, LF);
+    //printf("%c", 200);
+    textcolor(corDireita);
+    gotoxy(CF, LI);
+    printf("%c", 187);
+    //gotoxy(CF, LF);
+   // printf("%c", 188);
+    textcolor(corTopo);
+    for (i = CI + 1; i < CF; i++) {
+        gotoxy(i, LI);
+        printf("%c", 205);
+    }
+    /*textcolor(corBase);
+    for (i = CI + 1; i < CF; i++) {
+        gotoxy(i, LF);
+        printf("%c", 205);
+    }*/
+    textcolor(corEsquerda);
+    for (i = LI + 1; i < LF; i++) {
+        gotoxy(CI, i);
+        printf("%c", 186);
+    }
+    textcolor(corDireita);
+    for (i = LI + 1; i < LF; i++) {
+        gotoxy(CF, i);
+        printf("%c", 186);
+    }
+    textcolor(15);
 } 
+void mudarcorautomatico(void){
+	
+	//int corBORDAS;
+	int cor_banner, cor1, cor2, cor3;
+    int cores_permitidas[] = {1, 2, 3, 4, 5, 6, 9, 10, 11, 12, 13, 14};
+    int total_cores = sizeof(cores_permitidas) / sizeof(cores_permitidas[0]);
+
+    srand(time(NULL)); // inicializa aleatoriedade
+
+    do {
+        // Cor aleatória para o banner
+        cor_banner = cores_permitidas[rand() % total_cores];
+        //corBORDAS = cores_permitidas[rand () % total_cores];
+
+        // Três cores diferentes para as mensagens
+        /*int idx1, idx2, idx3;
+        do {
+            idx1 = rand() % total_cores;
+            idx2 = rand() % total_cores;
+            idx3 = rand() % total_cores;
+        } while (idx1 == idx2 || idx1 == idx3 || idx2 == idx3);
+
+        cor1 = cores_permitidas[idx1];
+        cor2 = cores_permitidas[idx2];
+        cor3 = cores_permitidas[idx3];*/
+
+        // Imprime o banner com cor animada
+        MolduraColorida(1, 1, 120, 30,cor_banner,cor_banner,cor_banner,cor_banner);
+        textcolor(cor_banner);
+        gotoxy(23,5);
+	    printf("___  _  ___        ____     ____  _____    _____  ____    ________  ___ ___    \n");
+	    gotoxy(23,6);
+		printf("|  |/ ] | |       |    \\   /  __] |    \\  /     \\ |  |    |      |  |  |  |    \n");
+	    gotoxy(23,7);
+		printf("|  ' /  | |       |  o  ) /  [___ |_ |  \\ |  o  | |  |    |      |  |  |  |     \n");
+	    gotoxy(23,8);
+		printf("|    \\  | |___    |   _/  |    _] |  |  | |     | |  |___ |_|  |_|  |  ~  |     \n");
+	    gotoxy(23,9);
+		printf("|     | |    |    |  |    |   [_  |  |  | |  _  | |     |   |  |    |  ___,     \n");
+	    gotoxy(23,10);
+		printf("|  .  | |    |    |  |    |     | |  |  | |  |  | |     |   |  |    |   |       \n");
+	    gotoxy(23,11);
+		printf("|__|\\_| |____|    |__|    |_____| |__|__| |__|__| |_____|   |__|    |____/      \n");
+
+        // Mensagens piscando embaixo
+        gotoxy(31, 20);
+        textcolor(cor_banner);
+        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
+
+        gotoxy(31, 22);
+        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
+
+        gotoxy(31, 24);
+        cprintf("Pressione [QUALQUER TECLA] Para iniciar KL Penalty em C...");
+
+        Sleep(500); // tempo de espera entre animações
+    } while (!kbhit());
+    textcolor(15);
+}
+void apresentacao(void){
+	
+	gotoxy(49, 14);
+	printf("KL Penalty | version BETA");
+	gotoxy(36, 15);
+	printf("Copyright Joao Lescovar | 2025. All Rights Reserved");
+	gotoxy(21, 16);
+	printf("Jogo Desenvolvido com base nas Estruturas de dados apresentadas na Universidade");
+	gotoxy(39, 17);
+	printf("Desenvolvido para treinar Estrutura de dados");
+	gotoxy(5, 29);
+	printf("Entre em contato comigo : jrlescovar@gmail.com");
+	gotoxy(92,29);
+	printf("Ultima Att em: 20/05/2025");
+	mudarcorautomatico();
+
+}
+
+
+
 
 void tela1(void)
 {
@@ -229,11 +264,13 @@ char tela2(void){
 	    printf((i % 2 == 0) ? "@" : "$");
 	    i++;
 	}
-    gotoxy(44,9);
-    printf("C O M I N G");
-    gotoxy(46,11);
-    printf("S O O N");
+    gotoxy(43,9);
+    printf("E S P A N H A");
+    gotoxy(44,11);
+    printf("EQUIPES: 12");
 	MolduraColorida(39, 6, 59, 14, 14, 14, 4, 4);
+	gotoxy(43,15);
+	printf("[ APERTE  2 ]");
 	
 	i = 0;
 	while(i<19) {
@@ -345,21 +382,36 @@ void teclaInvalida(void){
     printf("                                        ");
 }
 
-char teladoTime(tree *resultado,const char* msg,int cor,int corTopo,int corBase,int corEsquerda, int corDireita) {
+char teladoTime(tree *resultado,const char* msg,int cor,int corTopo,int corBase,int corEsquerda, int corDireita,int localidade) {
     clrscr();
     MolduraColorida(1, 1, 120, 30,corTopo,corBase,corEsquerda,corDireita);
     //exibir moldura dos time que tem 3 cores
-    if(resultado->time.codigo == 1){
-    	MolduraColorida(20,6,101,24,resultado->time.cor1,2,resultado->time.cor2, resultado->time.cor2);
-    }else if(resultado->time.codigo == 5){
-    		MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor2,15, 15);
-    }else if(resultado->time.codigo == 7){
-    		MolduraColorida(20,6,101,24,resultado->time.cor2,resultado->time.cor1,resultado->time.cor2,resultado->time.cor1);
-    }else if(resultado->time.codigo == 8){
-    		MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor1,1, resultado->time.cor2);
-    }else{
-    	MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor1,resultado->time.cor2, resultado->time.cor2);
+    if(localidade == 1){
+	    if(resultado->time.codigo == 1){
+	    	MolduraColorida(20,6,101,24,resultado->time.cor1,2,resultado->time.cor2, resultado->time.cor2);
+	    }else if(resultado->time.codigo == 5){
+	    		MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor2,15, 15);
+	    }else if(resultado->time.codigo == 7){
+	    		MolduraColorida(20,6,101,24,resultado->time.cor2,resultado->time.cor1,resultado->time.cor2,resultado->time.cor1);
+	    }else if(resultado->time.codigo == 8){
+	    		MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor1,1, resultado->time.cor2);
+	    }else{
+	    	MolduraColorida(20,6,101,24,resultado->time.cor1,resultado->time.cor1,resultado->time.cor2, resultado->time.cor2);
+	    }
     }
+    if(localidade == 2){
+		 if (resultado->time.codigo == 7) {
+	        MolduraColorida(20,6,101,24, resultado->time.cor1, 14, resultado->time.cor2, resultado->time.cor2);
+		}else if (resultado->time.codigo == 11) {
+	        MolduraColorida(20,6,101,24, 14, 4, 8,8);
+		}else if (resultado->time.codigo == 8) {
+	        MolduraColorida(20,6,101,24, 13, 13, 13,13);
+		}else if (resultado->time.codigo == 10) {
+	        MolduraColorida(20,6,101,24, 14, resultado->time.cor2, resultado->time.cor1,resultado->time.cor1);
+		}else
+			MolduraColorida(20,6,101,24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
+		
+	}
     
     gotoxy(92,4);
 	printf("$: Valor de Mercado");

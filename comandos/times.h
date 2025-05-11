@@ -20,6 +20,7 @@ typedef struct Presidente {
 typedef struct Goleiro {
     char nome[18];
     int defesa;
+    int golsSofridos;
     float valor;
     int overall;
     char posicao[4];
@@ -55,7 +56,7 @@ typedef struct Jogar {
     int empate;
     int golsFeitos;
     int golsSofridos;
-    int saldoDegols;
+    //int saldoDegols;
     float saldo;
 } jogar;
 
@@ -63,6 +64,7 @@ struct Lista{
 	jogar info;
 	struct Lista *prox, *ant;
 };typedef struct Lista listaDupla;
+
 
 tree* criaNo(times time) {
     tree* novoNo = (tree*)malloc(sizeof(tree));

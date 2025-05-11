@@ -1,0 +1,44 @@
+Mega Atualização (jogo agora é um jogo)
+
+-ADICIONADO CARTAS!!!!-
+* Adicionado Carta Penalti Presidente, aonde seu presidente batera um pênalti, em atualização futuras overral dos presidentes influenciara na cobrança
+
+* Adicionado Carta gol Dobro, ativada apenas em rodada de ataque, gol vale por 2.
+
+*Adicionado Carta Reflexo, ativada apenas em rodada de defesa, adiciona +1 reflexo pro goleiro.
+
+-Adicionado MODO JOGAR apertando J em menu de Carreira - Overall dos jogadores influenciam no jogo.
+
+-Adicionado sistema de Overall , goleiros overall alto mais chance de defesa, jogador overall alto mais chance de finalização.
+
+-Adicionado Simulação para os demais jogos da rodadas, simulação baseada exatamente igual modo JOGAR.
+
+-Adicionado ORDENAÇÃO na tabela por ponto, em caso de empate critério de desempate é o SALDO de GOLS.
+
+-Adicionado ESTATISTICA gerais do torneio.
+-Mostrando top 10 Artilheiros.
+-Mostrando Goleiros com mais defesas.
+-Mostrando top10 Goleiros.
+critério de desempate time em melhor colocação na tabela.
+
+-Adicionado PlayOFFs
+quartas.
+semi final.
+final.
+-ADICIONADO LIGA ESPANHA
+-12 elencos novos.
+-12 presidente novos.
+-72 jogadores novos.
+
+-Adicionado sistema de SIMULAÇÂO DE RODADAS incluem em simular todos os jogos daquela rodada apertando S em Simular agora no MENU de partida.
+
+-Remodelado sistema de cores da Interface tela de inicio de Múltiplas para uma.
+
+-Correção no bug de teclas múltiplas.
+-Correção saldo ganho time FORA
+
+-Atualização Elencos.
+
+-Remodelado sistema de criação e simulação de partida, código atualizado com mesma funcionalidade e menos linha de código. porem ainda da para remover umas 1000 linhas, porem foco foi em fazer funcionar, atualizações futura eu otimizo.
+
+-remodelado "escudo" e 10x10 para 10x4 seleção de time.
