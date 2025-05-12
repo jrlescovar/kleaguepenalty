@@ -47,7 +47,7 @@ int main(void){
 	listaDupla *listaTabelaEspanha = NULL; //Cria para salvar tabela antes dos dados do playoffs
 	SemanaBrasil *semanaEspanha  = malloc(sizeof(SemanaBrasil)); 
 	Confronto *confrontoEspanha = malloc(sizeof(Confronto));
-	playoffsConfrontos *jogosEspanha;jogosEspanha= malloc(sizeof(playoffsConfrontos));
+	playoffsConfrontos *jogosEspanha; jogosEspanha= malloc(sizeof(playoffsConfrontos));
 	
 	
 	tela1(); //tela de abertura apenas.
@@ -121,27 +121,10 @@ int main(void){
 												}while(confronto != NULL);
 												semana = semana->prox;
 				                				rodadaOficial++;
+				                				if(rodadaOficial != 10)//chegar em 10 para para nao exibir vento...
+				                					rodada = rodadaOficial; //mudar a pagina da rodada para a proxima
+				                				break;	
 				                			}
-				                			if(rodadaOficial < 10)//chegar em 10 para para nao exibir vento...
-				                				rodada = rodadaOficial; //mudar a pagina da rodada para a proxima
-				                				
-				                				
-				                			
-				                		break;
-				                		case 'J':
-				                			if(rodadaOficial <= 9){
-				                				semana = buscarSemana(campeonatoBrasil, rodadaOficial); //buscar o jogos dessa rodada
-												confronto = semana->primeiroConfronto;
-												do{
-													jogarConfronto(&listaBrasil,resultado,&confronto,0);
-													confronto = confronto->prox;
-												}while(confronto != NULL);
-												semana = semana->prox;
-				                				rodadaOficial++;
-				                			}
-				                			if(rodadaOficial<10)//chegar em 10 para para nao exibir vento...
-				                				rodada = rodadaOficial; //mudar a pagina da rodada para a proxima;
-				                			//PlayOffs
 				                			if(rodadaOficial >= 10 && rodadaOficial < 13){
 				                				if(rodadaOficial == 10){
 					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->primeiroConfronto,1);
@@ -157,6 +140,41 @@ int main(void){
 					                			
 					                			if(rodadaOficial == 12){
 					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->terceiroConfronto,1);
+					                			}
+					                			rodadaOficial++;
+				                			}
+				                			
+				                		break;
+				                		case 'J':
+				                			if(rodadaOficial <= 9){
+				                				semana = buscarSemana(campeonatoBrasil, rodadaOficial); //buscar o jogos dessa rodada
+												confronto = semana->primeiroConfronto;
+												do{
+													jogarConfronto(&listaBrasil,resultado,&confronto,0);
+													confronto = confronto->prox;
+												}while(confronto != NULL);
+												semana = semana->prox;
+				                				rodadaOficial++;
+				                				if(rodadaOficial != 10)//chegar em 10 para para nao exibir vento...
+				                					rodada = rodadaOficial; //mudar a pagina da rodada para a proxima
+				                				break;	
+				                			}//mudar a pagina da rodada para a proxima;
+				                			//PlayOffs
+				                			if(rodadaOficial >= 10 && rodadaOficial < 13){
+				                				if(rodadaOficial == 10){
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->primeiroConfronto,0);
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->segundoConfronto,0);
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->terceiroConfronto,0);
+					                			}
+					                			
+					                			if(rodadaOficial == 11){
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->primeiroConfronto,0);
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->segundoConfronto,0);
+					             
+					                			}
+					                			
+					                			if(rodadaOficial == 12){
+					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->terceiroConfronto,0);
 					                			}
 					                			rodadaOficial++;
 				                			}
@@ -243,7 +261,6 @@ int main(void){
 				    confirmaTime = telaEspanha();//TELA DE CONFIRMAR TIME 
 				    if (confirmaTime == 27)
 				        break; // sai da seleção de time volta para seleção de NACIONALIDADE
-				
 					
 				    if ((confirmaTime >= '0' && confirmaTime <= '9') || confirmaTime == 'W' || confirmaTime == 'E') {  // TECLA DE 0 a 9 ou W/E
 					    buscar = confirmaTime - '0';
@@ -274,24 +291,31 @@ int main(void){
 								}
 				                do{
 				                	//criarPlayin
-				                	/*if(rodadaOficial == 12){
+				                	if(rodadaOficial == 12){
 				                		listaTabelaEspanha = copiarLista(listaEspanha);//salva a tabela para nao exiber novas informações do playoffs
 										criarPlayoffEspanha(&jogosEspanha,listaEspanha,1);
 				                	}
-				                	//criarquartas
+				                	//criarPlayin final
 				                	if(rodadaOficial == 13){
 				                		criarPlayoffEspanha(&jogosEspanha,listaEspanha,2);
 				                	}
-				                	//criarSemis
+				                	//criar quartas ultima quarta
 									if(rodadaOficial == 14){
 				                		criarPlayoffEspanha(&jogosEspanha,listaEspanha,3);
-				                	}*/
+				                	}
+				                	if(rodadaOficial == 15){
+				                		criarPlayoffEspanha(&jogosEspanha,listaEspanha,4);
+				                	}
+				                	if(rodadaOficial == 16){
+				                		criarPlayoffEspanha(&jogosEspanha,listaEspanha,5);
+				                	}
 				                	//                           listaTimes  codtime  jogosRodadas    NumRodada5
-									int playoffJogos = estaEntreOsSeteMelhores(listaEspanha,buscar); //verificar se meu time jogara playoff
+									int playoffJogos = estaEntreOs10Melhores(listaEspanha,buscar); //verificar se meu time jogara playoff
 				                	menuSelecionado = ligaEspanha(listaEspanha,listaTabelaEspanha,buscar,campeonatoEspanha,rodada,playoffJogos,rodadaOficial);
 				                	switch(menuSelecionado){
-				                		case 'S':				                			
-				                			if(rodadaOficial <= 11){
+				                		case 'S':
+											Sleep(100);			                			
+				                			if(rodadaOficial < 12){
 				                				semanaEspanha = buscarSemana(campeonatoEspanha, rodadaOficial); //buscar o jogos dessa rodada
 												confrontoEspanha = semanaEspanha->primeiroConfronto;
 												do{
@@ -300,9 +324,43 @@ int main(void){
 												}while(confrontoEspanha != NULL);
 												semanaEspanha = semanaEspanha->prox;
 				                				rodadaOficial++;
+				                				
 				                			}
-				                			if(rodadaOficial < 12)//chegar em 10 para para nao exibir vento...
+				                			if(rodadaOficial < 12){//chegar em 12 para para nao exibir vento...
 				                				rodada = rodadaOficial; //mudar a pagina da rodada para a proxima
+												break;
+				                			}
+			                				if(rodadaOficial == 12){
+			                					if (jogosEspanha->playin1Confronto && jogosEspanha->playin2Confronto){
+			                						jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin1Confronto,1);
+					                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin2Confronto,1);
+					                				rodadaOficial++; 
+			                					}
+			                					break;
+				                			}
+				                			if(rodadaOficial == 13){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin3Confronto,1);
+				                				rodadaOficial++; 
+												break;
+				                			}
+				                			if(rodadaOficial == 14){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q1Confronto,1);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q2Confronto,1);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q3Confronto,1);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 15){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->s1Confronto,1);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->s2Confronto,1);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 16){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->finalConfronto,1);
+												rodadaOficial++;
+												break;
+				                			}
 				                		break;
 				                		case 'J':
 				                			if(rodadaOficial <= 11){
@@ -313,57 +371,57 @@ int main(void){
 													confrontoEspanha = confrontoEspanha->prox;
 												}while(confrontoEspanha != NULL);
 												semanaEspanha = semanaEspanha->prox;
-				                				//jogarBrasil(&listaBrasil,resultado,&campeonatoBrasil,rodadaOficial);
 				                				rodadaOficial++;
 				                			}
 				                			
-				                			if(rodadaOficial<12)//chegar em 12 para para nao exibir vento...
-				                				rodada = rodadaOficial; //mudar a pagina da rodada para a proxima;
-				                			//PlayOffs
-				                			/*if(rodadaOficial >= 12 && rodadaOficial < 16){
-				                				if(rodadaOficial == 12){
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->primeiroConfronto,1);
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->segundoConfronto,1);
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosQuartasBrasil->terceiroConfronto,1);
-					                			}
-					                			
-					                			if(rodadaOficial == 13){
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->primeiroConfronto,1);
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->segundoConfronto,1);
-					             
-					                			}
-					                			
-					                			if(rodadaOficial == 14){
-					                				jogarConfrontoPlayoff(&listaBrasil,resultado,&jogosSemiBrasil->terceiroConfronto,1);
-					                			}
-					                			rodadaOficial++;
+				                			if(rodadaOficial<12){//chegar em 12 para para nao exibir vento...
+				                				rodada = rodadaOficial;
+												break; //mudar a pagina da rodada para a proxima;
+											}
+				                			if(rodadaOficial == 12){
+			                					if (jogosEspanha->playin1Confronto && jogosEspanha->playin2Confronto){
+			                						jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin1Confronto,0);
+					                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin2Confronto,0);
+					                				rodadaOficial++; 
+			                					}
+			                					break;
 				                			}
-				                			*/
+				                			if(rodadaOficial == 13){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->playin3Confronto,0);
+				                				rodadaOficial++; 
+												break;
+				                			}
+				                			if(rodadaOficial == 14){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q1Confronto,0);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q2Confronto,0);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->q3Confronto,0);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 15){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->s1Confronto,0);
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->s2Confronto,0);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 16){
+				                				jogarConfrontoPlayoff(&listaEspanha,resultadoEspanha,&jogosEspanha->finalConfronto,0);
+												rodadaOficial++;
+												break;
+				                			}
+				                			
 				                		break;
 				                		case 'P':
-				                			/*
-				                				if(rodadaOficial==12){
+				                				if(rodadaOficial>=12){
 				                					clrscr();
-				                					if(playoffJogos != 1){
+				                					if(playoffJogos == 0){
 				                						printCentralizado("SEU TIME FOI ELIMINADO NA FASE DE GRUPOS!",28,15);
 				                					}
-				                					exibirPlayoffsBrasil(rodadaOficial, listaBrasil, jogosQuartasBrasil);
+				                					exibirPlayoffsEspanha(rodadaOficial, listaEspanha, jogosEspanha,rodadaOficial - 11);
 				                				}
-				                				if(rodadaOficial==11){
-				                					clrscr();
-				                					exibirPlayoffsSemiFinalBrasil(rodadaOficial, listaBrasil, jogosQuartasBrasil, jogosSemiBrasil);
-				                				}
-				                				if(rodadaOficial==12){
-				                					clrscr();
-				                					exibirPlayoffsFinalBrasil(rodadaOficial, listaBrasil, jogosQuartasBrasil,jogosSemiBrasil);
-				                				}
-				                				if(rodadaOficial == 13){
-				                					clrscr();
-				                					acabouLigaBrasil(rodadaOficial, listaBrasil, jogosQuartasBrasil,jogosSemiBrasil);
-				                				}*/
 												if(rodadaOficial <12){
-											        gotoxy(39, 19);
-											        printf("FALTAM %d RODADAS PARA O INICIO DOS PLAYOFFS", 10 - rodadaOficial);
+											        gotoxy(39, 29);
+											        printf("FALTAM %d RODADAS PARA O INICIO DOS PLAYOFFS", 12 - rodadaOficial);
 											        gotoxy(119, 29);
 											        Sleep(1200);
 											        limparBufferTeclado();

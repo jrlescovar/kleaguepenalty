@@ -1,0 +1,5 @@
+Correção em bug desempatar.
+
+Correção em bugs e  pequenas melhorias de desempenhos.
+
+Adicionado sistema de play-Off para liga Espanha.

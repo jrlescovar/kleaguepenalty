@@ -896,23 +896,7 @@ char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	gotoxy(108,26);
 	printf("[J]");
 	textcolor(15);
-    if(playoffJogos == 1){
-    		textcolor(14);
-			gotoxy(97,25);
-			printf("JOGAR AGORA");
-			gotoxy(99,26);
-			printf("PLAYOFF  [J]");
-			textcolor(15);
-    }else if(playoffJogos == 0){
-    		textcolor(14);
-    		gotoxy(97,25);
-			printf("           ");
-			gotoxy(99,25);
-			printf("SIMULAR");
-			gotoxy(99,26);
-			printf("PLAYOFF  [J]");
-			textcolor(15);
-    }
+
 	
 	printCentralizado("APERTA [H] PARA ACESSAR MENU 'AJUDA' ",29,15);
 	gotoxy(10,2);
@@ -1194,9 +1178,10 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 void exibirConfronto4(Confronto* confronto,int linhaX,int linhaY) {
     textcolor(confronto->cor1);
 
-    if (strlen(confronto->timeCasa) > 14) {
-        gotoxy(linhaX-1, linhaY);
-        printf("%s", confronto->timeCasa);
+    if (strlen(confronto->timeCasa) >=14) {
+    	linhaX - 4;
+        gotoxy(linhaX, linhaY);
+        printf("%s", confronto->timeCasa); linhaX + 4;
     } else if(strlen(confronto->timeCasa) > 10 && strlen(confronto->timeCasa) < 14){
         gotoxy(linhaX+2, linhaY);
         printf("%s", confronto->timeCasa);
@@ -1250,8 +1235,7 @@ void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsCo
 		textcolor(14);
         gotoxy(68, 7); printf("SEMI FINAIS");textcolor(15);
 
-    	textcolor(time1->info.elenco.cor1);
-        if (strcmp(time1->info.elenco.nomeEquipe, "Fluxo FC") == 0) textcolor(4);
+
 
         int nomeLen = strlen(time1->info.elenco.nomeEquipe);
         if (nomeLen > 14) 
@@ -1261,6 +1245,7 @@ void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsCo
 		else 
 		    gotoxy(62, 10); 
 		
+		textcolor(time1->info.elenco.cor1);
 		printf("%s", time1->info.elenco.nomeEquipe);
 		
 		textcolor(15);
@@ -1398,6 +1383,7 @@ void criarQuartasBR(playoffsConfrontos**qbr, listaDupla *listaBrasil){
     (*qbr)->terceiroConfronto  = criarConfronto(time2->info.elenco.nomeEquipe, time7->info.elenco.nomeEquipe,1);
 
 }
+
 void criarSemiBR(playoffsConfrontos *qbr, playoffsConfrontos **semi, listaDupla *listaBrasil) {
     listaDupla *vencedorQ1 = NULL, *vencedorQ2 = NULL, *vencedorQ3 = NULL;
     

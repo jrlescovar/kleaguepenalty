@@ -770,6 +770,22 @@ int estaEntreOsSeteMelhores(listaDupla *inicio, int codigo) {
 	}
     return 0; // Não está entre os 7 melhores
 }
+int estaEntreOs10Melhores(listaDupla *inicio, int codigo) {
+    int contador = 0;
+	if(inicio->info.partidas == 11){
+	    for (listaDupla *p = inicio; p != NULL && contador < 10; p = p->prox) {
+	        // Comparar pelo código (mais confiável que nome)
+	        if (p->info.elenco.codigo == codigo) {
+	            return 1; // Está entre os 10 melhores
+	        }
+	
+	        contador++;
+	    }
+	}else{
+		return 3;
+	}
+    return 0; // Não está entre os 7 melhores
+}
 listaDupla* copiarLista(listaDupla *original) {
     if (!original) return NULL;
 

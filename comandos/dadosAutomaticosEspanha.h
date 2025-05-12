@@ -61,7 +61,7 @@ void dadosAutomaticosEspanha(tree **raiz){
     jogador j4_3 = {"Nil Ayats", 0, 0, 35000, 84, "MEI"};
     jogador j4_4 = {"Daniel Plaza", 0, 0, 17000, 78, "MEI"};
     jogador j4_5 = {"Nico Pareja", 0, 0, 12000, 76, "DEF"};
-    goleiro g4 = {"Victor Vidal", 0, 0, 78000, 88, "GOL"};
+    goleiro g4 = {"Victor Vidal", 0, 0, 50000, 87, "GOL"};
     presidente p4 = {"Gerad Romero", 0, 0, 75};
     valorMercado = j4_1.valor + j4_2.valor + j4_3.valor + j4_4.valor + j4_5.valor + g4.valor;
     times team4 = {4,"Jijantes FC", j4_1, j4_2, j4_3, j4_4, j4_5, g4, p4, 1, 4, valorMercado};

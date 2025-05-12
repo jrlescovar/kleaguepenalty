@@ -35,13 +35,13 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 	//char cartas[4] = {49,49,49,49}; //teste
 	char penaltiFora[5] = {4,2,5,4,5};
 	char defesa[9];
-	MolduraColorida(1,1,120,30,2,2,14,14); 
 	listaDupla *meuTime = buscarTimeNaLista(*lista, resultado->time.codigo);
 	listaDupla *timeCasa = buscarTimeNaLista(*lista, (*confronto)->codigo1);
 	listaDupla *timeFora = buscarTimeNaLista(*lista, (*confronto)->codigo2);
 	
 	
 	if(((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo ) && simula == 0){
+		MolduraColorida(1,1,120,30,2,2,14,14); 
 		//sortear cartas
 		penaltiTime = 1; //adicionar penalti presidente
 		penaltiOponente = 1; //adicionar penalti presidente
@@ -6419,7 +6419,7 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 			penalidade++;
 			
 			//desempate			
-			if(penalidade == 5){
+			if(penalidade == 6){
 				if((*confronto)->placarCasa == (*confronto)->placarFora){
 					goldeouro = 1;
 				}
@@ -6431,15 +6431,16 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 			}
 			
 			if(goldeouro == 2){
-				if((*confronto)->placarCasa == (*confronto)->placarFora){
-					if(penalidade == 5){
-						penalidade = 1;
-					}
-				}else{
-					penalidade = 6;
+				if((*confronto)->placarCasa != (*confronto)->placarFora){
+					break; // sai do loop se houver vencedor
+				}
+				if(penalidade == 6){
+					penalidade = 1; // reinicia a rodada do gol de ouro
 				}
 			}
 			//fim do desempate
+
+			
 		}while(penalidade<=5);
 		
 		
