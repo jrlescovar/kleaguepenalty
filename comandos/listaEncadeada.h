@@ -221,10 +221,28 @@ typedef struct {
 
 TopGoleiro topGoleiros[100];
 
-char exibirTopGoleiros(listaDupla *inicio) {
+char exibirTopGoleiros(listaDupla *inicio, int l) {
     int total = 0,i,y,x;
 	clrscr();
-	MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+	if(l == 1){
+		MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+	    gotoxy(40,4);
+		textcolor(14);
+	    printf("--- TOP 10 GOLEIROS KL-PENALTY BRASIL---");
+    }
+    if(l == 2){
+    	MolduraColorida(1, 1, 120, 30, 4, 4, 14, 14);
+    	gotoxy(39,4);
+		textcolor(4);
+	    printf("--- TOP 10 GOLEIROS KL-PENALTY ESPANHA---");
+    }
+    if(l == 3){
+    	MolduraColorida(1, 1, 120, 30, 15, 15, 10, 4);
+    	gotoxy(40,4);
+		textcolor(10);
+	    printf("--- TOP 10 GOLEIROS KL-PENALTY ITALIA---");;
+	}
+	textcolor(15);
 	Moldura(27,7,96,20);
 	for(i = 1; i<11 ; i++){
 		if(i < 10){
@@ -288,9 +306,7 @@ char exibirTopGoleiros(listaDupla *inicio) {
             }
         }
     }
-	gotoxy(40,4);
-	textcolor(14);
-    printf("--- TOP 10 GOLEIROS KL-PENALTY BRASIL---");
+	
     textcolor(15);
     for (int i = 0; i < total && i < 10; i++) {
     	textcolor(topGoleiros[i].cor);;
@@ -401,10 +417,28 @@ char exibirTopGoleiros(listaDupla *inicio) {
     
     return plv;
 }
-char exibirEstatisticas(listaDupla *inicio) {	
+char exibirEstatisticas(listaDupla *inicio,int l) {	
 	clrscr();
 	int i,x,y;
-	MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+	if(l == 1){
+		MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+    	gotoxy(37,4);
+		textcolor(14);
+	    printf("--- TOP 10 ARTILHEIROS KL-PENALTY BRASIL---");
+    }
+    if(l == 2){
+		MolduraColorida(1, 1, 120, 30, 4, 4, 14, 14);
+    	gotoxy(36,4);
+		textcolor(4);
+	    printf("--- TOP 10 ARTILHEIROS KL-PENALTY ESPANHA---");
+    }
+    if(l == 3){
+    	MolduraColorida(1, 1, 120, 30, 15, 15, 10, 4);
+    	gotoxy(37,4);
+		textcolor(10);
+	    printf("--- TOP 10 ARTILHEIROS KL-PENALTY ITALIA---");
+	}
+	textcolor(15);
 	Moldura(27,7,96,20);
 	for(i = 1; i<11 ; i++){
 		if(i < 10){
@@ -480,9 +514,7 @@ char exibirEstatisticas(listaDupla *inicio) {
     }
 
     // Exibir os 10 primeiros
-    gotoxy(37,4);
-	textcolor(14);
-    printf("--- TOP 10 ARTILHEIROS KL-PENALTY BRASIL---");
+    
     textcolor(15);
     for (int i = 0; i < total && i < 10; i++){
     	textcolor(artilheiros[i].cor);
@@ -598,12 +630,30 @@ typedef struct {
     int partida;
 } TopPresidente;
 TopPresidente topPresidente[100];
-char exibirTopPresidentes(listaDupla *inicio) {
+char exibirTopPresidentes(listaDupla *inicio,int l) {
     int total = 0;
     clrscr();
-    MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+    if(l == 1){
+		MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+    	gotoxy(40, 4);
+    	textcolor(14);
+    	printf("--- TOP 10 PRESIDENTES KL-PENALTY BRASIL---");
+    }
+    if(l == 2){
+		MolduraColorida(1, 1, 120, 30, 4, 4, 14, 14);
+    	gotoxy(39, 4);
+    	textcolor(14);
+    	printf("--- TOP 10 PRESIDENTES KL-PENALTY ESPANHA---");
+    }
+    if(l == 3){
+    	MolduraColorida(1, 1, 120, 30, 15, 15, 10, 4);
+    	gotoxy(40, 4);
+    	textcolor(14);
+    	printf("--- TOP 10 PRESIDENTES KL-PENALTY ITALIA---");
+	}
+	textcolor(15);
     Moldura(27, 7, 96, 20);
-
+	
     for (int i = 1; i <= 10; i++) {
         gotoxy(i < 10 ? 30 : 29, i + 9);
         printf("%d", i);
@@ -649,9 +699,6 @@ char exibirTopPresidentes(listaDupla *inicio) {
         }
     }
 
-    gotoxy(40, 4);
-    textcolor(14);
-    printf("--- TOP 10 PRESIDENTES KL-PENALTY BRASIL---");
     textcolor(15);
 
     for (int i = 0; i < total && i < 10; i++) {
@@ -728,7 +775,7 @@ char exibirTopPresidentes(listaDupla *inicio) {
     	}
         
 
-        textcolor(15);
+        
     }
 
     printCentralizado(" G/F: GOLS FEITOS   G/P: GOLS PERDIDOS   PP: PENALTI PRESIDENTES BATIDOS", 21, 15);

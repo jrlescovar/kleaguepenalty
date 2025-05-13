@@ -301,10 +301,12 @@ char tela2(void){
 	    i++;
 	}
 	gotoxy(90,9);
-    printf("C O M I N G");
-    gotoxy(92,11);
-    printf("S O O N");
-	MolduraColorida(85, 6, 105, 14, 7, 7, 2, 4);
+    printf("I T A L I A");
+    gotoxy(90,11);
+    printf("EQUIPES: 12");textcolor(15);
+    gotoxy(89,15);
+	printf("[ APERTE  4 ]");
+	MolduraColorida(85, 6, 105, 14, 7, 7, 10, 4);
 	//molduras de baixo
 	i = 0;
 	while(i<19) {
@@ -411,6 +413,9 @@ char teladoTime(tree *resultado,const char* msg,int cor,int corTopo,int corBase,
 		}else
 			MolduraColorida(20,6,101,24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 		
+	}
+	if(localidade == 3){
+		MolduraColorida(20,6,101,24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 	}
     
     gotoxy(92,4);

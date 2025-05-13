@@ -47,7 +47,7 @@ void dadosAutomaticosEspanha(tree **raiz){
     jogador j2_1 = {"Edgar Alvaro", 0, 0, 40000, 85, "ATA"};
     jogador j2_2 = {"Javi Espinosa", 0, 0, 40000, 84, "MEI"};
     jogador j2_3 = {"Hugo Fraile", 0, 0, 21000, 81, "MEI"};
-    jogador j2_4 = {"Mantovani", 0, 0, 20000, 80, "DEF"};
+    jogador j2_4 = {"Mantovani", 0, 0, 18000, 79, "DEF"};
     jogador j2_5 = {"Carlos Val", 0, 0, 20000, 80, "DEF"};
     goleiro g2 = {"Victor Cocera", 0, 0, 25000, 83, "GOL"};
     presidente p2 = {"Juan Guarnizo", 0, 0, 60};
@@ -55,13 +55,13 @@ void dadosAutomaticosEspanha(tree **raiz){
     times team2 = {2, "Aniquiladores FC", j2_1, j2_2, j2_3, j2_4, j2_5, g2, p2, 4, 12, valorMercado};
     insereABBrecursivo(raiz, team2);
 	
-	 // Jijantes FC
+	 // Jijantes FC 
     jogador j4_1 = {"Pol Ortega", 0, 0, 77000, 90, "ATA"};
     jogador j4_2 = {"C. Martinez", 0, 0, 10000, 75, "ATA"};
-    jogador j4_3 = {"Nil Ayats", 0, 0, 35000, 84, "MEI"};
-    jogador j4_4 = {"Daniel Plaza", 0, 0, 17000, 78, "MEI"};
-    jogador j4_5 = {"Nico Pareja", 0, 0, 12000, 76, "DEF"};
-    goleiro g4 = {"Victor Vidal", 0, 0, 50000, 87, "GOL"};
+    jogador j4_3 = {"Albert Lopez", 0, 0, 40000, 84, "ATA"};
+    jogador j4_4 = {"Nil Ayats", 0, 0, 50000, 87, "MEI"};
+    jogador j4_5 = {"Daniel Plaza", 0, 0, 19000, 79, "MEI"};
+    goleiro g4 = {"Victor Vidal", 0, 0, 65000, 88, "GOL"};
     presidente p4 = {"Gerad Romero", 0, 0, 75};
     valorMercado = j4_1.valor + j4_2.valor + j4_3.valor + j4_4.valor + j4_5.valor + g4.valor;
     times team4 = {4,"Jijantes FC", j4_1, j4_2, j4_3, j4_4, j4_5, g4, p4, 1, 4, valorMercado};
@@ -71,7 +71,7 @@ void dadosAutomaticosEspanha(tree **raiz){
     jogador j8_1 = {"Marc Pelaz", 0, 0, 50000, 86, "MEI"};
     jogador j8_2 = {"Gilles Videl", 0, 0, 26000, 81, "MEI"};
     jogador j8_3 = {"Gerad Nolla", 0, 0, 36000, 84, "MEI"};
-    jogador j8_4 = {"Ivan Torres", 0, 0, 20000, 80, "DEF"};
+    jogador j8_4 = {"Ivan Torres", 0, 0, 17000, 78, "DEF"};
     jogador j8_5 = {"Nadir Louah", 0, 0, 33000, 84, "DEF"};
     goleiro g8 = {"Adria 'Capi'", 0, 0, 24000, 82, "GOL"};
     presidente p8 = {"Ibai", 0, 0, 74};
@@ -82,8 +82,8 @@ void dadosAutomaticosEspanha(tree **raiz){
     // 1K FC
     jogador j1_1 = {"Nico Santos", 0, 0, 27000, 82, "ATA"};
     jogador j1_2 = {"Carlos Corvo", 0, 0, 29000, 83, "ATA"};
-    jogador j1_3 = {"Gerad Verge", 0, 0, 25000, 80, "MEI"};
-    jogador j1_4 = {"Feliu Torrus", 0, 0, 18000, 79, "MEI"};
+    jogador j1_3 = {"Gerad Verge", 0, 0, 17000, 78, "MEI"};
+    jogador j1_4 = {"Feliu Torrus", 0, 0, 14000, 77, "MEI"};
     jogador j1_5 = {"Victor Mongi", 0, 0, 27000, 82, "DEF"};
     goleiro g1 = {"Pol Lechuga", 0, 0, 40000, 85, "GOL"};
     presidente p1 = {"Casillas", 0, 0, 85};
@@ -109,7 +109,7 @@ void dadosAutomaticosEspanha(tree **raiz){
     // PIO FC
     jogador j7_1 = {"Lobato", 0, 0, 10000, 71, "ATA"};
     jogador j7_2 = {"Pablo F.", 0, 0, 29000, 81, "MEI"};
-    jogador j7_3 = {"Luis Garcia", 0, 0, 24000, 80, "MEI"};
+    jogador j7_3 = {"Luis Garcia", 0, 0, 17000, 78, "MEI"};
     jogador j7_4 = {"Iker G.", 0, 0, 10000, 72, "MEI"};
     jogador j7_5 = {"Banuls", 0, 0, 10000, 73, "DEF"};
     goleiro g7 = {"Dani Parra", 0, 0, 21000, 83, "GOL"};
@@ -120,7 +120,7 @@ void dadosAutomaticosEspanha(tree **raiz){
 
 
     // Rayo Barcelona
-    jogador j9_1 = {"Gerad Oliva", 0, 0, 27500, 83, "ATA"};
+    jogador j9_1 = {"Gerad Oliva", 0, 0, 20000, 81, "ATA"};
     jogador j9_2 = {"M. Boullouh", 0, 0, 29000, 83, "ATA"};
     jogador j9_3 = {"Alex Marti", 0, 0, 29000, 83, "ATA"};
     jogador j9_4 = {"Dani Perez", 0, 0, 10000, 75, "MEI"};
@@ -169,7 +169,7 @@ void dadosAutomaticosEspanha(tree **raiz){
     
      // El Barrio
     jogador j3_1 = {"Antoni H.", 0, 0, 10000, 72, "ATA"};
-    jogador j3_2 = {"Cristian Ubon", 0, 0, 49000, 87, "MEI"};
+    jogador j3_2 = {"Cristian Ubon", 0, 0, 65000, 88, "MEI"};
     jogador j3_3 = {"R. Vallribera", 0, 0, 39000, 85, "MEI"};
     jogador j3_4 = {"Xavi Pluvins", 0, 0, 17000, 78, "MEI"};
     jogador j3_5 = {"Marc Valiente", 0, 0, 13000, 77, "DEF"};

@@ -29,9 +29,9 @@ void dadosAutomaticos(tree **raiz) {
     jogador j8_2 = {"Helber Jr", 0, 0, 35000, 84,"ATA"};
     jogador j8_3 = {"Victor Bueno", 0, 0, 21000, 80,"ATA"};
     jogador j8_4 = {"Chaveirinho", 0, 0, 28000, 82,"MEI"};
-    jogador j8_5 = {"Melequinha", 0, 0, 33000, 85,"DEF"};
+    jogador j8_5 = {"Melequinha", 0, 0, 50000, 87,"DEF"};
     goleiro g8 = {"Julio Carvalho", 0,0, 15000, 78,"GOL"};
-    presidente p8 = {"Nobru", 0, 0, 77};
+    presidente p8 = {"Cerol", 0, 0, 85};
     valorMercado = j8_1.valor + j8_2.valor + j8_3.valor + j8_4.valor + j8_5.valor + g8.valor;
     times t8 = {5, "Fluxo FC", j8_1, j8_2, j8_3, j8_4, j8_5, g8, p8,4,8,valorMercado};
     insereABBrecursivo(raiz, t8);
@@ -40,22 +40,22 @@ void dadosAutomaticos(tree **raiz) {
     jogador j9_1 = {"Marcelin Jr", 0, 0, 32000, 84,"ATA"};
     jogador j9_2 = {"Luisinho Alves", 0, 0, 25000, 82,"ATA"};
     jogador j9_3 = {"Batman", 0, 0, 28000, 83,"MEI"}; 
-    jogador j9_4 = {"Victor Bolt", 0, 0, 18000, 79,"MEI"};
+    jogador j9_4 = {"Victor Bolt", 0, 0, 20000, 80,"MEI"};
     jogador j9_5 = {"Bernardinello", 0, 0, 15000, 78,"DEF"};
-    goleiro g9 = {"Joao Pedro", 0,0, 69000, 89,"GOL"};
-    presidente p9 = {"Yuri 22", 0, 0, 60};
+    goleiro g9 = {"Joao Pedro", 0,0, 62000, 87,"GOL"};
+    presidente p9 = {"Yuri 22", 0, 0, 50};
     valorMercado = j9_1.valor + j9_2.valor + j9_3.valor + j9_4.valor + j9_5.valor + g9.valor;
     times t9 = {3, "DesimpedidosGoti", j9_1, j9_2, j9_3, j9_4, j9_5, g9, p9,2,1,valorMercado};
     insereABBrecursivo(raiz, t9);
     
     
     // Furia
-    jogador j2_1 = {"Leleti", 0, 0, 80000, 92,"ATA"};
-    jogador j2_2 = {"Lipao", 0, 0, 79000, 90,"ATA"};
+    jogador j2_1 = {"Leleti", 0, 0, 140000, 94,"ATA"};
+    jogador j2_2 = {"Lipao", 0, 0, 115000, 92,"ATA"};
     jogador j2_3 = {"Donato", 0, 0, 21000, 80,"ATA"};
     jogador j2_4 = {"Jefinho", 0, 0, 50000, 87,"MEI"};
-    jogador j2_5 = {"Dedo", 0, 0, 38000, 85,"DEF"};
-    goleiro g2 = {"Ayosa", 0, 0,35000, 85,"GOL"};
+    jogador j2_5 = {"Dedo", 0, 0, 40000, 85,"DEF"};
+    goleiro g2 = {"Victor Hugo", 0, 0,49000, 86,"GOL"};
     presidente p2 = {"Cris Guedes", 0, 0, 76};
     valorMercado = j2_1.valor + j2_2.valor + j2_3.valor + j2_4.valor + j2_5.valor + g2.valor;
     times t2 = {7, "Furia FC", j2_1, j2_2, j2_3, j2_4, j2_5, g2, p2,7,15,valorMercado};
@@ -63,12 +63,12 @@ void dadosAutomaticos(tree **raiz) {
 	
 	 // Dendele 
     jogador j6_1 = {"Canhoto", 0, 0, 38000, 85,"MEI"};
-    jogador j6_2 = {"Lucas Hector", 0, 0, 50000, 87,"MEI"};
-    jogador j6_3 = {"Tuco", 0, 0, 20000, 79,"MEI"};
-    jogador j6_4 = {"Romarinho", 0, 0, 12000, 76,"MEI"};
-    jogador j6_5 = {"Lyncoln", 0, 0, 40000, 85,"DEF"};
-    goleiro g6 = {"Maikon", 0,0, 29000, 83,"GOL"};
-    presidente p6 = {"LuquEt4", 0, 0, 78};
+    jogador j6_2 = {"Lucas Hector", 0, 0, 78000, 90,"MEI"};
+    jogador j6_3 = {"Tuco", 0, 0, 22000, 82,"MEI"};
+    jogador j6_4 = {"Romarinho", 0, 0, 20000, 80,"MEI"};
+    jogador j6_5 = {"Lyncoln", 0, 0, 68000, 88,"DEF"};
+    goleiro g6 = {"Maikon", 0,0, 32000, 84,"GOL"};
+    presidente p6 = {"LuquEt4", 0, 0, 73};
     valorMercado = j6_1.valor + j6_2.valor + j6_3.valor + j6_4.valor + j6_5.valor + g6.valor;
     times t6 = {2, "Dendele FC", j6_1, j6_2, j6_3, j6_4, j6_5, g6, p6,1,14,valorMercado};
     insereABBrecursivo(raiz, t6);
@@ -100,10 +100,10 @@ void dadosAutomaticos(tree **raiz) {
     // LOUD
     jogador j5_1 = {"Drope", 0, 0, 29000, 83,"ATA"};
     jogador j5_2 = {"Igor Rock", 0, 0, 20000, 80,"ATA"};
-    jogador j5_3 = {"Lukinhas", 0, 0, 40000, 85,"MEI"};
+    jogador j5_3 = {"Lukinhas", 0, 0, 64000, 87,"MEI"};
     jogador j5_4 = {"Luca Japa", 0, 0, 22000, 81,"MEI"};
-    jogador j5_5 = {"Lucas Caroco", 0, 0, 27000, 82,"MEI"};
-    goleiro g5 = {"Esau", 0, 0,40000, 85,"GOL"};
+    jogador j5_5 = {"Lucas Caroco", 0, 0, 20000, 80,"MEI"};
+    goleiro g5 = {"Esau", 0, 0,50000, 86,"GOL"};
     presidente p5 = {"Loud Coringa", 0, 0, 79};
 	valorMercado = j5_1.valor + j5_2.valor + j5_3.valor + j5_4.valor + j5_5.valor + g5.valor;
     times t5 = {9, "LOUD SC", j5_1, j5_2, j5_3, j5_4, j5_5, g5, p5,2,10,valorMercado};
@@ -111,10 +111,10 @@ void dadosAutomaticos(tree **raiz) {
     
     // Capim
     jogador j3_1 = {"Igo Caninde", 0, 0, 25000, 82,"ATA"};
-    jogador j3_2 = {"Briquinho", 0, 0, 40000, 84,"ATA"};
+    jogador j3_2 = {"Briquinho", 0, 0, 50000, 87,"ATA"};
     jogador j3_3 = {"Henry Japa", 0, 0, 22000, 80,"MEI"};
     jogador j3_4 = {"Neto Show", 0, 0, 38000, 84,"MEI"};
-    jogador j3_5 = {"GB Medeiros", 0, 0, 28000, 82,"DEF"};
+    jogador j3_5 = {"GB Medeiros", 0, 0, 40000, 84,"DEF"};
     goleiro g3 = {"Barata", 0,0, 78000, 88,"GOL"};
     presidente p3 = {"Jon Vlogs", 0, 0, 72};
     valorMercado = j3_1.valor + j3_2.valor + j3_3.valor + j3_4.valor + j3_5.valor + g3.valor;
@@ -123,8 +123,8 @@ void dadosAutomaticos(tree **raiz) {
 	
     // G3X
     jogador j1_1 = {"Kelvin 'K9'", 0, 0, 115000, 93,"ATA"};
-    jogador j1_2 = {"Ton", 0, 0, 78000, 88,"ATA"};
-    jogador j1_3 = {"Andreas Vaz", 0, 0, 75000, 90,"MEI"};
+    jogador j1_2 = {"Ton", 0, 0, 78000, 90,"ATA"};
+    jogador j1_3 = {"Andreas Vaz", 0, 0, 100000, 91,"MEI"};
     jogador j1_4 = {"Kenu", 0, 0, 33000, 84,"MEI"};
     //jogador j1_4 = {"Rufino", 0, 0, 54000, 86,"MEI"};
     jogador j1_5 = {"Wembley", 0, 0, 29000, 82,"DEF"};
@@ -137,10 +137,10 @@ void dadosAutomaticos(tree **raiz) {
     // Nyvelado{"Bruninho", 0, 0, 23200, 84,"MEI"};
     jogador j10_1 = {"Leo Gol", 0, 0, 61000, 88,"ATA"};
     jogador j10_2 = {"Bruninho", 0, 0, 40000, 84,"MEI"};
-    jogador j10_3 = {"Breno Arantes", 0, 0, 18000, 79,"MEI"};
+    jogador j10_3 = {"Breno Arantes", 0, 0, 29000, 83,"MEI"};
     jogador j10_4 = {"Klynsmann", 0, 0, 13000, 77,"MEI"};
     jogador j10_5 = {"Willin Jesus", 0, 0, 29000, 82,"DEF"};
-    goleiro g10 = {"Ivo Alves", 0,0, 40000, 85,"GOL"};
+    goleiro g10 = {"Ivo Alves", 0,0, 45000, 86,"GOL"};
     presidente p10 = {"Nyvi Estephan", 0, 0, 62};
     valorMercado = j10_1.valor + j10_2.valor + j10_3.valor + j10_4.valor + j10_5.valor + g10.valor;
     times t10 = {10, "Nyvelados FC", j10_1, j10_2, j10_3, j10_4, j10_5, g10, p10,8,15,valorMercado};

@@ -1,0 +1,12 @@
+-Adicionado Liga Itália
+Novos(12) Times.
+Novos(72) Jogadores.
+Novos(12) Presidentes.
+
+-Atualização no sistema de Overall jogadores com overall menor ou igual a 80 enfrentando um goleiro com overall igual ou maior que 82 gera ao goleiro +1 reflexo.
+
+-Atualização no sistema de Overall jogadores com overall menor ou igual a 77 enfrentando um goleiro com overall igual ou maior que 80 gera ao goleiro +1 reflexo.
+
+-Correções de Bugs Visuais.
+
+-Correções em Exibir Overall da Equipe em menu de selecionar Equipe.

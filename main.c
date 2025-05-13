@@ -7,10 +7,12 @@
 
 #include "./comandos/dadosAutomaticos.h"
 #include "./comandos/dadosAutomaticosEspanha.h"
+#include "./comandos/dadosAutomaticosItalia.h"
 #include "./comandos/times.h"
 #include "./comandos/visual.h"
 #include "./comandos/ligaBrasil.h"
 #include "./comandos/ligaEspanha.h"
+#include "./comandos/ligaItalia.h"
 #include "./comandos/listaEncadeada.h"
 #include "./comandos/jogoRodando.h"
 #include "./comandos/cartas.h"
@@ -48,6 +50,17 @@ int main(void){
 	SemanaBrasil *semanaEspanha  = malloc(sizeof(SemanaBrasil)); 
 	Confronto *confrontoEspanha = malloc(sizeof(Confronto));
 	playoffsConfrontos *jogosEspanha; jogosEspanha= malloc(sizeof(playoffsConfrontos));
+	//liga Italia.
+	tree *raizItalia = NULL; //Times Brasilerios
+	tree *resultadoItalia = NULL; // times Brasilerios
+	tree *moverTimesParaListaItalia = NULL; //Pegar os times da Arvore e inserir na Lista de times 
+	dadosAutomaticosItalia(&raizItalia);
+	SemanaBrasil* campeonatoItalia = gerarPartidasItalia();// gerar partidas  Ligas BRasil;
+	listaDupla *listaItalia = NULL; //CRIAR A LISTA PARA OS TIME BR
+	listaDupla *listaTabelaItalia = NULL; //Cria para salvar tabela antes dos dados do playoffs
+	SemanaBrasil *semanaItalia  = malloc(sizeof(SemanaBrasil)); 
+	Confronto *confrontoItalia = malloc(sizeof(Confronto));
+	playoffsConfrontos *jogosItalia; jogosItalia= malloc(sizeof(playoffsConfrontos));
 	
 	
 	tela1(); //tela de abertura apenas.
@@ -216,14 +229,14 @@ int main(void){
 				                			passarPagina = 'A';
 				                			do{
 				                				if(passarPagina == 'A'){
-				                					passarPagina = exibirEstatisticas(listaBrasil);
+				                					passarPagina = exibirEstatisticas(listaBrasil,1);
 				                				}
 				                				if(passarPagina == 'G')
 				                				{
-				                					passarPagina = exibirTopGoleiros(listaBrasil);
+				                					passarPagina = exibirTopGoleiros(listaBrasil,1);
 				                				}
 				                				if(passarPagina == 'P'){
-				                					passarPagina = exibirTopPresidentes(listaBrasil);
+				                					passarPagina = exibirTopPresidentes(listaBrasil,1);
 				                				}
 				                			}while(passarPagina != 27);
 				                		break;
@@ -435,14 +448,232 @@ int main(void){
 				                			passarPagina = 'A';
 				                			do{
 				                				if(passarPagina == 'A'){
-				                					passarPagina = exibirEstatisticas(listaEspanha);
+				                					passarPagina = exibirEstatisticas(listaEspanha,2);
 				                				}
 				                				if(passarPagina == 'G')
 				                				{
-				                					passarPagina = exibirTopGoleiros(listaEspanha);
+				                					passarPagina = exibirTopGoleiros(listaEspanha,2);
 				                				}
 				                				if(passarPagina == 'P'){
-				                					passarPagina = exibirTopPresidentes(listaEspanha);
+				                					passarPagina = exibirTopPresidentes(listaEspanha,2);
+				                				}
+				                			}while(passarPagina != 27);
+				                		break;
+				                		case 'N':
+				                			if(rodada != 1){
+				                				
+				                				rodada--;
+				                			}
+				                		break;
+				                		case 'M':
+				                			if(rodada < 11){
+				                				rodada++;
+				                			}
+				                		break;
+				                		default:
+				                				if(menuSelecionado == 27)
+				                					menuSelecionado = 'o';
+				                			break;
+				                			
+				                	}
+				                }while(menuSelecionado != 27);
+				                
+				            }
+				            else if (timeConfirmado != 27){//Se aperta tecla errada exibe msg, aperta ESC fecha o JOGO
+				                teclaInvalida();
+				        	}
+				        } while (timeConfirmado != 27);
+				    }
+					
+				} while (confirmaTime != 27); 
+			break;
+			case '4':
+				do {
+				    confirmaTime = telaItalia();//TELA DE CONFIRMAR TIME 
+				    if (confirmaTime == 27)
+				        break; // sai da seleção de time volta para seleção de NACIONALIDADE
+					
+				    if ((confirmaTime >= '0' && confirmaTime <= '9') || confirmaTime == 'W' || confirmaTime == 'E') {  // TECLA DE 0 a 9 ou W/E
+					    buscar = confirmaTime - '0';
+					
+					    // Se o código for 0, muda para 10
+					    if (buscar == 0) {
+					        buscar = 10;  // Muda o ID para 10 quando escolher '0'
+					    }
+					    if (confirmaTime == 'W') {
+					        buscar = 11;  // Muda o ID para 11 quando escolher 'W'
+					    }
+					    if (confirmaTime == 'E') {
+					        buscar = 12;  // Muda o ID para 12 quando escolher 'E'
+					    }
+				        resultadoItalia = buscaPorCodigo(raizItalia, buscar);  //Busca na arvore o TIME.
+				        do {
+				            timeConfirmado = teladoTime(resultadoItalia,"KL PENALTY - ITALIA",10,15,15,10,4,3);
+				            if (timeConfirmado == 'S'){
+				            	//Jogo "Roda aqui dentro".
+								rodadaOficial = 1;
+								rodada = 1;
+				            	int x = 1;
+								while( x <= 12){
+									moverTimesParaListaItalia = buscaPorCodigo(raizItalia, x);
+									inserirLista(&listaItalia, moverTimesParaListaItalia);
+									x++;
+									
+								}
+				                do{
+				                	//criarPlayin
+				                	if(rodadaOficial == 12){
+				                		listaTabelaItalia = copiarLista(listaItalia);//salva a tabela para nao exiber novas informações do playoffs
+										criarPlayoffItalia(&jogosItalia,listaItalia,1);
+				                	}
+				                	//criarPlayin final
+				                	if(rodadaOficial == 13){
+				                		criarPlayoffItalia(&jogosItalia,listaItalia,2);
+				                	}
+				                	//criar quartas ultima quarta
+									if(rodadaOficial == 14){
+				                		criarPlayoffItalia(&jogosItalia,listaItalia,3);
+				                	}
+				                	if(rodadaOficial == 15){
+				                		criarPlayoffItalia(&jogosItalia,listaItalia,4);
+				                	}
+				                	if(rodadaOficial == 16){
+				                		criarPlayoffItalia(&jogosItalia,listaItalia,5);
+				                	}
+				                	//                           listaTimes  codtime  jogosRodadas    NumRodada5
+									int playoffJogos = estaEntreOs10Melhores(listaItalia,buscar); //verificar se meu time jogara playoff
+				                	menuSelecionado = ligaItalia(listaItalia,listaTabelaItalia,buscar,campeonatoItalia,rodada,playoffJogos,rodadaOficial);
+				                	switch(menuSelecionado){
+				                		case 'S':
+											Sleep(100);			                			
+				                			if(rodadaOficial < 12){
+				                				semanaItalia = buscarSemana(campeonatoItalia, rodadaOficial); //buscar o jogos dessa rodada
+												confrontoItalia = semanaItalia->primeiroConfronto;
+												do{
+													jogarConfronto(&listaItalia,resultadoItalia,&confrontoItalia,1);
+													confrontoItalia = confrontoItalia->prox;
+												}while(confrontoItalia != NULL);
+												semanaItalia = semanaItalia->prox;
+				                				rodadaOficial++;
+				                				
+				                			}
+				                			if(rodadaOficial < 12){//chegar em 12 para para nao exibir vento...
+				                				rodada = rodadaOficial; //mudar a pagina da rodada para a proxima
+												break;
+				                			}
+			                				if(rodadaOficial == 12){
+			                					if (jogosItalia->playin1Confronto && jogosItalia->playin2Confronto){
+			                						jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin1Confronto,1);
+					                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin2Confronto,1);
+					                				rodadaOficial++; 
+			                					}
+			                					break;
+				                			}
+				                			if(rodadaOficial == 13){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin3Confronto,1);
+				                				rodadaOficial++; 
+												break;
+				                			}
+				                			if(rodadaOficial == 14){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q1Confronto,1);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q2Confronto,1);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q3Confronto,1);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 15){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->s1Confronto,1);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->s2Confronto,1);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 16){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->finalConfronto,1);
+												rodadaOficial++;
+												break;
+				                			}
+				                		break;
+				                		case 'J':
+				                			if(rodadaOficial <= 11){
+				                				semanaItalia = buscarSemana(campeonatoItalia, rodadaOficial); //buscar o jogos dessa rodada
+												confrontoItalia = semanaItalia->primeiroConfronto;
+												do{
+													jogarConfronto(&listaItalia,resultadoItalia,&confrontoItalia,0);
+													confrontoItalia = confrontoItalia->prox;
+												}while(confrontoItalia != NULL);
+												semanaItalia = semanaItalia->prox;
+				                				rodadaOficial++;
+				                			}
+				                			
+				                			if(rodadaOficial<12){//chegar em 12 para para nao exibir vento...
+				                				rodada = rodadaOficial;
+												break; //mudar a pagina da rodada para a proxima;
+											}
+				                			if(rodadaOficial == 12){
+			                					if (jogosItalia->playin1Confronto && jogosItalia->playin2Confronto){
+			                						jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin1Confronto,0);
+					                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin2Confronto,0);
+					                				rodadaOficial++; 
+			                					}
+			                					break;
+				                			}
+				                			if(rodadaOficial == 13){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->playin3Confronto,0);
+				                				rodadaOficial++; 
+												break;
+				                			}
+				                			if(rodadaOficial == 14){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q1Confronto,0);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q2Confronto,0);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->q3Confronto,0);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 15){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->s1Confronto,0);
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->s2Confronto,0);
+				                				rodadaOficial++;
+												break;
+				                			}
+				                			if(rodadaOficial == 16){
+				                				jogarConfrontoPlayoff(&listaItalia,resultadoItalia,&jogosItalia->finalConfronto,0);
+												rodadaOficial++;
+												break;
+				                			}
+				                			
+				                		break;
+				                		case 'P':
+				                				if(rodadaOficial>=12){
+				                					clrscr();
+				                					if(playoffJogos == 0){
+				                						printCentralizado("SEU TIME FOI ELIMINADO NA FASE DE GRUPOS!",28,15);
+				                					}
+				                					exibirPlayoffsItalia(rodadaOficial, listaItalia, jogosItalia,rodadaOficial - 11);
+				                				}
+												if(rodadaOficial <12){
+											        gotoxy(39, 29);
+											        printf("FALTAM %d RODADAS PARA O INICIO DOS PLAYOFFS", 12 - rodadaOficial);
+											        gotoxy(119, 29);
+											        Sleep(1200);
+											        limparBufferTeclado();
+											    }
+											    
+				                		break;
+				                		case 'E':
+				                			gerenciarElenco(&listaItalia,resultadoItalia,3);//(lista atualizada, arvoreFormação time)
+				                		break;
+				                		case 'W':
+				                			passarPagina = 'A';
+				                			do{
+				                				if(passarPagina == 'A'){
+				                					passarPagina = exibirEstatisticas(listaItalia,3);
+				                				}
+				                				if(passarPagina == 'G')
+				                				{
+				                					passarPagina = exibirTopGoleiros(listaItalia,3);
+				                				}
+				                				if(passarPagina == 'P'){
+				                					passarPagina = exibirTopPresidentes(listaItalia,3);
 				                				}
 				                			}while(passarPagina != 27);
 				                		break;

@@ -193,11 +193,11 @@ Confronto* criarConfronto(char* casa, char* fora,int pais) {
 	    if(strcmp(fora,"El Barrio") == 0 ){
 	    	novo->cor2 = 11;
 	    	novo->codigo2 = 3;
-	    }
+		}
 	    if(strcmp(fora,"Jijantes FC") == 0 ){
 	    	novo->cor2 = 1;
 	    	novo->codigo2 = 4;
-	    }
+		}
 	    if(strcmp(fora,"Kunisports") == 0 ){
 	    	novo->cor2 = 8;
 	    	novo->codigo2 = 5;
@@ -230,6 +230,110 @@ Confronto* criarConfronto(char* casa, char* fora,int pais) {
 	    	novo->cor2 = 15;
 	    	novo->codigo2 = 12;
 		}
+    }
+    
+    
+    if(pais == 3){
+    	if(strcmp(casa,"Alpak FC") == 0 ){
+	    	novo->cor1 = 13;
+	    	novo->codigo1 = 1;
+		}		
+	    if(strcmp(casa,"Black Lotus FC") == 0 ){
+	    	novo->cor1 = 1;
+	    	novo->codigo1 = 2;
+		}
+	    if(strcmp(casa,"Boomers") == 0 ){
+	    	novo->cor1 = 14;
+	    	novo->codigo1 = 3;
+		}
+	    if(strcmp(casa,"Circus FC") == 0 ){
+	    	novo->cor1 = 7;
+	    	novo->codigo1 = 4;
+		}
+	    if(strcmp(casa,"FC Caesar") == 0 ){
+	    	novo->cor1 = 4;
+	    	novo->codigo1 = 5;
+		}
+	    if(strcmp(casa,"FC Zeta") == 0 ){
+	    	novo->cor1 = 4;
+	    	novo->codigo1 = 6;
+		}
+	    if(strcmp(casa,"Gear 7 FC") == 0 ){
+	    	novo->cor1 = 1;
+	    	novo->codigo1 = 7;
+		}
+	    if(strcmp(casa,"Punchers FC") == 0 ){
+	    	novo->cor1 = 6;
+	    	novo->codigo1 = 8;
+		}
+	    if(strcmp(casa,"Stalions") == 0 ){
+	    	novo->cor1 = 9;
+	    	novo->codigo1 = 9;
+		}
+	    if(strcmp(casa,"TRM FC") == 0 ){
+	    	novo->cor1 = 14;
+	    	novo->codigo1 = 10;
+		}
+		if(strcmp(casa,"Underdogs FC") == 0 ){
+	    	novo->cor1 = 10;
+	    	novo->codigo1 = 11;
+		}
+		if(strcmp(casa,"Zebras FC") == 0 ){
+	    	novo->cor1 = 15;
+	    	novo->codigo1 = 12;
+		}
+		
+		if(strcmp(fora,"Alpak FC") == 0 ){
+	    	novo->cor2 = 13;
+	    	novo->codigo2 = 1;
+		}		
+	    if(strcmp(fora,"Black Lotus FC") == 0 ){
+	    	novo->cor2 =1;
+	    	novo->codigo2 = 2;
+		}
+	    if(strcmp(fora,"Boomers") == 0 ){
+	    	novo->cor2 = 14;
+	    	novo->codigo2 = 3;
+		}
+	    if(strcmp(fora,"Circus FC") == 0 ){
+	    	novo->cor2 = 7;
+	    	novo->codigo2 = 4;
+		}
+	    if(strcmp(fora,"FC Caesar") == 0 ){
+	    	novo->cor2 = 4;
+	    	novo->codigo2 = 5;
+		}
+	    if(strcmp(fora,"FC Zeta") == 0 ){
+	    	novo->cor2 = 4;
+	    	novo->codigo2 = 6;
+		}
+	    if(strcmp(fora,"Gear 7 FC") == 0 ){
+	    	novo->cor2 = 1;
+	    	novo->codigo2 = 7;
+		}
+	    if(strcmp(fora,"Punchers FC") == 0 ){
+	    	novo->cor2 = 6;
+	    	novo->codigo2 = 8;
+		}
+	    if(strcmp(fora,"Stalions") == 0 ){
+	    	novo->cor2 = 9;
+	    	novo->codigo2 = 9;
+		}
+	    if(strcmp(fora,"TRM FC") == 0 ){
+	    	novo->cor2 = 14;
+	    	novo->codigo2 = 10;
+		}
+		if(strcmp(fora,"Underdogs FC") == 0 ){
+	    	novo->cor2 = 10;
+	    	novo->codigo2 = 11;
+		}
+		if(strcmp(fora,"Zebras FC") == 0 ){
+	    	novo->cor2 = 15;
+	    	novo->codigo2 = 12;
+		}
+	    
+	    
+	    
     }
     
     
@@ -545,14 +649,8 @@ void exibirSemana(SemanaBrasil* inicio, int numeroRodada) {
 char telaBrasil(void){
 	clrscr();
 	MolduraColorida(1, 1, 120, 30,2,2,14,14);
-	gotoxy(85,3);
-	printf("P: Presidente");
-	gotoxy(100,3);
-	printf("#: Jogador Estrela");
-	gotoxy(92,4);
-	printf("$: Valor de Mercado");
 	gotoxy(95,2);
-	printf("[??]: Overall ");
+	printf("[??]: Overall Equipe");
 	
 	textcolor(12);
     gotoxy(4,3);
@@ -565,152 +663,95 @@ char telaBrasil(void){
 	printf("[APERTE] O NUMERO DA EQUIPE QUE DESEJA SELECIONAR");
 
 	
-	gotoxy(8,15);
+	gotoxy(8,11);
     printf("[ APERTE  1 ]");
-    gotoxy(10,7);
+    gotoxy(10,8);
     textcolor(11);
     printf("CAPIM FC");
-    gotoxy(9,9);
-    textcolor(3);
-    printf("P: JonVlogs");
-    gotoxy(8,11);
-    printf("#: Barata [90]");
-    gotoxy(13,13);
-    printf("$: XXX.XXX");
-	MolduraColorida(4, 6, 24, 14, 11, 2, 8, 8);
+    gotoxy(20,7);
+    printf("[84]");
+	MolduraColorida(4, 6, 24, 10, 11, 2, 8, 8);
 	
-	gotoxy(31,15);
+	gotoxy(31,11);
     printf("[ APERTE  2 ]");
-    gotoxy(33	,7);
+    gotoxy(33,8);
     textcolor(1);
     printf("DENDELE FC");
-    gotoxy(32,9);
-    textcolor(14);
-    printf("P: Luquet4");
-    gotoxy(28,11);
-    printf("#: Marcelin Jr [83]");
-    gotoxy(36,13);
-    textcolor(1);
-    printf("$: XXX.XXX");
-	MolduraColorida(27, 6, 47, 14, 1, 1, 14, 14);
+    gotoxy(43,7);
+    printf("[84]");
+	MolduraColorida(27, 6, 47, 10, 1, 1, 14, 14);
 	
-	gotoxy(54,15);
+	gotoxy(54,11);
     printf("[ APERTE  3 ]");
-    gotoxy(52,7);
+    gotoxy(52,8);
     textcolor(1);
     printf("DESIMPEDIDOS GOTI");
-    gotoxy(56,9);
-    textcolor(1);
-    printf("P: Yuri 22");
-    gotoxy(53,11);
-    printf("#: J. Pedro [88]");
-    gotoxy(59,13);
-    printf("$: XXX.XXX");
-	MolduraColorida(50, 6, 70, 14, 2, 2, 1, 1);
+	gotoxy(66,7);
+    printf("[82]");
+	MolduraColorida(50, 6, 70, 10, 2, 2, 1, 1);
 	
-	gotoxy(77,15);
+	gotoxy(77,11);
     printf("[ APERTE  4 ]");
-    gotoxy(77,7);
+    gotoxy(77,8);
     textcolor(9);
     printf("FC REAL ELITE");
-    gotoxy(77,9);
-    textcolor(9);
-    printf("P: Allan Stag");
-    gotoxy(76,11);
-    printf("#: Davi .I [89]");
-    gotoxy(82,13);
-    textcolor(13);
-    printf("$: XXX.XXX");
-	MolduraColorida(73, 6, 93, 14, 13, 13, 9, 9);
+    gotoxy(89,7);
+    printf("[80]");
+	MolduraColorida(73, 6, 93, 10, 13, 13, 9, 9);
 	
-	gotoxy(101,15);
+	gotoxy(101,11);
     printf("[ APERTE 5 ]");
-    gotoxy(103,7);
+    gotoxy(103,8);
     textcolor(15);
     printf("FLUXO FC");
-    gotoxy(103,9);
-    textcolor(8);
-    printf("P: Nobru");
-    gotoxy(100,11);
-    printf("#: Boolt [84]");
-    gotoxy(106,13);
-    textcolor(4);
-    printf("$: XXX.XXX");
-	MolduraColorida(96, 6, 117, 14, 4, 8, 15, 15);
-	
-	gotoxy(8,26);
+    gotoxy(113,7);
+    printf("[82]");
+	MolduraColorida(96, 6, 117, 10, 4, 8, 15, 15);
+		
+	gotoxy(8,19);
     printf("[ APERTE  6 ]");
-    gotoxy(8,18);
+    gotoxy(8,16);
     textcolor(5);
     printf("FUNKBOL CLUBE");
-    gotoxy(8,20);
-    textcolor(14);
-    printf("P: MC Hariel");
-    gotoxy(6,22);
-    printf("#: Douglinha [87]");
-    gotoxy(13,24);
-    textcolor(5);
-    printf("$: XXX.XXX");
-	MolduraColorida(4, 17, 24, 25, 5, 5, 14, 14);
+    gotoxy(20,15);
+    printf("[83]");
+	MolduraColorida(4, 14, 24, 18, 5, 5, 14, 14);	
 	
-	gotoxy(31,26);
+	gotoxy(31,19);
     printf("[ APERTE  7 ]");
-    gotoxy(33,18);
+    gotoxy(33,16);
     textcolor(15);
     printf("FURIA FC");
-    gotoxy(30,20);
-    textcolor(7);
-    printf("P: Cris Guedes");
-    gotoxy(30,22);
-    printf("#: Leleti [92]");
-    gotoxy(36,24);
-    printf("$: XXX.XXX");
-	MolduraColorida(27, 17, 47, 25, 7, 15, 15, 7);
+    gotoxy(43,15);
+    printf("[87]");
+	MolduraColorida(27, 14, 47, 18, 15, 8, 15, 8);
 	
-	gotoxy(54,26);
+	gotoxy(54,19);
     printf("[ APERTE  8 ]");
-    gotoxy(57,18);
+    gotoxy(57,16);
     textcolor(15);
     printf("G3X FC");
-    gotoxy(56,20);
-    textcolor(1);
-    printf("P: Gaules");
-    gotoxy(52,22);
-    printf("#: Kelvin K9 [95]");
-    gotoxy(59,24);
-    textcolor(14);
-    printf("$: XXX.XXX");
-	MolduraColorida(50, 17, 70, 25, 15, 15, 1, 14);
+    gotoxy(66,15);
+    printf("[87]");
+	MolduraColorida(50, 14, 70, 18, 15, 15, 1, 14);
 	
-	gotoxy(77,26);
+	gotoxy(77,19);
     printf("[ APERTE  9 ]");
-    gotoxy(80,18);
+    gotoxy(80,16);
     textcolor(2);
     printf("LOUD SC");
-    gotoxy(79,20);
-    textcolor(10);
-    printf("P: Coringa");
-    gotoxy(76,22);
-    printf("#: Lukinhas [85]");
-    gotoxy(82,24);
-    textcolor(2);
-    printf("$: XXX.XXX");
-	MolduraColorida(73, 17, 93, 25, 2, 2, 10, 10);
+    gotoxy(89,15);
+    printf("[82]");
+	MolduraColorida(73, 14, 93, 18, 2, 2,10,10);
 	
-	gotoxy(101,26);
+	gotoxy(101,19);
     printf("[ APERTE 0 ]");
-    gotoxy(101,18);
+    gotoxy(101,16);
     textcolor(15);
     printf("Nyvelados FC");
-    gotoxy(103,20);
-    textcolor(8);
-    printf("P: Nyvi");
-    gotoxy(100,22);
-    printf("#: Leo Gol [88]");
-    gotoxy(106,24);
-    textcolor(15);
-    printf("$: XXX.XXX");
-	MolduraColorida(96, 17, 117, 25, 8, 8, 15, 15);
+    gotoxy(113,15);
+    printf("[83]");
+	MolduraColorida(96, 14, 117, 18, 8, 8, 15,15);
 
 	gotoxy(119,29);
 	fflush(stdin);
@@ -965,7 +1006,20 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 		}
     	MolduraColorida(1, 1, 120, 30, 4, 4, 14, 14);
     }
+	 if(localidade == 3){
+	    while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 4 : 10); // Alterna cores
 	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "=" : "*");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? "=" : "*");
+	    
+	    i++;
+		}
+    	MolduraColorida(1, 1, 120, 30, 15, 15, 10, 4);
+    }
 	if(localidade == 1){
 	    if (resultado->time.codigo == 1) {
 	        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, 2, resultado->time.cor2, resultado->time.cor2);
@@ -992,6 +1046,9 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 		}else
 			MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 		
+	}
+	if(localidade == 3){
+		MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 	}
     gotoxy(42, 5);
     printf("$: Valor de Mercado");

@@ -204,6 +204,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 3){
 							gotoxy(33,20);
@@ -212,6 +216,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--; //tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 5){
 							gotoxy(33,20);
@@ -220,6 +228,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 7){
 							gotoxy(33,20);
@@ -228,6 +240,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 9){
 							gotoxy(33,20);
@@ -236,6 +252,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						gotoxy(67,20);
 						textcolor(timeFora->info.elenco.cor1);
@@ -319,6 +339,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador1.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 3){
 									gotoxy(33,20);
@@ -327,6 +351,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 										quantidade--; //tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador2.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 5){
 									gotoxy(33,20);
@@ -335,6 +363,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador3.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 7){
 									gotoxy(33,20);
@@ -343,6 +375,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador4.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 9){
 									gotoxy(33,20);
@@ -351,6 +387,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador5.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								gotoxy(67,20);
 								textcolor(timeFora->info.elenco.cor1);
@@ -801,6 +841,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeFora->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 3){
 							gotoxy(67,20);
@@ -809,6 +853,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeFora->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 5){
 							gotoxy(67,20);
@@ -817,6 +865,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeFora->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 7){
 							gotoxy(67,20);
@@ -825,6 +877,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeFora->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 9){
 							gotoxy(67,20);
@@ -833,6 +889,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeFora->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						
 						
@@ -1041,6 +1101,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 3){
 						gotoxy(67,20);
@@ -1049,6 +1113,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 5){
 						gotoxy(67,20);
@@ -1057,6 +1125,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 7){
 						gotoxy(67,20);
@@ -1065,6 +1137,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 9){
 						gotoxy(67,20);
@@ -1073,6 +1149,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					
 					
@@ -1289,10 +1369,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 						cartaPenaltiCasaOponente();
 					
 					if(cartaSecretaTime  == 1){//carta secreta foi usada
-							if(timeCarta == '1')
-								cartaSecretaFora(timeCarta,4);
-							if(timeCarta == '2')
-								cartaSecretaFora(timeCarta,13);
+						if(timeCarta == '1')
+							cartaSecretaFora(timeCarta,4);
+						if(timeCarta == '2')
+							cartaSecretaFora(timeCarta,13);
 					}
 							
 					if(cartaSecretaOponente == 1){//carta secreta foi usada
@@ -1479,6 +1559,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeCasa->info.elenco.jogador1.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 4){
 								gotoxy(67,20);
@@ -1487,6 +1571,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeCasa->info.elenco.jogador2.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 6){
 								gotoxy(67,20);
@@ -1495,6 +1583,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeCasa->info.elenco.jogador3.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 8){
 								gotoxy(67,20);
@@ -1503,6 +1595,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeCasa->info.elenco.jogador4.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 10){
 								gotoxy(67,20);
@@ -1511,6 +1607,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeCasa->info.elenco.jogador5.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							
 							
@@ -1733,6 +1833,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeCasa->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 4){
 							gotoxy(33,20);
@@ -1741,6 +1845,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeCasa->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 6){
 							gotoxy(33,20);
@@ -1749,6 +1857,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeCasa->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 8){
 							gotoxy(33,20);
@@ -1757,6 +1869,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeCasa->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 10){
 							gotoxy(33,20);
@@ -1765,6 +1881,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 								quantidade--;
 							if(timeCasa->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						
 						
@@ -2005,6 +2125,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeFora->info.elenco.jogador1.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 4){
 								gotoxy(67,20);
@@ -2013,6 +2137,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeFora->info.elenco.jogador2.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 6){
 								gotoxy(67,20);
@@ -2021,6 +2149,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeFora->info.elenco.jogador3.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 8){
 								gotoxy(67,20);
@@ -2029,6 +2161,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeFora->info.elenco.jogador4.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 10){
 								gotoxy(67,20);
@@ -2037,6 +2173,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 									quantidade--;
 								if(timeFora->info.elenco.jogador5.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							gotoxy(33,20);
 							textcolor(timeCasa->info.elenco.cor1);
@@ -2131,6 +2271,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador1.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 4){
 										gotoxy(67,20);
@@ -2139,6 +2283,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 											quantidade--; //tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador2.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 6){
 										gotoxy(67,20);
@@ -2147,6 +2295,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador3.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 8){
 										gotoxy(67,20);
@@ -2155,6 +2307,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador4.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 10){
 										gotoxy(67,20);
@@ -2163,6 +2319,10 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador5.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									gotoxy(33,20);
 									textcolor(timeCasa->info.elenco.cor1);
@@ -2597,30 +2757,50 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeCasa->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeCasa->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 3){
 						if(timeCasa->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeCasa->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeCasa->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time fora
 					if (timeFora->info.elenco.goleiro1.overall >= 83 &&  timeFora->info.elenco.goleiro1.overall <= 85) 
@@ -2734,30 +2914,50 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeCasa->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeCasa->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 3){
 						if(timeCasa->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeCasa->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeCasa->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time fora
 					if (timeFora->info.elenco.goleiro1.overall >= 83 &&  timeFora->info.elenco.goleiro1.overall <= 85) 
@@ -2884,30 +3084,50 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 							quantidade--;
 						if(timeFora->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeFora->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 3){
 						if(timeFora->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeFora->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeFora->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time casa
 					if (timeCasa->info.elenco.goleiro1.overall >= 83 &&  timeCasa->info.elenco.goleiro1.overall <= 85) 
@@ -3021,30 +3241,50 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 						quantidade--;
 					if(timeFora->info.elenco.jogador1.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 2){
 					if(timeFora->info.elenco.jogador2.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador2.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 3){
 					if(timeFora->info.elenco.jogador3.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador3.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 4){
 					if(timeFora->info.elenco.jogador4.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador4.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;						
 				}
 				if(penalidade == 5){
 					if(timeFora->info.elenco.jogador5.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador5.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				//defesa time casa
 				if (timeCasa->info.elenco.goleiro1.overall >= 83 &&  timeCasa->info.elenco.goleiro1.overall <= 85) 
@@ -3419,6 +3659,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 3){
 							gotoxy(33,20);
@@ -3427,6 +3671,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--; //tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 5){
 							gotoxy(33,20);
@@ -3435,6 +3683,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 7){
 							gotoxy(33,20);
@@ -3443,6 +3695,11 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
+							
 						}
 						if(y == 9){
 							gotoxy(33,20);
@@ -3451,6 +3708,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;//tirar reflexo do goleiro
 							if(timeCasa->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						gotoxy(67,20);
 						textcolor(timeFora->info.elenco.cor1);
@@ -3534,6 +3795,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador1.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 3){
 									gotoxy(33,20);
@@ -3542,6 +3807,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 										quantidade--; //tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador2.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 5){
 									gotoxy(33,20);
@@ -3550,6 +3819,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador3.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 7){
 									gotoxy(33,20);
@@ -3558,6 +3831,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador4.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								if(y == 9){
 									gotoxy(33,20);
@@ -3566,6 +3843,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 										quantidade--;//tirar reflexo do goleiro
 									if(timeCasa->info.elenco.jogador5.overall >= 90)
 										quantidade--;
+									if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+										quantidade++;
+									if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+										quantidade++;
 								}
 								gotoxy(67,20);
 								textcolor(timeFora->info.elenco.cor1);
@@ -4016,6 +4297,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeFora->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+							if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 3){
 							gotoxy(67,20);
@@ -4024,6 +4309,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeFora->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+							if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 5){
 							gotoxy(67,20);
@@ -4032,6 +4321,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeFora->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+							if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 7){
 							gotoxy(67,20);
@@ -4040,6 +4333,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeFora->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+							if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 9){
 							gotoxy(67,20);
@@ -4048,6 +4345,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeFora->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+							if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						
 						
@@ -4256,6 +4557,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 3){
 						gotoxy(67,20);
@@ -4264,6 +4569,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 5){
 						gotoxy(67,20);
@@ -4272,6 +4581,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 7){
 						gotoxy(67,20);
@@ -4280,6 +4593,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(y == 9){
 						gotoxy(67,20);
@@ -4288,9 +4605,12 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador5.overall >= 90)
 							quantidade--;
-					}
+						if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					
-					
+					}	
 					gotoxy(33,20);
 					textcolor(timeCasa->info.elenco.cor1);
 					if(strcmp(timeCasa->info.elenco.nomeEquipe,"Fluxo FC") == 0)
@@ -4694,6 +5014,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeCasa->info.elenco.jogador1.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 4){
 								gotoxy(67,20);
@@ -4702,6 +5026,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeCasa->info.elenco.jogador2.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 6){
 								gotoxy(67,20);
@@ -4710,6 +5038,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeCasa->info.elenco.jogador3.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 8){
 								gotoxy(67,20);
@@ -4718,6 +5050,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeCasa->info.elenco.jogador4.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 10){
 								gotoxy(67,20);
@@ -4726,6 +5062,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeCasa->info.elenco.jogador5.overall >= 90)
 									quantidade--;
+								if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							
 							
@@ -4948,6 +5288,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeCasa->info.elenco.jogador1.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 4){
 							gotoxy(33,20);
@@ -4956,6 +5300,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeCasa->info.elenco.jogador2.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 6){
 							gotoxy(33,20);
@@ -4964,6 +5312,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeCasa->info.elenco.jogador3.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 8){
 							gotoxy(33,20);
@@ -4972,6 +5324,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeCasa->info.elenco.jogador4.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						if(y == 10){
 							gotoxy(33,20);
@@ -4980,6 +5336,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 								quantidade--;
 							if(timeCasa->info.elenco.jogador5.overall >= 90)
 								quantidade--;
+							if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+								quantidade++;
+							if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+								quantidade++;
 						}
 						
 						
@@ -5220,6 +5580,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeFora->info.elenco.jogador1.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 4){
 								gotoxy(67,20);
@@ -5228,6 +5592,11 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeFora->info.elenco.jogador2.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
+								
 							}
 							if(y == 6){
 								gotoxy(67,20);
@@ -5236,6 +5605,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeFora->info.elenco.jogador3.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 8){
 								gotoxy(67,20);
@@ -5244,6 +5617,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeFora->info.elenco.jogador4.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							if(y == 10){
 								gotoxy(67,20);
@@ -5252,6 +5629,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 									quantidade--;
 								if(timeFora->info.elenco.jogador5.overall >= 90)
 									quantidade--;
+								if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+									quantidade++;
+								if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+									quantidade++;
 							}
 							gotoxy(33,20);
 							textcolor(timeCasa->info.elenco.cor1);
@@ -5346,6 +5727,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador1.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 4){
 										gotoxy(67,20);
@@ -5354,6 +5739,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 											quantidade--; //tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador2.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 6){
 										gotoxy(67,20);
@@ -5362,6 +5751,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador3.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 8){
 										gotoxy(67,20);
@@ -5370,6 +5763,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador4.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									if(y == 10){
 										gotoxy(67,20);
@@ -5378,6 +5775,10 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 											quantidade--;//tirar reflexo do goleiro
 										if(timeFora->info.elenco.jogador5.overall >= 90)
 											quantidade--;
+										if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+											quantidade++;
+										if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+											quantidade++;
 									}
 									gotoxy(33,20);
 									textcolor(timeCasa->info.elenco.cor1);
@@ -5860,30 +6261,50 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeCasa->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeCasa->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 3){
 						if(timeCasa->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeCasa->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeCasa->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time fora
 					if (timeFora->info.elenco.goleiro1.overall >= 83 &&  timeFora->info.elenco.goleiro1.overall <= 85) 
@@ -5997,30 +6418,50 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeCasa->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador1.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador1.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeCasa->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador2.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador2.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 3){
 						if(timeCasa->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador3.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador3.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeCasa->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador4.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador4.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeCasa->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeCasa->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeCasa->info.elenco.jogador5.overall <= 80 && timeFora->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeCasa->info.elenco.jogador5.overall <= 77 && timeFora->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time fora
 					if (timeFora->info.elenco.goleiro1.overall >= 83 &&  timeFora->info.elenco.goleiro1.overall <= 85) 
@@ -6147,30 +6588,51 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							quantidade--;
 						if(timeFora->info.elenco.jogador1.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 2){
 						if(timeFora->info.elenco.jogador2.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador2.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
+						
 					}
 					if(penalidade == 3){
 						if(timeFora->info.elenco.jogador3.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador3.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 4){
 						if(timeFora->info.elenco.jogador4.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador4.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					if(penalidade == 5){
 						if(timeFora->info.elenco.jogador5.overall >= 87)
 							quantidade--;
 						if(timeFora->info.elenco.jogador5.overall >= 90)
 							quantidade--;
+						if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+							quantidade++;
+						if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+							quantidade++;
 					}
 					//defesa time casa
 					if (timeCasa->info.elenco.goleiro1.overall >= 83 &&  timeCasa->info.elenco.goleiro1.overall <= 85) 
@@ -6284,30 +6746,50 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 						quantidade--;
 					if(timeFora->info.elenco.jogador1.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador1.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador1.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 2){
 					if(timeFora->info.elenco.jogador2.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador2.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador2.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador2.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 3){
 					if(timeFora->info.elenco.jogador3.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador3.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador3.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador3.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 4){
 					if(timeFora->info.elenco.jogador4.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador4.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador4.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador4.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				if(penalidade == 5){
 					if(timeFora->info.elenco.jogador5.overall >= 87)
 						quantidade--;
 					if(timeFora->info.elenco.jogador5.overall >= 90)
 						quantidade--;
+					if(timeFora->info.elenco.jogador5.overall <= 80 && timeCasa->info.elenco.goleiro1.overall >= 82)
+						quantidade++;
+					if(timeFora->info.elenco.jogador5.overall <= 77 && timeCasa->info.elenco.goleiro1.overall >= 80)
+						quantidade++;
 				}
 				//defesa time casa
 				if (timeCasa->info.elenco.goleiro1.overall >= 83 &&  timeCasa->info.elenco.goleiro1.overall <= 85) 
