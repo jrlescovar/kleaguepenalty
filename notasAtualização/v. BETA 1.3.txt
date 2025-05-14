@@ -1,0 +1,8 @@
+-Adicionado Liga das Americas
+Novos(12) Times.
+Novos(72) Jogadores.
+Novos(12) Presidentes.
+
+-Correções de Pequenos Bugs Visuais.
+
+-Correções em [Partidas Jogadas] no playoffs, nunca acabara empate, sempre tera um ganhador.

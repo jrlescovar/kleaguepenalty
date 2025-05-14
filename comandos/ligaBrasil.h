@@ -231,8 +231,6 @@ Confronto* criarConfronto(char* casa, char* fora,int pais) {
 	    	novo->codigo2 = 12;
 		}
     }
-    
-    
     if(pais == 3){
     	if(strcmp(casa,"Alpak FC") == 0 ){
 	    	novo->cor1 = 13;
@@ -331,11 +329,108 @@ Confronto* criarConfronto(char* casa, char* fora,int pais) {
 	    	novo->cor2 = 15;
 	    	novo->codigo2 = 12;
 		}
-	    
-	    
-	    
     }
-    
+    if(pais == 4){
+    	if(strcmp(casa,"ATL. Parceros FC") == 0 ){
+	    	novo->cor1 = 12;
+	    	novo->codigo1 = 1;
+		}		
+	    if(strcmp(casa,"Clube Cuervos") == 0 ){
+	    	novo->cor1 = 8;
+	    	novo->codigo1 = 2;
+		}
+	    if(strcmp(casa,"Galatic Caribe") == 0 ){
+	    	novo->cor1 = 1;
+	    	novo->codigo1 = 3;
+		}
+	    if(strcmp(casa,"Los Aliens FC") == 0 ){
+	    	novo->cor1 = 9;
+	    	novo->codigo1 = 4;
+		}
+	    if(strcmp(casa,"Los Chamos FC") == 0 ){
+	    	novo->cor1 = 6;
+	    	novo->codigo1 = 5;
+		}
+	    if(strcmp(casa,"Muchachos FC") == 0 ){
+	    	novo->cor1 = 9;
+	    	novo->codigo1 = 6;
+		}
+	    if(strcmp(casa,"Olimpo United") == 0 ){
+	    	novo->cor1 = 7;
+	    	novo->codigo1 = 7;
+		}
+	    if(strcmp(casa,"Peluche Caligari") == 0 ){
+	    	novo->cor1 = 14;
+	    	novo->codigo1 = 8;
+		}
+	    if(strcmp(casa,"Persas FC") == 0 ){
+	    	novo->cor1 = 15;
+	    	novo->codigo1 = 9;
+		}
+	    if(strcmp(casa,"Raniza FC") == 0 ){
+	    	novo->cor1 = 2;
+	    	novo->codigo1 = 10;
+		}
+		if(strcmp(casa,"Real Titan FC") == 0 ){
+	    	novo->cor1 = 13;
+	    	novo->codigo1 = 11;
+		}
+		if(strcmp(casa,"West Santos FC") == 0 ){
+	    	novo->cor1 = 15;
+	    	novo->codigo1 = 12;
+		}
+		
+		if(strcmp(fora,"ATL. Parceros FC") == 0 ){
+	    	novo->cor2 = 12;
+	    	novo->codigo2 = 1;
+		}		
+	    if(strcmp(fora,"Clube Cuervos") == 0 ){
+	    	novo->cor2 = 8;
+	    	novo->codigo2 = 2;
+		}
+	    if(strcmp(fora,"Galatic Caribe") == 0 ){
+	    	novo->cor2 = 1;
+	    	novo->codigo2 = 3;
+		}
+	    if(strcmp(fora,"Los Aliens FC") == 0 ){
+	    	novo->cor2 = 9;
+	    	novo->codigo2 = 4;
+		}
+	    if(strcmp(fora,"Los Chamos FC") == 0 ){
+	    	novo->cor2 = 6;
+	    	novo->codigo2 = 5;
+		}
+	    if(strcmp(fora,"Muchachos FC") == 0 ){
+	    	novo->cor2 = 9;
+	    	novo->codigo2 = 6;
+		}
+	    if(strcmp(fora,"Olimpo United") == 0 ){
+	    	novo->cor2 = 7;
+	    	novo->codigo2 = 7;
+		}
+	    if(strcmp(fora,"Peluche Caligari") == 0 ){
+	    	novo->cor2 = 14;
+	    	novo->codigo2 = 8;
+		}
+	    if(strcmp(fora,"Persas FC") == 0 ){
+	    	novo->cor2 = 15;
+	    	novo->codigo2 = 9;
+		}
+	    if(strcmp(fora,"Raniza FC") == 0 ){
+	    	novo->cor2 = 2;
+	    	novo->codigo2 = 10;
+		}
+		if(strcmp(fora,"Real Titan FC") == 0 ){
+	    	novo->cor2 = 13;
+	    	novo->codigo2 = 11;
+		}
+		if(strcmp(fora,"West Santos FC") == 0 ){
+	    	novo->cor2 = 15;
+	    	novo->codigo2 = 12;
+		}
+		
+		
+    }
     
     strcpy(novo->timeCasa, casa);
     novo->placarCasa = 0; // Espaço em branco nos dois caracteres
@@ -1020,6 +1115,20 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 		}
     	MolduraColorida(1, 1, 120, 30, 15, 15, 10, 4);
     }
+    if(localidade == 4){
+	    while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 8 : 9); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "<" : "?");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? ">" : "?");
+	    
+	    i++;
+		}
+    	MolduraColorida(1, 1, 120, 30, 15, 15, 9, 9);
+    }
 	if(localidade == 1){
 	    if (resultado->time.codigo == 1) {
 	        MolduraColorida(6, 6, 82, 24, resultado->time.cor1, 2, resultado->time.cor2, resultado->time.cor2);
@@ -1048,6 +1157,9 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 		
 	}
 	if(localidade == 3){
+		MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
+	}
+	if(localidade == 4){
 		MolduraColorida(6, 6, 82, 24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 	}
     gotoxy(42, 5);

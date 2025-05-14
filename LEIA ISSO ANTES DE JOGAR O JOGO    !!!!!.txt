@@ -1,0 +1,21 @@
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+
+PARA JOGAR CLIQUE COM O BOTAO DIREITO NO ARQUIVO COM O NOME DE KL PENALTY GAME. !!!!!! 
+
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+
+NAO RECOMEDADO ABRIR DIRETO NO TERMINAL EM ALGUNS PODERA RESULTAR EM BUG VISUAL PELO TAMANHO DA TELA DO TERMINAL(EMULADO).
+
+ESSE JOGO FOI FEITO PARA WINDOWS
+
+-- EM MODO TERMIMAL ASCII --
+
+Intuito de ser um jogo divertido e dinâmico
+
+RECOMENDAÇE JOGAR WINDOWS 10 OU SUPERIOR PARA EVITAR BUGs VISUAL
+
+NÃO COLOQUE O TERMINAL EM TELA CHEIA! - RESULTARA EM BUG DE RESOLUÇÃO DE ESCRITA.
+
+VEJA AS IMAGENS DE RESOLUÇÃO DE COR NA PASTA TUTORIAL. PARA UMA MELHOR QUALIDADE.

@@ -24,7 +24,7 @@ int calcularPontuacaoGoleiro(int overall) {
         return 3;
 }
 
-void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int simula){
+void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int simula,int liga){
 	clrscr();
 	int i,y,penaltiTime, penaltiOponente,ok,quantidade,encontrado,qtdColocada,repetida,penalidade,teclacerta,conferirpenaltifora,paranaoexibirmesnagemdeteclaerrada;
 	int cartaSecretaTime, cartaSecretaOponente,goldobro,goldobroOponente,valorFinal,CartaDefesaOponente,goldeouro = 0;
@@ -41,7 +41,18 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 	
 	
 	if(((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo ) && simula == 0){
-		MolduraColorida(1,1,120,30,2,2,14,14); 
+		if(liga == 1){
+			MolduraColorida(1,1,120,30,2,2,14,14); 	
+		}
+		if(liga == 2){
+			MolduraColorida(1,1,120,30,4,4,14,14); 
+		}
+		if(liga == 3){
+			MolduraColorida(1,1,120,30,15,15,10,4); 
+		}
+		if(liga == 4){
+			MolduraColorida(1,1,120,30,15,15,9,9); 
+		}
 		//sortear cartas
 		penaltiTime = 1; //adicionar penalti presidente
 		penaltiOponente = 1; //adicionar penalti presidente
@@ -4803,6 +4814,25 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 				
 				y+=2;//ir pro proximo batedor
 				//acabou ai
+				if(y == 11){
+					if((*confronto)->placarCasa == (*confronto)->placarFora){
+						goldeouro = 1;
+					}
+				}
+				
+				if(goldeouro == 1){
+					 y = 1;
+					goldeouro = 2;
+				}
+				
+				if(goldeouro == 2){
+					if((*confronto)->placarCasa != (*confronto)->placarFora){
+						y = 20;
+					}
+					if(y == 11){
+						y = 1; // reinicia a rodada do gol de ouro
+					}
+				}
 				
 			}else{
 				//começar defendendo
@@ -6056,6 +6086,28 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 							goldobro = 0;
 					}while(ok != 1);
 					y+=2;//ir pro proximo batedor
+					
+					if(y == 12){
+						if((*confronto)->placarCasa == (*confronto)->placarFora){
+							goldeouro = 1;
+						}
+					}
+					
+					if(goldeouro == 1){
+						 y = 2;
+						goldeouro = 2;
+					}
+					
+					if(goldeouro == 2){
+						if((*confronto)->placarCasa != (*confronto)->placarFora){
+							y = 20;
+						}
+						if(y == 12){
+							y = 2; // reinicia a rodada do gol de ouro
+						}
+					}
+					
+					
 				}
 				
 			}	

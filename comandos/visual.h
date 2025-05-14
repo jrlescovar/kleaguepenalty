@@ -195,10 +195,7 @@ void apresentacao(void){
 	printf("KL Penalty | version BETA");
 	gotoxy(36, 15);
 	printf("Copyright Joao Lescovar | 2025. All Rights Reserved");
-	gotoxy(21, 16);
-	printf("Jogo Desenvolvido com base nas Estruturas de dados apresentadas na Universidade");
-	gotoxy(39, 17);
-	printf("Desenvolvido para treinar Estrutura de dados");
+
 	gotoxy(5, 29);
 	printf("Entre em contato comigo : jrlescovar@gmail.com");
 	gotoxy(92,29);
@@ -268,26 +265,28 @@ char tela2(void){
     printf("E S P A N H A");
     gotoxy(44,11);
     printf("EQUIPES: 12");
-	MolduraColorida(39, 6, 59, 14, 14, 14, 4, 4);
+	MolduraColorida(39, 6, 59, 14, 4, 4, 14,14);
 	gotoxy(43,15);
 	printf("[ APERTE  2 ]");
 	
 	i = 0;
 	while(i<19) {
-	    textcolor((i % 2 == 0) ? 2 : 12); // Escolhe cor direto
+	    textcolor((i % 2 == 0) ? 8 : 9); // Escolhe cor direto
 	
 	    gotoxy(63 + i, 7);  
-	    printf((i % 2 == 0) ? "-" : "^");
+	    printf((i % 2 == 0) ? ">" : "?");
 	
 	    gotoxy(63 + i, 13);
-	    printf((i % 2 == 0) ? "-" : "^");
+	    printf((i % 2 == 0) ? "<" : "?");
 	    i++;
 	}
-	gotoxy(67,9);
-    printf("C O M I N G");
-    gotoxy(69,11);
-    printf("S O O N");
-	MolduraColorida(62, 6, 82, 14, 2, 11, 12, 6);
+	gotoxy(65,9);textcolor(15);
+    printf("A M E R I C A S");
+    gotoxy(67,11);
+    printf("EQUIPES: 12");
+	MolduraColorida(62, 6, 82, 14, 15, 15, 9, 9);
+	gotoxy(65,15);
+	printf("[ APERTE  3 ]");
 	
 	i = 0;
 	while(i<19) {
@@ -415,6 +414,9 @@ char teladoTime(tree *resultado,const char* msg,int cor,int corTopo,int corBase,
 		
 	}
 	if(localidade == 3){
+		MolduraColorida(20,6,101,24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
+	}
+	if(localidade == 4){
 		MolduraColorida(20,6,101,24, resultado->time.cor1, resultado->time.cor1, resultado->time.cor2, resultado->time.cor2);
 	}
     
