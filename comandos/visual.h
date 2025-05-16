@@ -488,6 +488,7 @@ char teladoTime(tree *resultado,const char* msg,int cor,int corTopo,int corBase,
 
     tecla = toupper(getch());
     textcolor(15); // volta cor padrão
+    //limparBufferTeclado();
     return tecla;
 }
 

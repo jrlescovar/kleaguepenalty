@@ -853,7 +853,7 @@ char telaBrasil(void){
 	return toupper(getch());
 }
 
-char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* campeonato,int rodada,int playoffJogos,int rodadaOficial){
+char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* campeonato,int rodada,int rodadaOficial){
 	int jogador1, jogador2;
 	clrscr();
 	listaDupla *aux = buscarTimeNaLista(lista, buscar);
@@ -1015,15 +1015,13 @@ char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	gotoxy(55,25);
 	printf("? EM BREVE ?");
 	
-	Moldura(72, 24, 90, 27);/*
+	Moldura(72, 24, 90, 27);
 	gotoxy(78,25);
 	printf("OUTRAS");
 	gotoxy(75,26);
 	printf("KL - LIGAS");
 	gotoxy(87,26);
-	printf("[L]");*/
-	gotoxy(76,25);
-	printf("? EM BREVE ?");
+	printf("[L]");
 	
 	MolduraColorida(93, 24, 111, 27,14,14,14,14);
 	textcolor(14);
@@ -1374,8 +1372,8 @@ void exibirConfronto4(Confronto* confronto,int linhaX,int linhaY) {
 
     textcolor(15);
 }
-void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsConfrontos *qbr) {
-    if (rodadaOficial >= 10) {
+void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsConfrontos *qbr, int num) {
+    if (num == 1) {
         listaDupla *time1 = buscarTimeNaListaPOSI(listaBrasil, 1);
 
         MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
@@ -1386,9 +1384,9 @@ void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsCo
         gotoxy(6, 11); printf("Q2");
         gotoxy(6, 14); printf("Q3");
 
-        exibirConfronto4(qbr->primeiroConfronto, 9, 8);
-        exibirConfronto4(qbr->segundoConfronto, 9, 11);
-        exibirConfronto4(qbr->terceiroConfronto, 9, 14);
+        exibirConfronto4(qbr->q1Confronto, 9, 8);
+        exibirConfronto4(qbr->q2Confronto, 9, 11);
+        exibirConfronto4(qbr->q3Confronto, 9, 14);
         gotoxy(26,8);
         printf(" ");
         gotoxy(30,8);
@@ -1430,13 +1428,7 @@ void exibirPlayoffsBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsCo
 		gotoxy(83, 20); printf("VENC. SEMI1  X  VENC.SEMI2"); 
 
     }
-
-    printCentralizado("PRESSIONE QUALQUER TECLA PARA CONTINUAR", 29, 15);
-    gotoxy(119, 29);
-    getch();
-}
-void exibirPlayoffsSemiFinalBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsConfrontos *qbr,playoffsConfrontos *semi) {
-    if (rodadaOficial >= 10) {
+	if (num == 2) {
 
         MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
         textcolor(14);
@@ -1446,14 +1438,14 @@ void exibirPlayoffsSemiFinalBrasil(int rodadaOficial, listaDupla *listaBrasil, p
         gotoxy(6, 11); printf("Q2");
         gotoxy(6, 14); printf("Q3");
 
-        exibirConfronto4(qbr->primeiroConfronto, 9, 8);
-        exibirConfronto4(qbr->segundoConfronto, 9, 11);
-        exibirConfronto4(qbr->terceiroConfronto, 9, 14);
+        exibirConfronto4(qbr->q1Confronto, 9, 8);
+        exibirConfronto4(qbr->q2Confronto, 9, 11);
+        exibirConfronto4(qbr->q3Confronto, 9, 14);
 		textcolor(14);
         gotoxy(69, 7); printf("SEMI FINAIS");
 		textcolor(15);
-		exibirConfronto4(semi->primeiroConfronto, 55, 10);
-        exibirConfronto4(semi->segundoConfronto, 55, 13);
+		exibirConfronto4(qbr->s1Confronto, 55, 10);
+        exibirConfronto4(qbr->s2Confronto, 55, 13);
         gotoxy(72,13);
         printf(" ");
         gotoxy(76,13);
@@ -1468,16 +1460,8 @@ void exibirPlayoffsSemiFinalBrasil(int rodadaOficial, listaDupla *listaBrasil, p
         gotoxy(83, 20); printf("VENC. SEMI1  X  VENC.SEMI2");
 
     }
-
-    printCentralizado("PRESSIONE QUALQUER TECLA PARA CONTINUAR", 29, 15);
-    gotoxy(119, 29);
-    getch();
-}
-
-void exibirPlayoffsFinalBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsConfrontos *qbr,playoffsConfrontos *semi) {
-    if (rodadaOficial >= 10) {
-
-        MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+    if(num == 3){
+    	MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
         textcolor(14);
 
         gotoxy(19, 5); textcolor(15); textcolor(14);printf("QUARTAS DE FINAIS");textcolor(15);
@@ -1485,156 +1469,403 @@ void exibirPlayoffsFinalBrasil(int rodadaOficial, listaDupla *listaBrasil, playo
         gotoxy(6, 11); printf("Q2");
         gotoxy(6, 14); printf("Q3");
 
-        exibirConfronto4(qbr->primeiroConfronto, 9, 8);
-        exibirConfronto4(qbr->segundoConfronto, 9, 11);
-        exibirConfronto4(qbr->terceiroConfronto, 9, 14);
+        exibirConfronto4(qbr->q1Confronto, 9, 8);
+        exibirConfronto4(qbr->q2Confronto, 9, 11);
+        exibirConfronto4(qbr->q3Confronto, 9, 14);
 		textcolor(14);
         gotoxy(69, 7); printf("SEMI FINAIS");
 		textcolor(15);
-		exibirConfronto4(semi->primeiroConfronto, 55, 10);
-        exibirConfronto4(semi->segundoConfronto, 55, 13);
+		exibirConfronto4(qbr->s1Confronto, 55, 10);
+        exibirConfronto4(qbr->s2Confronto, 55, 13);
         
-        exibirConfronto4(semi->terceiroConfronto, 70, 20);
-       	gotoxy(87,20);
-        printf(" ");
-        gotoxy(91,20);
-        printf(" ");
         textcolor(14);
-        gotoxy(81, 18); printf("FINAL KL - BRASIL");
-        textcolor(15);
-
-    }
-
-    printCentralizado("PRESSIONE QUALQUER TECLA PARA CONTINUAR", 29, 15);
-    gotoxy(119, 29);
-    getch();
-}
-
-void acabouLigaBrasil(int rodadaOficial, listaDupla *listaBrasil, playoffsConfrontos *qbr,playoffsConfrontos *semi){
-
-        MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
-        textcolor(14);
-
-        gotoxy(19, 5); textcolor(15); textcolor(14);printf("QUARTAS DE FINAIS");textcolor(15);
-        gotoxy(6, 8); printf("Q1");
-        gotoxy(6, 11); printf("Q2");
-        gotoxy(6, 14); printf("Q3");
-
-        exibirConfronto4(qbr->primeiroConfronto, 9, 8);
-        exibirConfronto4(qbr->segundoConfronto, 9, 11);
-        exibirConfronto4(qbr->terceiroConfronto, 9, 14);
-		textcolor(14);
-        gotoxy(69, 7); printf("SEMI FINAIS");
+		gotoxy(86, 16); printf("FINAL KL - BRASIL"); 
+		if (qbr->finalConfronto) {
+		    exibirConfronto4(qbr->finalConfronto, 75, 18);
+		} else {
+		    gotoxy(70, 18);
+		    printf("FINAL NAO CRIADA");
+		}
+		gotoxy(92,18);printf(" ");
+	    gotoxy(96,18);printf(" ");
+		
 		textcolor(15);
-		exibirConfronto4(semi->primeiroConfronto, 55, 10);
-        exibirConfronto4(semi->segundoConfronto, 55, 13);
-        exibirConfronto4(semi->terceiroConfronto, 70, 20);
-        textcolor(14);
-        gotoxy(81, 18); printf("FINAL KL - BRASIL");
-        textcolor(15);
-
+		 
+		
+    }
+    if(num == 4){
+			MolduraColorida(1, 1, 120, 30, 2, 2, 14, 14);
+        	textcolor(14);
+	
+	        gotoxy(19, 5); textcolor(15); textcolor(14);printf("QUARTAS DE FINAIS");textcolor(15);
+	        gotoxy(6, 8); printf("Q1");
+	        gotoxy(6, 11); printf("Q2");
+	        gotoxy(6, 14); printf("Q3");
+	
+	        exibirConfronto4(qbr->q1Confronto, 9, 8);
+	        exibirConfronto4(qbr->q2Confronto, 9, 11);
+	        exibirConfronto4(qbr->q3Confronto, 9, 14);
+			textcolor(14);
+	        gotoxy(69, 7); printf("SEMI FINAIS");
+			textcolor(15);
+			exibirConfronto4(qbr->s1Confronto, 55, 10);
+	        exibirConfronto4(qbr->s2Confronto, 55, 13);
+	        exibirConfronto4(qbr->finalConfronto, 75, 18);
+	        textcolor(14);
+	        gotoxy(86, 16); printf("FINAL KL - BRASIL");
+	        textcolor(15);	
+	}
     printCentralizado("PRESSIONE QUALQUER TECLA PARA CONTINUAR", 29, 15);
     gotoxy(119, 29);
     getch();
 }
-void criarQuartasBR(playoffsConfrontos**qbr, listaDupla *listaBrasil){
-	 if (*qbr == NULL) {
-        *qbr = (playoffsConfrontos*) malloc(sizeof(playoffsConfrontos));
+
+
+
+
+
+void criarPlayoffBrasil(playoffsConfrontos **qbr, listaDupla *listaEspanha, int play) {
+    if (*qbr == NULL) {
+        *qbr = malloc(sizeof(playoffsConfrontos));
+        if (!(*qbr)) {
+            printf("Erro: Falha ao alocar memória para playoffsConfrontos.\n");
+            return;  // único return justificado aqui (memória não alocada)
+        }
+        memset(*qbr, 0, sizeof(playoffsConfrontos));
     }
-	listaDupla *time3 = buscarTimeNaListaPOSI(listaBrasil,3);
-	listaDupla *time6 = buscarTimeNaListaPOSI(listaBrasil,6);
-	listaDupla *time2 = buscarTimeNaListaPOSI(listaBrasil,2);
-	listaDupla *time7 = buscarTimeNaListaPOSI(listaBrasil,7);
-	listaDupla *time4 = buscarTimeNaListaPOSI(listaBrasil,4);
-	listaDupla *time5 = buscarTimeNaListaPOSI(listaBrasil,5);
-	(*qbr)->primeiroConfronto  = criarConfronto(time4->info.elenco.nomeEquipe, time5->info.elenco.nomeEquipe,1);
-    (*qbr)->segundoConfronto   = criarConfronto(time3->info.elenco.nomeEquipe, time6->info.elenco.nomeEquipe,1);
-    (*qbr)->terceiroConfronto  = criarConfronto(time2->info.elenco.nomeEquipe, time7->info.elenco.nomeEquipe,1);
 
-}
+    // PLAY 1 - criar play-ins e confrontos iniciais
+    if (play == 1) {
+        listaDupla *time2 = buscarTimeNaListaPOSI(listaEspanha, 2);
+        listaDupla *time3 = buscarTimeNaListaPOSI(listaEspanha, 3);
+        listaDupla *time4 = buscarTimeNaListaPOSI(listaEspanha, 4);
+        listaDupla *time5 = buscarTimeNaListaPOSI(listaEspanha, 5);
+        listaDupla *time6 = buscarTimeNaListaPOSI(listaEspanha, 6);
+        listaDupla *time7 = buscarTimeNaListaPOSI(listaEspanha, 7);
 
-void criarSemiBR(playoffsConfrontos *qbr, playoffsConfrontos **semi, listaDupla *listaBrasil) {
-    listaDupla *vencedorQ1 = NULL, *vencedorQ2 = NULL, *vencedorQ3 = NULL;
+
+        if (time4 && time5)
+            (*qbr)->q1Confronto = criarConfronto(time4->info.elenco.nomeEquipe, time5->info.elenco.nomeEquipe, 1);
+        else
+            printf("Erro ao criar playin1Confronto.\n");
+
+        if (time3 && time6)
+            (*qbr)->q2Confronto = criarConfronto(time3->info.elenco.nomeEquipe, time6->info.elenco.nomeEquipe, 1);
+        else
+            printf("Erro ao criar playin2Confronto.\n");
+
+        if (time2 && time7)
+            (*qbr)->q3Confronto = criarConfronto(time2->info.elenco.nomeEquipe, time7->info.elenco.nomeEquipe, 1);
+        else
+            printf("Erro ao criar q1Confronto.\n");
+    }
+
+    // PLAY 2 - criar play-in final
+    if (play == 2) {
+        if (!(*qbr)->q1Confronto || !(*qbr)->q2Confronto) {
+            printf("Erro: playins 1 ou 2 não definidos.\n");
+        } else {
+            listaDupla *vencedorQ1 = NULL;
+            listaDupla *vencedorQ2 = NULL;
+            listaDupla *vencedorQ3 = NULL;
+			listaDupla *time1 = buscarTimeNaListaPOSI(listaEspanha, 1);
+            for (int i = 1; i <= 10; i++) {
+                listaDupla *t = buscarTimeNaListaPOSI(listaEspanha, i);
+                if (!t) continue;
+
+                if (!vencedorQ1) {
+                    if (((*qbr)->q1Confronto->placarCasa > (*qbr)->q1Confronto->placarFora &&
+                         (*qbr)->q1Confronto->codigo1 == t->info.elenco.codigo) ||
+                        ((*qbr)->q1Confronto->placarFora > (*qbr)->q1Confronto->placarCasa &&
+                         (*qbr)->q1Confronto->codigo2 == t->info.elenco.codigo)) {
+                        vencedorQ1 = t;
+                    }
+                }
+
+                if (!vencedorQ2) {
+                    if (((*qbr)->q2Confronto->placarCasa > (*qbr)->q2Confronto->placarFora &&
+                         (*qbr)->q2Confronto->codigo1 == t->info.elenco.codigo) ||
+                        ((*qbr)->q2Confronto->placarFora > (*qbr)->q2Confronto->placarCasa &&
+                         (*qbr)->q2Confronto->codigo2 == t->info.elenco.codigo)) {
+                        vencedorQ2 = t;
+                    }
+                }
+                
+                if (!vencedorQ3) {
+                    if (((*qbr)->q3Confronto->placarCasa > (*qbr)->q3Confronto->placarFora &&
+                         (*qbr)->q3Confronto->codigo1 == t->info.elenco.codigo) ||
+                        ((*qbr)->q3Confronto->placarFora > (*qbr)->q3Confronto->placarCasa &&
+                         (*qbr)->q3Confronto->codigo2 == t->info.elenco.codigo)) {
+                        vencedorQ3 = t;
+                    }
+                }
+
+                if (vencedorQ1 && vencedorQ2 && vencedorQ3) break;
+            }
+
+            if (vencedorQ1 && vencedorQ2 && vencedorQ3){
+                (*qbr)->s1Confronto = criarConfronto(time1->info.elenco.nomeEquipe, vencedorQ1->info.elenco.nomeEquipe, 1);
+                (*qbr)->s2Confronto = criarConfronto(vencedorQ2->info.elenco.nomeEquipe, vencedorQ3->info.elenco.nomeEquipe, 1);
+        	}
+            else
+                printf("Erro: Não foi possível determinar os vencedores dos play-ins.\n");
+        }
+    }
+
+    // PLAY 3 - criar confronto q3 com time2 vs vencedor do play-in final
+    if (play == 3) {
+    	if (!(*qbr)->s1Confronto || !(*qbr)->s2Confronto) {
+    		printf("Erro: semifinais não foram definidas.\n");
+		} else {
+		    listaDupla *vencedorQ1 = NULL;
+		    listaDupla *vencedorQ2 = NULL;
+		
+		    for (int i = 1; i <= 10; i++) {
+		        listaDupla *t = buscarTimeNaListaPOSI(listaEspanha, i);
+		        if (!t) continue;
+		
+		        if (!vencedorQ1) {
+		            if (((*qbr)->s1Confronto->placarCasa > (*qbr)->s1Confronto->placarFora &&
+		                 (*qbr)->s1Confronto->codigo1 == t->info.elenco.codigo) ||
+		                ((*qbr)->s1Confronto->placarFora > (*qbr)->s1Confronto->placarCasa &&
+		                 (*qbr)->s1Confronto->codigo2 == t->info.elenco.codigo)) {
+		                vencedorQ1 = t;
+		            }
+		        }
+		
+		        if (!vencedorQ2) {
+		            if (((*qbr)->s2Confronto->placarCasa > (*qbr)->s2Confronto->placarFora &&
+		                 (*qbr)->s2Confronto->codigo1 == t->info.elenco.codigo) ||
+		                ((*qbr)->s2Confronto->placarFora > (*qbr)->s2Confronto->placarCasa &&
+		                 (*qbr)->s2Confronto->codigo2 == t->info.elenco.codigo)) {
+		                vencedorQ2 = t;
+		            }
+		        }
+		
+		        if (vencedorQ1 && vencedorQ2) break;
+		    }
+		
+		    if (vencedorQ1 && vencedorQ2)
+		        (*qbr)->finalConfronto = criarConfronto(vencedorQ1->info.elenco.nomeEquipe, vencedorQ2->info.elenco.nomeEquipe, 1);
+		    else
+		        printf("Erro ao determinar finalistas.\n");
+		}
+
+	}
     
-    // Obter vencedores das quartas
-    for (int i = 1; i <= 10; i++) {
-        listaDupla *t = buscarTimeNaListaPOSI(listaBrasil, i);
-        if (!t) continue;
-
-        if (!vencedorQ1) {
-            if ((qbr->primeiroConfronto->placarCasa > qbr->primeiroConfronto->placarFora &&
-                 qbr->primeiroConfronto->codigo1 == t->info.elenco.codigo) ||
-                (qbr->primeiroConfronto->placarFora > qbr->primeiroConfronto->placarCasa &&
-                 qbr->primeiroConfronto->codigo2 == t->info.elenco.codigo)) {
-                vencedorQ1 = t;
-                continue;
-            }
-        }
-
-        if (!vencedorQ2) {
-            if ((qbr->segundoConfronto->placarCasa > qbr->segundoConfronto->placarFora &&
-                 qbr->segundoConfronto->codigo1 == t->info.elenco.codigo) ||
-                (qbr->segundoConfronto->placarFora > qbr->segundoConfronto->placarCasa &&
-                 qbr->segundoConfronto->codigo2 == t->info.elenco.codigo)) {
-                vencedorQ2 = t;
-                continue;
-            }
-        }
-
-        if (!vencedorQ3) {
-            if ((qbr->terceiroConfronto->placarCasa > qbr->terceiroConfronto->placarFora &&
-                 qbr->terceiroConfronto->codigo1 == t->info.elenco.codigo) ||
-                (qbr->terceiroConfronto->placarFora > qbr->terceiroConfronto->placarCasa &&
-                 qbr->terceiroConfronto->codigo2 == t->info.elenco.codigo)) {
-                vencedorQ3 = t;
-                continue;
-            }
-        }
-
-        if (vencedorQ1 && vencedorQ2 && vencedorQ3) break; // todos encontrados
-    }
-
-    // Criação dos confrontos da semi
-    listaDupla *time1 = buscarTimeNaListaPOSI(listaBrasil, 1); // 1º colocado
-    if (vencedorQ1 && time1 && vencedorQ2 && vencedorQ3) {
-        (*semi)->primeiroConfronto = criarConfronto(time1->info.elenco.nomeEquipe, vencedorQ1->info.elenco.nomeEquipe,1);
-        (*semi)->segundoConfronto = criarConfronto(vencedorQ2->info.elenco.nomeEquipe, vencedorQ3->info.elenco.nomeEquipe,1);
-    }
 }
 
-void criarFinalBr(playoffsConfrontos **semi, listaDupla *listaBrasil) {
-    listaDupla *vencedorQ1 = NULL, *vencedorQ2 = NULL;
+int exibeLigaBrasil(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeonato,int rodada,int rodadaOficial,int outrasliga,playoffsConfrontos *jogo,int liga){
+	clrscr(); char passarPagina1;
+	int y,x,i;
+	char op;
+	if(rodadaOficial >= 10)
+		rodada = 9;
+	do{	
+		i = 0;
+		while(i < 28) { // de 2 até 29 ? 28 posições
+		    textcolor((i % 2 == 0) ? 14 : 2); // Alterna cores
+		
+		    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+		    printf((i % 2 == 0) ? "#" : "$");
+		
+		    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+		    printf((i % 2 == 0) ? "#" : "$");
+		    
+		    i++;
+		}
+		textcolor(15);
+		MolduraColorida(1, 1, 120, 30,2,2,14,14);
+		
+		Moldura(10, 5, 68, 18);
+		
+		gotoxy(12,4);
+		printf("TABELA GERAL");
+		textcolor(14);
+		gotoxy(25,4);
+		printf("KL - PENALTY BRASIL");
+		textcolor(15);
+		gotoxy(11,6);
+		printf("POS");
+		y = 6;
+		while(y <= 17){
+			gotoxy(14, y); 
+	    	printf("%c", 186);
+	    	gotoxy(35, y); 
+	    	printf("%c", 186);
+	    	gotoxy(41, y); 
+	    	printf("%c", 186);
+			gotoxy(45, y);
+	    	printf("%c", 186);
+	    	gotoxy(49, y); 
+	    	printf("%c", 186);
+	    	gotoxy(53, y);
+	    	printf("%c", 186);
+	    	gotoxy(58, y); 
+	    	printf("%c", 186);
+	    	gotoxy(63,y);
+	    	printf("%c", 186);
+	    	y++;
+		}
+		
+		
+		gotoxy(22,6);
+		printf("EQUIPE");
+		
+		gotoxy(37,6);
+		printf("PTS");
+		
+		gotoxy(43,6);
+		printf("V");
+		
+		gotoxy(47,6);
+		printf("E");
+	
+		gotoxy(51,6);
+		printf("D");
+	
+		gotoxy(55,6);
+		printf("GF");
+		
+		gotoxy(60,6);
+		printf("GS");
+		
+		gotoxy(65,6);
+		printf("GA");
+		
+		x = 11;
+		while(x < 68){
+			gotoxy(x, 7);
+			if (x != 14 || x != 35 || x != 41 || x != 45 || x != 49 || x != 53 || x != 58 || x != 63)
+				printf("%c", 205);
+			x++;
+		}
+		
+		
+	
+		Moldura(69, 5, 111, 18);
+		if(rodada == 1)
+		{	
+			gotoxy(84,4);
+			printf("PROXIMOS JOGOS --> [M]");
+			
+		}else if(rodada == 9){
+			gotoxy(76,4);
+			printf("[N] <-- PROXIMOS JOGOS");
+		}else{
+			gotoxy(76,4);
+			printf("[N] <-- PROXIMOS JOGOS --> [M]");
+		}
+		printCentralizado("APERTE [ESC] PARA SAIR DO MENU OUTRAS LIGAS",2,12);
+	
+		Moldura(30, 21, 48, 24);
+		gotoxy(34,22);
+		printf("? EM BREVE ?");
 
-    for (int i = 1; i <= 10; i++) {
-        listaDupla *t = buscarTimeNaListaPOSI(listaBrasil, i);
-        if (!t) continue;
-
-        if (!vencedorQ1) {
-            if (((*semi)->primeiroConfronto->placarCasa > (*semi)->primeiroConfronto->placarFora &&
-                 (*semi)->primeiroConfronto->codigo1 == t->info.elenco.codigo) ||
-                ((*semi)->primeiroConfronto->placarFora > (*semi)->primeiroConfronto->placarCasa &&
-                 (*semi)->primeiroConfronto->codigo2 == t->info.elenco.codigo)) {
-                vencedorQ1 = t;
-                continue;
-            }
-        }
-
-        if (!vencedorQ2) {
-            if (((*semi)->segundoConfronto->placarCasa > (*semi)->segundoConfronto->placarFora &&
-                 (*semi)->segundoConfronto->codigo1 == t->info.elenco.codigo) ||
-                ((*semi)->segundoConfronto->placarFora > (*semi)->segundoConfronto->placarCasa &&
-                 (*semi)->segundoConfronto->codigo2 == t->info.elenco.codigo)) {
-                vencedorQ2 = t;
-                continue;
-            }
-        }
-
-        if (vencedorQ1 && vencedorQ2) break;
-    }
-
-    if (vencedorQ1 && vencedorQ2) {
-        (*semi)->terceiroConfronto = criarConfronto(vencedorQ1->info.elenco.nomeEquipe, vencedorQ2->info.elenco.nomeEquipe,1);
-    }
+	
+		Moldura(51, 21, 69, 24);
+		gotoxy(55,22);
+		printf("ESTATISTICAS");
+		gotoxy(65,23);
+		printf("[W]");
+		
+		Moldura(72, 21, 90, 24);
+		gotoxy(76,22);
+		printf("PLAY - OFFS");
+		gotoxy(87,23);
+		printf("[P]");
+		
+		if(outrasliga == 1){
+			printCentralizado("        PROXIMA LIGA --> [D]",26,15);
+		}
+		if(outrasliga == 3){
+			printCentralizado("[A] <-- PROXIMA LIGA        ",26,15);
+		}else
+			printCentralizado("[A] <-- PROXIMA LIGA --> [D]",26,15);
+		
+		if(liga == 1){
+			if(rodadaOficial >= 10){
+				exibirTabela(lista2,8);
+			}else{
+				exibirTabela(lista, 8);
+			}	
+		}
+		else{
+			if(rodadaOficial >= 12){
+				exibirTabela(lista2,8);
+			}else{
+				exibirTabela(lista, 8);
+			}
+		}
+		exibirSemana(campeonato,rodada);
+		
+		gotoxy(119,29);
+		fflush(stdin);
+		op = toupper(getch());
+		limparBufferTeclado();
+		switch(op){
+			case 'W':
+				passarPagina1 = 'A';
+    			do{
+    				if(passarPagina1 == 'A'){
+    					passarPagina1 = exibirEstatisticas(lista,1);
+    				}
+    				if(passarPagina1 == 'G')
+    				{
+    					passarPagina1 = exibirTopGoleiros(lista,1);
+    				}
+    				if(passarPagina1 == 'P'){
+    					passarPagina1 = exibirTopPresidentes(lista,1);
+    				}
+    			}while(passarPagina1 != 27);
+			break;
+			case 'N':
+    			if(rodada != 1){
+    				rodada--;
+    			}
+    		break;
+    		case 'M':
+    			if(rodada < 10){
+    				rodada++;
+    			}
+    		break;	
+			case 'D':
+				if(outrasliga<3){
+					op = 27;
+					return outrasliga+1;
+				} 
+			break;
+			case 'A':
+				if(outrasliga>1)
+				{
+					op = 27;
+					return outrasliga-1;
+				}
+			break;
+			case 'P':
+				if(rodadaOficial>9){
+					clrscr();
+					if(rodadaOficial >= 9 && rodadaOficial <= 14)
+						exibirPlayoffsBrasil(rodadaOficial, lista,jogo,1);
+					if(rodadaOficial == 15)
+						exibirPlayoffsBrasil(rodadaOficial, lista,jogo,2);
+					if(rodadaOficial == 16)
+						exibirPlayoffsBrasil(rodadaOficial, lista,jogo,3);
+					if(rodadaOficial == 17)
+						exibirPlayoffsBrasil(rodadaOficial, lista,jogo,4);
+				}
+				if(rodadaOficial < 9){
+			        printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
+			        gotoxy(119, 29);
+			        Sleep(1200);
+			        limparBufferTeclado();
+			    }
+			    
+			break;
+		}
+		
+		clrscr();
+	}while(op != 27);
+	return 5;
 }
-
 #endif

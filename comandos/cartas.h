@@ -354,7 +354,7 @@ void encontrarAreasGoleiro(int encontrado, char tecla){
 	textcolor(15);				
 }
 void encontrarAreasDefesa(char tecla){
-	textcolor(14);
+	textcolor(9);
 	if(tecla == 49){
 		gotoxy(33,8);
 		printf("[1]");

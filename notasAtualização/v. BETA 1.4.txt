@@ -1,0 +1,15 @@
+Notas Da Atualização
+
+-Adicionado limite de teclas pressionada na tela de selecionar localidade entre outras, após clicar em diversas teclas antes ficava repetindo as mensagem  de erro 10,20 vezes dependendo do total de teclas apertadas. Agora limita em ate 2 mensagens.
+
+-Corrigido bug de exibição no Q3 da quartas de finais (liga espanha,americas,mexico), antes de serem acontecidas os jogos das quartas de finais o time  maior que 14 caracteres ficava desalinhado ( BUG INUTIL NINGUEM IA SE INCOMODAR COM ISSO SO EU ) risos.
+
+-Adicionado menu OUTRAS LIGAS ao aperta tecla L em menu de partido, ira criar uma nova tela exibindo a tabela atualizada das outras ligas e suas estatística e resultados de jogos..., podendo assim ver em tempo real
+oque esta acontecendo pelo universo KINGS na temporada de jogo atual..
+
+-Correção em Bug playoff Italiano Nome do finalista antes de executar os playin exibia junto com o nome do time das quarta de final.
+
+-Alterado cor dos posicionamento dos reflexos dos goleiro de amarelo para AZUL, para melhor visibilidade ao quais não seguiram o TUTORIAL de mudança de cor do TERMINAL.
+
+
+-BALANÇAMENTO EM OVERAIS ALHEIOS-

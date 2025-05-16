@@ -35,12 +35,16 @@ void jogarConfronto(listaDupla **lista,tree *resultado,Confronto **confronto,int
 	//char cartas[4] = {49,49,49,49}; //teste
 	char penaltiFora[5] = {4,2,5,4,5};
 	char defesa[9];
-	listaDupla *meuTime = buscarTimeNaLista(*lista, resultado->time.codigo);
+	listaDupla *meuTime = NULL;
+	if(simula == 0)
+		meuTime = buscarTimeNaLista(*lista, resultado->time.codigo);
+
+		
 	listaDupla *timeCasa = buscarTimeNaLista(*lista, (*confronto)->codigo1);
 	listaDupla *timeFora = buscarTimeNaLista(*lista, (*confronto)->codigo2);
 	
 	
-	if(((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo ) && simula == 0){
+	if(simula == 0 && ((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo )){
 		if(liga == 1){
 			MolduraColorida(1,1,120,30,2,2,14,14); 	
 		}
@@ -3500,14 +3504,16 @@ void jogarConfrontoPlayoff(listaDupla **lista,tree *resultado,Confronto **confro
 	//char cartas[4] = {49,49,49,49}; //teste
 	char penaltiFora[5] = {4,2,5,4,5};
 	char defesa[9];
-	MolduraColorida(1,1,120,30,2,2,14,14); 
-	//exibirTrave();
-	//exibirTrave();
-	listaDupla *meuTime = buscarTimeNaLista(*lista, resultado->time.codigo);
-	listaDupla *timeCasa = buscarTimeNaLista(*lista, (*confronto)->codigo1);
-	listaDupla *timeFora = buscarTimeNaLista(*lista, (*confronto)->codigo2);
+	MolduraColorida(1,1,120,30,9,9,9,9); 
+	listaDupla *meuTime = NULL;
 	
-	if(((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo ) && simula == 0){
+	if(simula == 0)
+		meuTime = buscarTimeNaLista(*lista, resultado->time.codigo);
+	
+	listaDupla *timeCasa = buscarTimeNaLista(*lista,(*confronto)->codigo1);
+	listaDupla *timeFora = buscarTimeNaLista(*lista,(*confronto)->codigo2);
+	
+	if(simula == 0 && ((*confronto)->codigo1 == meuTime->info.elenco.codigo || (*confronto)->codigo2 == meuTime->info.elenco.codigo )){
 		//sortear cartas
 		penaltiTime = 1; //adicionar penalti presidente
 		penaltiOponente = 1; //adicionar penalti presidente

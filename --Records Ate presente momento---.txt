@@ -1,0 +1,29 @@
+--Records Ate presente momento---
+
+Mais gols em menos Jogos registrados
+	@Douglinhas 16gols em 9 Jogos LIGA BRASIL
+Maior Artilheiro Liga Brasil
+	@Kelvin 'K9' 20gols em 13 Jogos Liga BRASIL
+
+Maior Artilheiro GLOBALMENTE
+	@Pol Ortega 23gols em 15 jogos LIGA ESPANHA
+
+Maior Artilheiro Liga Espanha
+	@Pol Ortega 23gols em 15 Jogos Liga ESPANHA
+
+Maior Artilheiro Liga Itália
+	@Fran Hernadez 20gols em 14 Jogos Liga ITALIA
+
+Maior Artilheiro Liga America
+	@Cisnero 16gols em 14 Jogos Liga MEXICO
+
+Melhor Goleiro GLOBALMENTE
+	@Joao Pedro 22 Gols sofridos em 12 Jogos
+
+Melhor Presidente GLOBALMENTE
+	@Blur do Staions da Itália 13Gols em 13 PP batidos
+
+Time com mais pontos liga Brasil
+	@Furia FC 25pts 8vitoria,1empate,0 derrotas
+Time com mais pontos nas outras ligas
+	@TRM FC 30pts venceu todas.

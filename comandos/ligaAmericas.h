@@ -628,15 +628,13 @@ char ligaAmericas(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil*
 	gotoxy(55,26);
 	printf("? EM BREVE ?");
 	
-	Moldura(72, 25, 90, 28);/*
-	gotoxy(78,25);
+	Moldura(72, 25, 90, 28);
+	gotoxy(78,26);
 	printf("OUTRAS");
-	gotoxy(75,26);
+	gotoxy(75,27);
 	printf("KL - LIGAS");
-	gotoxy(87,26);
-	printf("[L]");*/
-	gotoxy(76,26);
-	printf("? EM BREVE ?");
+	gotoxy(87,27);
+	printf("[L]");
 	
 	MolduraColorida(93, 25, 111, 28,14,14,14,14);
 	textcolor(14);
@@ -730,11 +728,11 @@ void exibirPlayoffsAmericas(int rodadaOficial, listaDupla *lista, playoffsConfro
 	    gotoxy(81,10);printf(" ");
 	    int nomeLen = strlen(time2->info.elenco.nomeEquipe);
 	    if (nomeLen > 14) 
-		    gotoxy(57, 12); 
+		    gotoxy(58, 12); 
 		else if (nomeLen > 12) 
 		    gotoxy(60, 12);
 		else 
-		    gotoxy(63, 12);
+		    gotoxy(64, 12);
 		textcolor(time2->info.elenco.cor1);
 		printf("%s",time2->info.elenco.nomeEquipe);
 	    gotoxy(79,12);textcolor(15);printf("X      VENCEDOR PLAY IN");
@@ -792,11 +790,11 @@ void exibirPlayoffsAmericas(int rodadaOficial, listaDupla *lista, playoffsConfro
 	    gotoxy(81,10);printf(" ");
 	    int nomeLen = strlen(time2->info.elenco.nomeEquipe);
 	    if (nomeLen > 14) 
-		    gotoxy(57, 12); 
+		    gotoxy(58, 12); 
 		else if (nomeLen > 12) 
 		    gotoxy(60, 12);
 		else 
-		    gotoxy(63, 12);
+		    gotoxy(64, 12);
 		textcolor(time2->info.elenco.cor1);
 		printf("%s",time2->info.elenco.nomeEquipe);
 	    gotoxy(79,12);textcolor(15);printf("X      VENCEDOR PLAY IN");
@@ -1004,4 +1002,190 @@ void exibirPlayoffsAmericas(int rodadaOficial, listaDupla *lista, playoffsConfro
     printCentralizado("PRESSIONE QUALQUER TECLA PARA CONTINUAR", 29, 15);
     gotoxy(119, 29);
     getch();
+}
+int exibeLigaAmericas(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeonato,int rodada,int rodadaOficial,int outrasliga,playoffsConfrontos *jogo,int liga){
+	clrscr(); char passarPagina1;
+	int y,x,i;
+	char op;
+	if(rodadaOficial >= 10)
+		rodada = 11;
+	do{	
+		i = 0;
+		while(i < 28) { // de 2 até 29 ? 28 posições
+		    textcolor((i % 2 == 0) ? 8 : 9); // Alterna cores
+		
+		    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+		    printf((i % 2 == 0) ? "<" : "?");
+		
+		    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+		    printf((i % 2 == 0) ? ">" : "?");
+		    
+		    i++;
+		}
+		textcolor(15);
+		MolduraColorida(1, 1, 120, 30,15,15,9,9);
+		Moldura(10, 5, 68, 20);	
+		gotoxy(12,4);printf("TABELA GERAL");
+		textcolor(9);gotoxy(25,4);printf("KL - PENALTY AMERICAS");textcolor(15);
+		gotoxy(11,6);printf("POS");
+		y = 6;
+		while(y <= 19){
+			gotoxy(14, y); 
+	    	printf("%c", 186);
+	    	gotoxy(35, y); 
+	    	printf("%c", 186);
+	    	gotoxy(41, y); 
+	    	printf("%c", 186);
+			gotoxy(45, y);
+	    	printf("%c", 186);
+	    	gotoxy(49, y); 
+	    	printf("%c", 186);
+	    	gotoxy(53, y);
+	    	printf("%c", 186);
+	    	gotoxy(58, y); 
+	    	printf("%c", 186);
+	    	gotoxy(63,y);
+	    	printf("%c", 186);
+	    	y++;
+		}
+		gotoxy(22,6);printf("EQUIPE");gotoxy(37,6);printf("PTS");gotoxy(43,6);printf("V");
+		gotoxy(47,6);printf("E");gotoxy(51,6);printf("D");gotoxy(55,6);printf("GF");
+		gotoxy(60,6);printf("GS");gotoxy(65,6);printf("GA");
+		
+		x = 11;
+		while(x < 68){
+			gotoxy(x, 7);
+			if (x != 14 || x != 35 || x != 41 || x != 45 || x != 49 || x != 53 || x != 58 || x != 63)
+				printf("%c", 205);
+			x++;
+		}
+		Moldura(69, 5, 111, 20);
+		if(rodada == 1)
+		{	
+			gotoxy(84,4);
+			printf("PROXIMOS JOGOS --> [M]");
+			
+		}else if(rodada == 11){
+			gotoxy(76,4);
+			printf("[N] <-- PROXIMOS JOGOS");
+		}else{
+			gotoxy(76,4);
+			printf("[N] <-- PROXIMOS JOGOS --> [M]");
+		}
+		printCentralizado("APERTE [ESC] PARA SAIR DO MENU OUTRAS LIGAS",2,12);
+	
+		Moldura(30, 21, 48, 24);
+		gotoxy(34,22);
+		printf("? EM BREVE ?");
+
+	
+		Moldura(51, 21, 69, 24);
+		gotoxy(55,22);
+		printf("ESTATISTICAS");
+		gotoxy(65,23);
+		printf("[W]");
+		
+		Moldura(72, 21, 90, 24);
+		gotoxy(76,22);
+		printf("PLAY - OFFS");
+		gotoxy(87,23);
+		printf("[P]");
+		
+		if(outrasliga == 1){
+			printCentralizado("        PROXIMA LIGA --> [D]",26,15);
+		}
+		if(outrasliga == 3){
+			printCentralizado("[A] <-- PROXIMA LIGA        ",26,15);
+		}else
+			printCentralizado("[A] <-- PROXIMA LIGA --> [D]",26,15);
+		
+		if(liga == 1){
+			if(rodadaOficial >= 10){
+				exibirTabela(lista2,8);
+			}else{
+				exibirTabela(lista, 8);
+			}	
+		}
+		else{
+			if(rodadaOficial >= 12){
+				exibirTabela(lista2,8);
+			}else{
+				exibirTabela(lista, 8);
+			}
+		}
+		mudarcor();
+		exibirSemana(campeonato,rodada);
+		
+		gotoxy(119,29);
+		fflush(stdin);
+		op = toupper(getch());
+		limparBufferTeclado();
+		switch(op){
+			case 'W':
+				passarPagina1 = 'A';
+    			do{
+    				if(passarPagina1 == 'A'){
+    					passarPagina1 = exibirEstatisticas(lista,4);
+    				}
+    				if(passarPagina1 == 'G')
+    				{
+    					passarPagina1 = exibirTopGoleiros(lista,4);
+    				}
+    				if(passarPagina1 == 'P'){
+    					passarPagina1 = exibirTopPresidentes(lista,4);
+    				}
+    			}while(passarPagina1 != 27);
+			break;
+			case 'N':
+    			if(rodada != 1){
+    				rodada--;
+    			}
+    		break;
+    		case 'M':
+    			if(rodada < 11){
+    				rodada++;
+    			}
+    		break;	
+			case 'D':
+				if(outrasliga<3){
+					op = 27;
+					return outrasliga+1;
+				} 
+			break;
+			case 'A':
+				if(outrasliga>1)
+				{
+					op = 27;
+					return outrasliga-1;
+				}
+			break;
+			case 'P':
+				if(liga == 1){
+					if(rodadaOficial>9){
+						clrscr();
+						exibirPlayoffsAmericas(rodadaOficial, lista,jogo,(rodadaOficial + 4) - 11);
+					}
+					if(rodadaOficial < 9){
+			       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
+			        	gotoxy(119, 29);
+			        	Sleep(1200);
+			        	limparBufferTeclado();
+			    	}
+				}else{
+					if(rodadaOficial < 12){
+			       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
+			        	gotoxy(119, 29);
+			        	Sleep(1200);
+			        	limparBufferTeclado();
+			    	}else{
+			    		clrscr();
+			    		exibirPlayoffsAmericas(rodadaOficial, lista,jogo,rodadaOficial - 11);
+			    	}
+				}   
+			break;
+		}
+		
+		clrscr();
+	}while(op != 27);
+	return 5;
 }
