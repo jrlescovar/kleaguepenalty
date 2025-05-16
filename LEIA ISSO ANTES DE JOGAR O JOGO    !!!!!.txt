@@ -1,7 +1,10 @@
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
 
-PARA JOGAR CLIQUE NO ARQUIVO COM O NOME DE KL PENALTY GAME. !!!!!! no momento o nome esta com main.exe aqui mesmo no GitHub depois clique em View raw, não tenho licença da Microsoft então pode indicar que é um arquivo de risco, porem não contem nada de risco, tudo feito em C puro
+PARA JOGAR CLIQUE NO ARQUIVO COM O NOME DE KL PENALTY GAME. !!!!!! no momento o nome esta com main.exe 
+aqui mesmo no GitHub depois clique em View raw, 
+não tenho licença da Microsoft então pode indicar que é um arquivo de risco, 
+porem não contem nada de risco, tudo feito em C puro
 
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
