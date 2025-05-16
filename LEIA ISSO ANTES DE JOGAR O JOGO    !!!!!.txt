@@ -13,6 +13,8 @@ ACESSE A PASTA TUTORIAL - importante <---------------
 
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
 **** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
+**** *** ** ** * ** * * ** * ** ** * ** ** ** * 
 
 NAO RECOMEDADO ABRIR DIRETO NO TERMINAL EM ALGUNS PODERA RESULTAR EM BUG VISUAL PELO TAMANHO DA TELA DO TERMINAL(EMULADO).
 
