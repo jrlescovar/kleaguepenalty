@@ -773,7 +773,7 @@ char telaBrasil(void){
     textcolor(1);
     printf("DENDELE FC");
     gotoxy(43,7);
-    printf("[84]");
+    printf("[85]");
 	MolduraColorida(27, 6, 47, 10, 1, 1, 14, 14);
 	
 	gotoxy(54,11);
@@ -818,7 +818,7 @@ char telaBrasil(void){
     textcolor(15);
     printf("FURIA FC");
     gotoxy(43,15);
-    printf("[87]");
+    printf("[86]");
 	MolduraColorida(27, 14, 47, 18, 15, 8, 15, 8);
 	
 	gotoxy(54,19);

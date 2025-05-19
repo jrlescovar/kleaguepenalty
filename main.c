@@ -142,38 +142,7 @@ int main(void){
 				                		listaTabela = copiarLista(listaBrasil);//salva a tabela para nao exiber novas informações do playoffs
 
 										criarPlayoffBrasil(&jogosBrasil,listaBrasil,1);
-										
-										listaTabelaEspanha = copiarLista(listaEspanha);
-										criarPlayoffEspanha(&jogosEspanha,listaEspanha,1);
-										
-										listaTabelaItalia = copiarLista(listaItalia);
-										criarPlayoffItalia(&jogosItalia,listaItalia,1);
-										
-										listaTabelaAmericas = copiarLista(listaAmericas);
-										criarPlayoffAmericas(&jogosAmericas,listaAmericas,1);
-										
-										if(desbugarplayoff == 1){
-											jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin1Confronto,1);
-					                		jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin2Confronto,1);
-											criarPlayoffEspanha(&jogosEspanha,listaEspanha,2);
-											jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin3Confronto,1);
-											criarPlayoffEspanha(&jogosEspanha,listaEspanha,3);
-											
-											jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin1Confronto,1);
-					                		jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin2Confronto,1);
-											criarPlayoffItalia(&jogosItalia,listaItalia,2);
-											jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin3Confronto,1);
-											criarPlayoffItalia(&jogosItalia,listaItalia,3);
-											
-											jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin1Confronto,1);
-					                		jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin2Confronto,1);
-											criarPlayoffAmericas(&jogosAmericas,listaAmericas,2);
-											jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin3Confronto,1);
-											criarPlayoffAmericas(&jogosAmericas,listaAmericas,3);
-											
-											
-											desbugarplayoff = 0;
-										}
+									
 										
 										
 				                	}
@@ -272,7 +241,37 @@ int main(void){
 														confrontoAmericas = confrontoAmericas->prox;
 													}while(confrontoAmericas != NULL);
 													
+													listaTabelaEspanha = copiarLista(listaEspanha);
+													criarPlayoffEspanha(&jogosEspanha,listaEspanha,1);
 													
+													listaTabelaItalia = copiarLista(listaItalia);
+													criarPlayoffItalia(&jogosItalia,listaItalia,1);
+													
+													listaTabelaAmericas = copiarLista(listaAmericas);
+													criarPlayoffAmericas(&jogosAmericas,listaAmericas,1);
+													
+													if(desbugarplayoff == 1){
+														jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin2Confronto,1);
+														criarPlayoffEspanha(&jogosEspanha,listaEspanha,2);
+														jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin3Confronto,1);
+														criarPlayoffEspanha(&jogosEspanha,listaEspanha,3);
+														
+														jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin2Confronto,1);
+														criarPlayoffItalia(&jogosItalia,listaItalia,2);
+														jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin3Confronto,1);
+														criarPlayoffItalia(&jogosItalia,listaItalia,3);
+														
+														jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin2Confronto,1);
+														criarPlayoffAmericas(&jogosAmericas,listaAmericas,2);
+														jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin3Confronto,1);
+														criarPlayoffAmericas(&jogosAmericas,listaAmericas,3);
+														
+														
+														desbugarplayoff = 0;
+													}
 													
 				                				}
 				                				
@@ -406,6 +405,39 @@ int main(void){
 														jogarConfronto(&listaAmericas,resultado,&confrontoAmericas,1,2);
 														confrontoAmericas = confrontoAmericas->prox;
 													}while(confrontoAmericas != NULL);
+													
+													
+													listaTabelaEspanha = copiarLista(listaEspanha);
+													criarPlayoffEspanha(&jogosEspanha,listaEspanha,1);
+													
+													listaTabelaItalia = copiarLista(listaItalia);
+													criarPlayoffItalia(&jogosItalia,listaItalia,1);
+													
+													listaTabelaAmericas = copiarLista(listaAmericas);
+													criarPlayoffAmericas(&jogosAmericas,listaAmericas,1);
+													
+													if(desbugarplayoff == 1){
+														jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin2Confronto,1);
+														criarPlayoffEspanha(&jogosEspanha,listaEspanha,2);
+														jogarConfrontoPlayoff(&listaEspanha,resultado,&jogosEspanha->playin3Confronto,1);
+														criarPlayoffEspanha(&jogosEspanha,listaEspanha,3);
+														
+														jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin2Confronto,1);
+														criarPlayoffItalia(&jogosItalia,listaItalia,2);
+														jogarConfrontoPlayoff(&listaItalia,resultado,&jogosItalia->playin3Confronto,1);
+														criarPlayoffItalia(&jogosItalia,listaItalia,3);
+														
+														jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin1Confronto,1);
+								                		jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin2Confronto,1);
+														criarPlayoffAmericas(&jogosAmericas,listaAmericas,2);
+														jogarConfrontoPlayoff(&listaAmericas,resultado,&jogosAmericas->playin3Confronto,1);
+														criarPlayoffAmericas(&jogosAmericas,listaAmericas,3);
+														
+														
+														desbugarplayoff = 0;
+													}
 													
 				                				}
 				                				if(rodadaOficial != 10)//chegar em 10 para para nao exibir vento...

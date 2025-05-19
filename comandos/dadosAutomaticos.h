@@ -53,9 +53,9 @@ void dadosAutomaticos(tree **raiz) {
     jogador j2_1 = {"Leleti", 0, 0, 140000, 94,"ATA"};
     jogador j2_2 = {"Lipao", 0, 0, 115000, 92,"ATA"};
     jogador j2_3 = {"Donato", 0, 0, 21000, 80,"ATA"};
-    jogador j2_4 = {"Jefinho", 0, 0, 50000, 87,"MEI"};
-    jogador j2_5 = {"Dedo", 0, 0, 40000, 85,"DEF"};
-    goleiro g2 = {"Victor Hugo", 0, 0,49000, 86,"GOL"};
+    jogador j2_4 = {"Jefinho", 0, 0, 40000, 85,"MEI"};
+    jogador j2_5 = {"Dedo", 0, 0, 40000, 84,"DEF"};
+    goleiro g2 = {"Victor Hugo", 0, 0,30000, 84,"GOL"};
     presidente p2 = {"Cris Guedes", 0, 0, 76};
     valorMercado = j2_1.valor + j2_2.valor + j2_3.valor + j2_4.valor + j2_5.valor + g2.valor;
     times t2 = {7, "Furia FC", j2_1, j2_2, j2_3, j2_4, j2_5, g2, p2,7,15,valorMercado};
@@ -67,7 +67,7 @@ void dadosAutomaticos(tree **raiz) {
     jogador j6_3 = {"Tuco", 0, 0, 22000, 82,"MEI"};
     jogador j6_4 = {"Romarinho", 0, 0, 20000, 80,"MEI"};
     jogador j6_5 = {"Lyncoln", 0, 0, 68000, 88,"DEF"};
-    goleiro g6 = {"Maikon", 0,0, 32000, 84,"GOL"};
+    goleiro g6 = {"Maikon", 0,0, 42000, 86,"GOL"};
     presidente p6 = {"LuquEt4", 0, 0, 73};
     valorMercado = j6_1.valor + j6_2.valor + j6_3.valor + j6_4.valor + j6_5.valor + g6.valor;
     times t6 = {2, "Dendele FC", j6_1, j6_2, j6_3, j6_4, j6_5, g6, p6,1,14,valorMercado};
@@ -75,7 +75,7 @@ void dadosAutomaticos(tree **raiz) {
     
     // Real Elite
     jogador j4_1 = {"Marlon Ribas", 0, 0, 14000, 77,"ATA"};
-    jogador j4_2 = {"Davi Ilario", 0, 0, 78000, 90,"MEI"};
+    jogador j4_2 = {"Davi Ilario", 0, 0, 90000, 91,"MEI"};
     jogador j4_3 = {"Well", 0, 0, 26000, 82,"MEI"};
     jogador j4_4 = {"Matheus Bueno", 0, 0, 10000, 75,"MEI"};
     jogador j4_5 = {"Junin Antunes", 0, 0, 25000, 81,"MEI"};
@@ -123,10 +123,9 @@ void dadosAutomaticos(tree **raiz) {
 	
     // G3X
     jogador j1_1 = {"Kelvin 'K9'", 0, 0, 115000, 93,"ATA"};
-    jogador j1_2 = {"Ton", 0, 0, 78000, 90,"ATA"};
+    jogador j1_2 = {"Rufino", 0, 0, 54000, 86,"MEI"};
     jogador j1_3 = {"Andreas Vaz", 0, 0, 100000, 91,"MEI"};
     jogador j1_4 = {"Kenu", 0, 0, 33000, 84,"MEI"};
-    //jogador j1_4 = {"Rufino", 0, 0, 54000, 86,"MEI"};
     jogador j1_5 = {"Wembley", 0, 0, 29000, 82,"DEF"};
     goleiro g1 = {"Igor Rezende", 0, 0,45000, 86,"GOL"};
     presidente p1 = {"Gaules", 0, 0, 74};
