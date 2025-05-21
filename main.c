@@ -549,6 +549,9 @@ int main(void){
 				                						break;
 				                				}while(1);
 				                		break;
+				                		case 'G':
+				                			exibirEstatisticaTime(listaBrasil,10,1);
+				                		break;
 				                		default:
 				                				if(menuSelecionado == 27)
 				                					menuSelecionado = 'o';
@@ -910,6 +913,9 @@ int main(void){
 				                						break;
 				                				}while(1);
 				                		break;
+				                		case 'G':
+				                			exibirEstatisticaTime(listaEspanha,12,2);
+				                		break;
 				                		default:
 				                			if(menuSelecionado == 27)
 				                				menuSelecionado = 'o';
@@ -1267,6 +1273,9 @@ int main(void){
 				                						break;
 				                				}while(1);
 				                		break;
+				                		case 'G':
+				                			exibirEstatisticaTime(listaItalia,12,3);
+				                		break;
 				                		default:
 				                			if(menuSelecionado == 27)
 				                				menuSelecionado = 'o';
@@ -1620,16 +1629,17 @@ int main(void){
 				                						break;
 				                				}while(1);
 				                		break;
+				                		case 'G':
+				                			exibirEstatisticaTime(listaAmericas,12,4);
+				                		break;
 				                		default:
 				                			if(menuSelecionado == 27)
 				                				menuSelecionado = 'o';
 				                			break;
 				                			
 				                	}
-				                }while(menuSelecionado != 27);
-				                
-				            }
-				            else if (timeConfirmado != 27){//Se aperta tecla errada exibe msg, aperta ESC fecha o JOGO
+				                }while(menuSelecionado != 27);       
+				            }else if (timeConfirmado != 27){//Se aperta tecla errada exibe msg, aperta ESC fecha o JOGO
 				                teclaInvalida();
 				        	}
 				        } while (timeConfirmado != 27);

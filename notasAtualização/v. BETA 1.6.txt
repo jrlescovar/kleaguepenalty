@@ -1,0 +1,6 @@
+Adicionado Estatísticas por times no menu de jogo apenas apertando G.
+	-Exibe gols, gols perdidos por jogador.
+	-Exibe defesa, defesa feitas.
+	-Exibe partidas jogads, overall, valores.
+
+Adicionado como funciona os Overall na pasta TUTORIAL.

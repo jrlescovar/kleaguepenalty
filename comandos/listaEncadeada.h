@@ -674,7 +674,7 @@ char exibirTopPresidentes(listaDupla *inicio,int l) {
     gotoxy(40, 8); printf("NOME");
     gotoxy(54, 8); printf("G/F");
     gotoxy(60, 8); printf("G/P");
-    gotoxy(66, 8); printf("PP");
+    gotoxy(66, 8); printf("PJ");
     gotoxy(80, 8); printf("EQUIPE");
 
     for (listaDupla *p = inicio; p != NULL; p = p->prox) {
@@ -776,7 +776,7 @@ char exibirTopPresidentes(listaDupla *inicio,int l) {
         
     }
 
-    printCentralizado(" G/F: GOLS FEITOS   G/P: GOLS PERDIDOS   PP: PENALTI PRESIDENTES BATIDOS", 21, 15);
+    printCentralizado("  G/F: GOLS FEITOS   G/P: GOLS PERDIDOS   PJ: PARTIDAS JOGADAS", 21, 15);
     printCentralizado("APERTE [A] <---- ESTATISTICAS DA ARTILHARIA      ESTATISTICAS GOLEIRO ----> APERTE [G]", 28, 15);
 
     textcolor(12);

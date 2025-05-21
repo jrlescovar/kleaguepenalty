@@ -1,0 +1,18 @@
+# # Tabela de Overall # #
+
+Goleiro Overall	Reflexo(Marcação de área de defesa do goleiro)
+
+90 ou superior = 6 Reflexos
+89 a 86	 = 5 Reflexos
+85 a 82	 = 4 Reflexos
+81 ou menor =3 Reflexos
+
+# # Atacantes Overall # #
+ 
+Afeta o desempenho do goleiro 
+90 ou superior 	Tira 2 reflexos do goleiro 
+87 ou superior 	Tira 1 reflexo do goleiro
+
+Atacante Overal 80 ou inferior Contra um goleiro overall 82 ou superior 	Adiciona 1 reflexo para o goleiro
+
+Atacante Overal 77 ou inferior Contra um goleiro overall 80 ou superior 	Adiciona 1 reflexo para o goleiro

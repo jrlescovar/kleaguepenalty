@@ -371,21 +371,7 @@ char ligaEspanha(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* 
 	listaDupla *aux = buscarTimeNaLista(lista, buscar);
 	int y,x,i;
 	
-	i = 0;
-	while(i < 28) { // de 2 até 29 ? 28 posições
-	    textcolor((i % 2 == 0) ? 14 : 4); // Alterna cores
-	
-	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
-	    printf((i % 2 == 0) ? "$" : "@");
-	
-	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
-	    printf((i % 2 == 0) ? "$" : "@");
-	    
-	    i++;
-	}
-	textcolor(15);
-	MolduraColorida(1, 1, 120, 30,4,4,14,14);
-	
+	MolduraEspanha();
 	Moldura(10, 5, 68, 20);
 	
 	gotoxy(12,4);
@@ -477,8 +463,8 @@ char ligaEspanha(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* 
 	Moldura(30, 21, 48, 24);
 	gotoxy(34,22);
 	printf("ESTATISTICAS");
-	gotoxy(45,23);
-	printf("[W]");
+	gotoxy(37,23);
+	printf("TOP 10  [W]");
 	
 	Moldura(51, 21, 69, 24);
 	gotoxy(55,22);
@@ -509,13 +495,11 @@ char ligaEspanha(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* 
 	gotoxy(14,26);
 	printf("? EM BREVE ?");
 	
-	Moldura(30, 25, 48, 28);/*
-	gotoxy(34,25);
-	printf("ESTATISTICAS");
-	gotoxy(36,26);
-	printf("POR TIME [G]");*/
+	Moldura(30, 25, 48, 28);
 	gotoxy(34,26);
-	printf("? EM BREVE ?");
+	printf("ESTATISTICAS");
+	gotoxy(36,27);
+	printf("POR TIME [G]");
 	
 	Moldura(51, 25, 69, 28);/*
 	gotoxy(57,25);
@@ -973,7 +957,9 @@ int exibeLigaEspanha(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeon
 	
 		Moldura(30, 21, 48, 24);
 		gotoxy(34,22);
-		printf("? EM BREVE ?");
+		printf("ESTATISTICAS");
+		gotoxy(36,23);
+		printf("POR TIME [G]");
 
 	
 		Moldura(51, 21, 69, 24);
@@ -1082,6 +1068,16 @@ int exibeLigaEspanha(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeon
 			    	}
 				}   
 			break;
+			case 'G':
+				exibirEstatisticaTime(lista,12,2);
+			break;
+			case 27:
+				Sleep(1);break;
+			default:
+    			printCentralizado("TECLA INVALIDA! TECLAS DISPONIVEIS [A] [D] [P] [M] [N] [W]",28,15);
+    			gotoxy(119, 29);
+	        	Sleep(1000);
+	        	limparBufferTeclado();
 		}
 		
 		clrscr();

@@ -578,8 +578,8 @@ char ligaAmericas(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil*
 	Moldura(30, 21, 48, 24);
 	gotoxy(34,22);
 	printf("ESTATISTICAS");
-	gotoxy(45,23);
-	printf("[W]");
+	gotoxy(37,23);
+	printf("TOP 10  [W]");
 
 	
 	
@@ -612,13 +612,11 @@ char ligaAmericas(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil*
 	gotoxy(14,26);
 	printf("? EM BREVE ?");
 	
-	Moldura(30, 25, 48, 28);/*
-	gotoxy(34,25);
-	printf("ESTATISTICAS");
-	gotoxy(36,26);
-	printf("POR TIME [G]");*/
+	Moldura(30, 25, 48, 28);
 	gotoxy(34,26);
-	printf("? EM BREVE ?");
+	printf("ESTATISTICAS");
+	gotoxy(36,27);
+	printf("POR TIME [G]");
 	
 	Moldura(51, 25, 69, 28);/*
 	gotoxy(57,25);
@@ -643,25 +641,7 @@ char ligaAmericas(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil*
 	gotoxy(108,27);
 	printf("[J]");
 	textcolor(15);
-	/*
-    if(playoffJogos == 1){
-    		textcolor(14);
-			gotoxy(97,25);
-			printf("JOGAR AGORA");
-			gotoxy(99,26);
-			printf("PLAYOFF  [J]");
-			textcolor(15);
-    }else if(playoffJogos == 0){
-    		textcolor(14);
-    		gotoxy(97,25);
-			printf("           ");
-			gotoxy(99,25);
-			printf("SIMULAR");
-			gotoxy(99,26);
-			printf("PLAYOFF  [J]");
-			textcolor(15);
-    }*/
-	
+
 	printCentralizado("APERTA [H] PARA ACESSAR MENU 'AJUDA' ",29,15);
 	gotoxy(10,2);
 	textcolor(aux->info.elenco.cor1);
@@ -1010,20 +990,7 @@ int exibeLigaAmericas(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeo
 	if(rodadaOficial >= 10)
 		rodada = 11;
 	do{	
-		i = 0;
-		while(i < 28) { // de 2 até 29 ? 28 posições
-		    textcolor((i % 2 == 0) ? 8 : 9); // Alterna cores
-		
-		    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
-		    printf((i % 2 == 0) ? "<" : "?");
-		
-		    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
-		    printf((i % 2 == 0) ? ">" : "?");
-		    
-		    i++;
-		}
-		textcolor(15);
-		MolduraColorida(1, 1, 120, 30,15,15,9,9);
+		MolduraAmericas();
 		Moldura(10, 5, 68, 20);	
 		gotoxy(12,4);printf("TABELA GERAL");
 		textcolor(9);gotoxy(25,4);printf("KL - PENALTY AMERICAS");textcolor(15);
@@ -1076,8 +1043,9 @@ int exibeLigaAmericas(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeo
 	
 		Moldura(30, 21, 48, 24);
 		gotoxy(34,22);
-		printf("? EM BREVE ?");
-
+		printf("ESTATISTICAS");
+		gotoxy(36,23);
+		printf("POR TIME [G]");
 	
 		Moldura(51, 21, 69, 24);
 		gotoxy(55,22);
@@ -1183,6 +1151,16 @@ int exibeLigaAmericas(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeo
 			    	}
 				}   
 			break;
+			case 'G':
+				exibirEstatisticaTime(lista,12,4);
+			break;
+			case 27:
+				Sleep(1);break;
+			default:
+    			printCentralizado("TECLA INVALIDA! TECLAS DISPONIVEIS [A] [D] [P] [M] [N] [W]",28,15);
+    			gotoxy(119, 29);
+	        	Sleep(1000);
+	        	limparBufferTeclado();
 		}
 		
 		clrscr();

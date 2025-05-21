@@ -63,7 +63,7 @@ void dadosAutomaticos(tree **raiz) {
 	
 	 // Dendele 
     jogador j6_1 = {"Canhoto", 0, 0, 38000, 85,"MEI"};
-    jogador j6_2 = {"Lucas Hector", 0, 0, 78000, 90,"MEI"};
+    jogador j6_2 = {"Lucas Hector", 0, 0, 78000, 89,"MEI"};
     jogador j6_3 = {"Tuco", 0, 0, 22000, 82,"MEI"};
     jogador j6_4 = {"Romarinho", 0, 0, 20000, 80,"MEI"};
     jogador j6_5 = {"Lyncoln", 0, 0, 68000, 88,"DEF"};

@@ -477,22 +477,7 @@ char ligaItalia(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	clrscr();
 	listaDupla *aux = buscarTimeNaLista(lista, buscar);
 	int y,x,i;
-	
-	i = 0;
-	while(i < 28) { // de 2 até 29 ? 28 posições
-	    textcolor((i % 2 == 0) ? 4 : 10); // Alterna cores
-	
-	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
-	    printf((i % 2 == 0) ? "=" : "*");
-	
-	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
-	    printf((i % 2 == 0) ? "=" : "*");
-	    
-	    i++;
-	}
-	textcolor(15);
-	MolduraColorida(1, 1, 120, 30,15,15,10,4);
-	
+	MolduraItalia();
 	Moldura(10, 5, 68, 20);
 	
 	gotoxy(12,4);
@@ -584,8 +569,8 @@ char ligaItalia(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	Moldura(30, 21, 48, 24);
 	gotoxy(34,22);
 	printf("ESTATISTICAS");
-	gotoxy(45,23);
-	printf("[W]");
+	gotoxy(37,23);
+	printf("TOP 10  [W]");
 
 	
 	
@@ -618,13 +603,11 @@ char ligaItalia(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	gotoxy(14,26);
 	printf("? EM BREVE ?");
 	
-	Moldura(30, 25, 48, 28);/*
-	gotoxy(34,25);
-	printf("ESTATISTICAS");
-	gotoxy(36,26);
-	printf("POR TIME [G]");*/
+	Moldura(30, 25, 48, 28);
 	gotoxy(34,26);
-	printf("? EM BREVE ?");
+	printf("ESTATISTICAS");
+	gotoxy(36,27);
+	printf("POR TIME [G]");
 	
 	Moldura(51, 25, 69, 28);/*
 	gotoxy(57,25);
@@ -1010,170 +993,182 @@ int exibeLigaItalia(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeona
 		    printf((i % 2 == 0) ? "=" : "*");
 		    
 		    i++;
-		}
-		textcolor(15);
-		MolduraColorida(1, 1, 120, 30,15,15,10,4);Moldura(10, 5, 68, 20);	
-		gotoxy(12,4);printf("TABELA GERAL");
-		textcolor(10);gotoxy(25,4);printf("KL - PENALTY ITALIA");textcolor(15);
-		gotoxy(11,6);printf("POS");
-		y = 6;
-		while(y <= 19){
-			gotoxy(14, y); 
-	    	printf("%c", 186);
-	    	gotoxy(35, y); 
-	    	printf("%c", 186);
-	    	gotoxy(41, y); 
-	    	printf("%c", 186);
-			gotoxy(45, y);
-	    	printf("%c", 186);
-	    	gotoxy(49, y); 
-	    	printf("%c", 186);
-	    	gotoxy(53, y);
-	    	printf("%c", 186);
-	    	gotoxy(58, y); 
-	    	printf("%c", 186);
-	    	gotoxy(63,y);
-	    	printf("%c", 186);
-	    	y++;
-		}
-		gotoxy(22,6);printf("EQUIPE");gotoxy(37,6);printf("PTS");gotoxy(43,6);printf("V");
-		gotoxy(47,6);printf("E");gotoxy(51,6);printf("D");gotoxy(55,6);printf("GF");
-		gotoxy(60,6);printf("GS");gotoxy(65,6);printf("GA");
-		
-		x = 11;
-		while(x < 68){
-			gotoxy(x, 7);
-			if (x != 14 || x != 35 || x != 41 || x != 45 || x != 49 || x != 53 || x != 58 || x != 63)
-				printf("%c", 205);
-			x++;
-		}
-		Moldura(69, 5, 111, 20);
-		if(rodada == 1)
-		{	
-			gotoxy(84,4);
-			printf("PROXIMOS JOGOS --> [M]");
-			
-		}else if(rodada == 11){
-			gotoxy(76,4);
-			printf("[N] <-- PROXIMOS JOGOS");
-		}else{
-			gotoxy(76,4);
-			printf("[N] <-- PROXIMOS JOGOS --> [M]");
-		}
-		printCentralizado("APERTE [ESC] PARA SAIR DO MENU OUTRAS LIGAS",2,12);
-	
-		Moldura(30, 21, 48, 24);
-		gotoxy(34,22);
-		printf("? EM BREVE ?");
-
-	
-		Moldura(51, 21, 69, 24);
-		gotoxy(55,22);
-		printf("ESTATISTICAS");
-		gotoxy(65,23);
-		printf("[W]");
-		
-		Moldura(72, 21, 90, 24);
-		gotoxy(76,22);
-		printf("PLAY - OFFS");
-		gotoxy(87,23);
-		printf("[P]");
-		
-		if(outrasliga == 1){
-			printCentralizado("        PROXIMA LIGA --> [D]",26,15);
-		}
-		if(outrasliga == 3){
-			printCentralizado("[A] <-- PROXIMA LIGA        ",26,15);
-		}else
-			printCentralizado("[A] <-- PROXIMA LIGA --> [D]",26,15);
-		
-		if(liga == 1){
-			if(rodadaOficial >= 10){
-				exibirTabela(lista2,8);
-			}else{
-				exibirTabela(lista, 8);
-			}	
-		}
-		else{
-			if(rodadaOficial >= 12){
-				exibirTabela(lista2,8);
-			}else{
-				exibirTabela(lista, 8);
 			}
-		}
-		mudarcor();
-		exibirSemana(campeonato,rodada);
+			textcolor(15);
+			MolduraColorida(1, 1, 120, 30,15,15,10,4);Moldura(10, 5, 68, 20);	
+			gotoxy(12,4);printf("TABELA GERAL");
+			textcolor(10);gotoxy(25,4);printf("KL - PENALTY ITALIA");textcolor(15);
+			gotoxy(11,6);printf("POS");
+			y = 6;
+			while(y <= 19){
+				gotoxy(14, y); 
+		    	printf("%c", 186);
+		    	gotoxy(35, y); 
+		    	printf("%c", 186);
+		    	gotoxy(41, y); 
+		    	printf("%c", 186);
+				gotoxy(45, y);
+		    	printf("%c", 186);
+		    	gotoxy(49, y); 
+		    	printf("%c", 186);
+		    	gotoxy(53, y);
+		    	printf("%c", 186);
+		    	gotoxy(58, y); 
+		    	printf("%c", 186);
+		    	gotoxy(63,y);
+		    	printf("%c", 186);
+		    	y++;
+			}
+			gotoxy(22,6);printf("EQUIPE");gotoxy(37,6);printf("PTS");gotoxy(43,6);printf("V");
+			gotoxy(47,6);printf("E");gotoxy(51,6);printf("D");gotoxy(55,6);printf("GF");
+			gotoxy(60,6);printf("GS");gotoxy(65,6);printf("GA");
+			
+			x = 11;
+			while(x < 68){
+				gotoxy(x, 7);
+				if (x != 14 || x != 35 || x != 41 || x != 45 || x != 49 || x != 53 || x != 58 || x != 63)
+					printf("%c", 205);
+				x++;
+			}
+			Moldura(69, 5, 111, 20);
+			if(rodada == 1)
+			{	
+				gotoxy(84,4);
+				printf("PROXIMOS JOGOS --> [M]");
+				
+			}else if(rodada == 11){
+				gotoxy(76,4);
+				printf("[N] <-- PROXIMOS JOGOS");
+			}else{
+				gotoxy(76,4);
+				printf("[N] <-- PROXIMOS JOGOS --> [M]");
+			}
+			printCentralizado("APERTE [ESC] PARA SAIR DO MENU OUTRAS LIGAS",2,12);
 		
-		gotoxy(119,29);
-		fflush(stdin);
-		op = toupper(getch());
-		limparBufferTeclado();
-		switch(op){
-			case 'W':
-				passarPagina1 = 'A';
-    			do{
-    				if(passarPagina1 == 'A'){
-    					passarPagina1 = exibirEstatisticas(lista,3);
-    				}
-    				if(passarPagina1 == 'G')
-    				{
-    					passarPagina1 = exibirTopGoleiros(lista,3);
-    				}
-    				if(passarPagina1 == 'P'){
-    					passarPagina1 = exibirTopPresidentes(lista,3);
-    				}
-    			}while(passarPagina1 != 27);
-			break;
-			case 'N':
-    			if(rodada != 1){
-    				rodada--;
-    			}
-    		break;
-    		case 'M':
-    			if(rodada < 11){
-    				rodada++;
-    			}
-    		break;	
-			case 'D':
-				if(outrasliga<3){
-					op = 27;
-					return outrasliga+1;
-				} 
-			break;
-			case 'A':
-				if(outrasliga>1)
-				{
-					op = 27;
-					return outrasliga-1;
-				}
-			break;
-			case 'P':
-				if(liga == 1){
-					if(rodadaOficial>9){
-						clrscr();
-						exibirPlayoffsItalia(rodadaOficial, lista,jogo,(rodadaOficial + 4) - 11);
-					}
-					if(rodadaOficial < 9){
-			       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
-			        	gotoxy(119, 29);
-			        	Sleep(1200);
-			        	limparBufferTeclado();
-			    	}
+			Moldura(30, 21, 48, 24);
+			gotoxy(34,22);
+			printf("ESTATISTICAS");
+			gotoxy(36,23);
+			printf("POR TIME [G]");
+	
+		
+			Moldura(51, 21, 69, 24);
+			gotoxy(55,22);
+			printf("ESTATISTICAS");
+			gotoxy(65,23);
+			printf("[W]");
+			
+			Moldura(72, 21, 90, 24);
+			gotoxy(76,22);
+			printf("PLAY - OFFS");
+			gotoxy(87,23);
+			printf("[P]");
+			
+			if(outrasliga == 1){
+				printCentralizado("        PROXIMA LIGA --> [D]",26,15);
+			}
+			if(outrasliga == 3){
+				printCentralizado("[A] <-- PROXIMA LIGA        ",26,15);
+			}else
+				printCentralizado("[A] <-- PROXIMA LIGA --> [D]",26,15);
+			
+			if(liga == 1){
+				if(rodadaOficial >= 10){
+					exibirTabela(lista2,8);
 				}else{
-					if(rodadaOficial < 12){
-			       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
-			        	gotoxy(119, 29);
-			        	Sleep(1200);
-			        	limparBufferTeclado();
-			    	}else{
-			    		clrscr();
-			    		exibirPlayoffsItalia(rodadaOficial, lista,jogo,rodadaOficial - 11);
-			    	}
-				}   
-			break;
-		}
-		
-		clrscr();
+					exibirTabela(lista, 8);
+				}	
+			}
+			else{
+				if(rodadaOficial >= 12){
+					exibirTabela(lista2,8);
+				}else{
+					exibirTabela(lista, 8);
+				}
+			}
+			mudarcor();
+			exibirSemana(campeonato,rodada);
+			
+			gotoxy(119,29);
+			fflush(stdin);
+			op = toupper(getch());
+			limparBufferTeclado();
+			switch(op){
+				case 'W':
+					passarPagina1 = 'A';
+	    			do{
+	    				if(passarPagina1 == 'A'){
+	    					passarPagina1 = exibirEstatisticas(lista,3);
+	    				}
+	    				if(passarPagina1 == 'G')
+	    				{
+	    					passarPagina1 = exibirTopGoleiros(lista,3);
+	    				}
+	    				if(passarPagina1 == 'P'){
+	    					passarPagina1 = exibirTopPresidentes(lista,3);
+	    				}
+	    			}while(passarPagina1 != 27);
+				break;
+				case 'N':
+	    			if(rodada != 1){
+	    				rodada--;
+	    			}
+	    		break;
+	    		case 'M':
+	    			if(rodada < 11){
+	    				rodada++;
+	    			}
+	    		break;	
+				case 'D':
+					if(outrasliga<3){
+						op = 27;
+						return outrasliga+1;
+					} 
+				break;
+				case 'A':
+					if(outrasliga>1)
+					{
+						op = 27;
+						return outrasliga-1;
+					}
+				break;
+				case 'P':
+					if(liga == 1){
+						if(rodadaOficial>9){
+							clrscr();
+							exibirPlayoffsItalia(rodadaOficial, lista,jogo,(rodadaOficial + 4) - 11);
+						}
+						if(rodadaOficial < 9){
+				       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
+				        	gotoxy(119, 29);
+				        	Sleep(1200);
+				        	limparBufferTeclado();
+				    	}
+					}else{
+						if(rodadaOficial < 12){
+				       		printCentralizado("LOGO MAIS OS PLAYOFFS ESTARAO EM ANDAMENTO",28,15);
+				        	gotoxy(119, 29);
+				        	Sleep(1200);
+				        	limparBufferTeclado();
+				    	}else{
+				    		clrscr();
+				    		exibirPlayoffsItalia(rodadaOficial, lista,jogo,rodadaOficial - 11);
+				    	}
+					}   
+				break;
+				case 'G':
+					exibirEstatisticaTime(lista,12,3);
+				break;
+				case 27:
+					Sleep(1);break;
+				default:
+	    			printCentralizado("TECLA INVALIDA! TECLAS DISPONIVEIS [A] [D] [P] [M] [N] [W]",28,15);
+	    			gotoxy(119, 29);
+		        	Sleep(1000);
+		        	limparBufferTeclado();
+			}
+			
+			clrscr();
 	}while(op != 27);
 	return 5;
 }

@@ -43,6 +43,70 @@ typedef struct playOffsConfrontos {
     Confronto* finalConfronto;
 }playoffsConfrontos;
 // Funções de criação
+void MolduraBrasil(void){
+	int i = 0;
+	while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 14 : 2); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "#" : "$");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? "#" : "$");
+	    
+	    i++;
+	}
+	textcolor(15);
+	MolduraColorida(1, 1, 120, 30,2,2,14,14);
+}
+void MolduraEspanha(void){
+	int i = 0;
+	while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 14 : 4); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "$" : "@");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? "$" : "@");
+	    
+	    i++;
+	}
+	textcolor(15);
+	MolduraColorida(1, 1, 120, 30,4,4,14,14);
+}
+void MolduraItalia(void){
+	int i = 0;
+	while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 4 : 10); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "=" : "*");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? "=" : "*");
+	    
+	    i++;
+	}
+	textcolor(15);
+	MolduraColorida(1, 1, 120, 30,15,15,10,4);
+}
+void MolduraAmericas(void){
+	int	i = 0;
+	while(i < 28) { // de 2 até 29 ? 28 posições
+	    textcolor((i % 2 == 0) ? 8 : 9); // Alterna cores
+	
+	    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
+	    printf((i % 2 == 0) ? "<" : "?");
+	
+	    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
+	    printf((i % 2 == 0) ? ">" : "?");
+	    
+	    i++;
+	}
+	textcolor(15);
+	MolduraColorida(1, 1, 120, 30,15,15,9,9);
+}
 
 Confronto* criarConfronto(char* casa, char* fora,int pais) {
 	int cod1 , cod2;
@@ -965,10 +1029,8 @@ char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	Moldura(30, 20, 48, 23);
 	gotoxy(34,21);
 	printf("ESTATISTICAS");
-	gotoxy(45,22);
-	printf("[W]");
-
-	
+	gotoxy(37,22);
+	printf("TOP 10  [W]");
 	
 	Moldura(51, 20, 69, 23);
 	gotoxy(55,21);
@@ -999,13 +1061,12 @@ char ligaBrasil(listaDupla *lista, listaDupla *lista2,int buscar,SemanaBrasil* c
 	gotoxy(14,25);
 	printf("? EM BREVE ?");
 	
-	Moldura(30, 24, 48, 27);/*
+	Moldura(30, 24, 48, 27);
 	gotoxy(34,25);
 	printf("ESTATISTICAS");
 	gotoxy(36,26);
-	printf("POR TIME [G]");*/
-	gotoxy(34,25);
-	printf("? EM BREVE ?");
+	printf("POR TIME [G]");
+
 	
 	Moldura(51, 24, 69, 27);/*
 	gotoxy(57,25);
@@ -1179,7 +1240,7 @@ void gerenciarElenco(listaDupla **lista, tree *resultado,int localidade) {
 	            textcolor(resultado->time.cor2);
 	
 	        gotoxy(9, 7);
-	        printf("Time %s  [%d]", resultado->time.nomeEquipe,((resultado->time.jogador1.overall + resultado->time.jogador2.overall) + (resultado->time.jogador3.overall + resultado->time.jogador4.overall) + (resultado->time.jogador5.overall + resultado->time.goleiro1.overall))/6); 
+	        printf("Time: %s  [%d]", resultado->time.nomeEquipe,((resultado->time.jogador1.overall + resultado->time.jogador2.overall) + (resultado->time.jogador3.overall + resultado->time.jogador4.overall) + (resultado->time.jogador5.overall + resultado->time.goleiro1.overall))/6); 
 	
 	        gotoxy(51, 7);
 	        printf("Presidente: %s [%d]", resultado->time.presida.nome, resultado->time.presida.overall);
@@ -1662,20 +1723,7 @@ int exibeLigaBrasil(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeona
 	if(rodadaOficial >= 10)
 		rodada = 9;
 	do{	
-		i = 0;
-		while(i < 28) { // de 2 até 29 ? 28 posições
-		    textcolor((i % 2 == 0) ? 14 : 2); // Alterna cores
-		
-		    gotoxy(2, 2 + i);  // Coluna fixa (X=17), linha variável
-		    printf((i % 2 == 0) ? "#" : "$");
-		
-		    gotoxy(119, 2 + i);  // Exemplo: segunda linha vertical à direita
-		    printf((i % 2 == 0) ? "#" : "$");
-		    
-		    i++;
-		}
-		textcolor(15);
-		MolduraColorida(1, 1, 120, 30,2,2,14,14);
+		MolduraBrasil();
 		
 		Moldura(10, 5, 68, 18);
 		
@@ -1760,7 +1808,9 @@ int exibeLigaBrasil(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeona
 	
 		Moldura(30, 21, 48, 24);
 		gotoxy(34,22);
-		printf("? EM BREVE ?");
+		printf("ESTATISTICAS");
+		gotoxy(36,23);
+		printf("POR TIME [G]");
 
 	
 		Moldura(51, 21, 69, 24);
@@ -1780,7 +1830,8 @@ int exibeLigaBrasil(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeona
 		}
 		if(outrasliga == 3){
 			printCentralizado("[A] <-- PROXIMA LIGA        ",26,15);
-		}else
+		}
+		if(outrasliga == 2)
 			printCentralizado("[A] <-- PROXIMA LIGA --> [D]",26,15);
 		
 		if(liga == 1){
@@ -1860,12 +1911,362 @@ int exibeLigaBrasil(listaDupla *lista, listaDupla *lista2,SemanaBrasil* campeona
 			        Sleep(1200);
 			        limparBufferTeclado();
 			    }
-			    
 			break;
+			case 'G':
+				exibirEstatisticaTime(lista,10,1);
+			break;
+			case 27:
+				Sleep(1);break;
+			default:
+    			printCentralizado("TECLA INVALIDA! TECLAS DISPONIVEIS [A] [D] [P] [M] [N] [W]",28,15);
+    			gotoxy(119, 29);
+	        	Sleep(1000);
+	        	limparBufferTeclado();
 		}
 		
 		clrscr();
 	}while(op != 27);
 	return 5;
+}
+
+void exibirEstatisticaTime(listaDupla *lista,int num,int localidade){
+	int time = 1;
+	char op; int y , x ;
+	listaDupla *listaAtual = NULL;
+	do{
+		clrscr();
+		listaAtual = buscarTimeNaLista(lista,time);
+		if(localidade == 1)
+			MolduraBrasil();
+		if(localidade == 2)
+			MolduraEspanha();
+		if(localidade == 3)
+			MolduraItalia();
+		if(localidade == 4)
+			MolduraAmericas();
+		
+		int toggle = 0;
+		do{
+			if(localidade == 1){
+			    if (listaAtual->info.elenco.codigo == 1) {
+			        MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, 2, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			        MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, 2, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			    } else if (listaAtual->info.elenco.codigo == 5) {
+			        MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, 15, 15);
+			      	MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, 15, 15);
+			    } else if (listaAtual->info.elenco.codigo == 7) {
+			        MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1);
+			        MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1);
+			    } else if (listaAtual->info.elenco.codigo == 8) {
+			        MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, 1, listaAtual->info.elenco.cor2);
+			        MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1,1, listaAtual->info.elenco.cor2);
+			    } else {
+			    	MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			        MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			    }
+			}else if(localidade == 2){
+				 if (listaAtual->info.elenco.codigo == 7) {
+				 	MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, 14, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			        MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, 14, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+				 }else if(listaAtual->info.elenco.codigo == 11) {
+					MolduraColorida(60, 4, 114, 24, 14, 4, 8,8);
+			        MolduraColorida(6, 4, 60, 24, 14, 4, 8,8);
+				 }else if(listaAtual->info.elenco.codigo == 8) {
+			        MolduraColorida(60, 4, 114, 24, 13, 13, 13,13);
+			        MolduraColorida(6, 4, 60, 24,13, 13,13,13);
+				 }else if(listaAtual->info.elenco.codigo == 10) {
+			        MolduraColorida(60, 4, 114,24, 14, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1,listaAtual->info.elenco.cor1);
+			        MolduraColorida(6, 4, 60, 24,listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1);
+				 }else{
+					MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+					MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+				}		
+			}else if(localidade == 3){
+				MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+				MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			}else if(localidade == 4){
+				MolduraColorida(60, 4, 114, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+				MolduraColorida(6, 4, 60, 24, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor1, listaAtual->info.elenco.cor2, listaAtual->info.elenco.cor2);
+			}
+			
+	        if (toggle == 0)
+	            textcolor(listaAtual->info.elenco.cor1);
+	        else
+	            textcolor(listaAtual->info.elenco.cor2);
+	            
+	        gotoxy(41,5);
+			printf("QUADRO TATICO");    
+	
+	        gotoxy(9, 5);
+	        printf("Time: %s  [%d]", listaAtual->info.elenco.nomeEquipe,((listaAtual->info.elenco.jogador1.overall + listaAtual->info.elenco.jogador2.overall) + (listaAtual->info.elenco.jogador3.overall + listaAtual->info.elenco.jogador4.overall) + (listaAtual->info.elenco.jogador5.overall + listaAtual->info.elenco.goleiro1.overall))/6); 
+	
+	        gotoxy(19, 7);
+	        printf("Presidente: %s [%d]", listaAtual->info.elenco.presida.nome, listaAtual->info.elenco.presida.overall);
+	
+	        // Cor dos jogadores e goleiro (invertida da do elenco)
+	        if (toggle == 0)
+	            textcolor(listaAtual->info.elenco.cor2);
+	        else
+	            textcolor(listaAtual->info.elenco.cor1);
+		
+	        gotoxy(13, 9);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.jogador1.posicao, listaAtual->info.elenco.jogador1.nome, listaAtual->info.elenco.jogador1.overall, listaAtual->info.elenco.jogador1.valor/1000);
+	
+	        gotoxy(13, 11);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.jogador2.posicao, listaAtual->info.elenco.jogador2.nome, listaAtual->info.elenco.jogador2.overall, listaAtual->info.elenco.jogador2.valor/1000);
+	
+	        gotoxy(13, 13);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.jogador3.posicao, listaAtual->info.elenco.jogador3.nome, listaAtual->info.elenco.jogador3.overall, listaAtual->info.elenco.jogador3.valor/1000);
+	
+	        gotoxy(13, 15);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.jogador4.posicao, listaAtual->info.elenco.jogador4.nome, listaAtual->info.elenco.jogador4.overall, listaAtual->info.elenco.jogador4.valor/1000);
+	
+	        gotoxy(13, 17);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.jogador5.posicao, listaAtual->info.elenco.jogador5.nome, listaAtual->info.elenco.jogador5.overall, listaAtual->info.elenco.jogador5.valor/1000);
+	
+	        gotoxy(13, 21);
+	        printf("[%s] - %s [%d][$: %.3f]", listaAtual->info.elenco.goleiro1.posicao, listaAtual->info.elenco.goleiro1.nome, listaAtual->info.elenco.goleiro1.overall, listaAtual->info.elenco.goleiro1.valor/1000);
+	
+	        gotoxy(49, 23);
+	        printf("$: %.3f", listaAtual->info.elenco.valorMercado / 1000.0);
+	        
+	        y = 5;
+			while(y <= 23){
+				gotoxy(90, y); 
+		    	printf("%c", 186);
+		    	gotoxy(98, y); 
+		    	printf("%c", 186);
+		    	gotoxy(106, y); 
+		    	printf("%c", 186);
+
+		    	y++;
+			}
+			
+			
+			x = 61;
+			while(x < 114){
+				gotoxy(x, 6);
+				if (x != 80 || x != 87 || x != 93 || x != 100)
+					printf("%c", 205);
+				gotoxy(x, 18);
+				if (x != 80 || x != 87 || x != 93 || x != 100)
+					printf("%c", 205);
+				gotoxy(x, 20);
+				if (x != 80 || x != 87 || x != 93 || x != 100)
+					printf("%c", 205);
+				x++;
+			}
+			gotoxy(109,3);
+			printf("%d/%d",time,num);
+
+	        gotoxy(74,5);printf("NOME");
+	        gotoxy(93,5);printf("G/F");
+	        gotoxy(101,5);printf("E/R");
+	        gotoxy(109,5);printf("P/J");
+	        
+	        gotoxy(74,19);printf("NOME");
+	        gotoxy(93,19);printf("D/F");
+	        gotoxy(101,19);printf("G/S");
+	        gotoxy(109,19);printf("P/J");
+			
+			gotoxy(70,7);
+			printf("%s",listaAtual->info.elenco.presida.nome);
+			gotoxy(70,9);
+			printf("%s",listaAtual->info.elenco.jogador1.nome);
+			gotoxy(70,11);
+			printf("%s",listaAtual->info.elenco.jogador2.nome);
+			gotoxy(70,13);
+			printf("%s",listaAtual->info.elenco.jogador3.nome);
+			gotoxy(70,15);
+			printf("%s",listaAtual->info.elenco.jogador4.nome);
+			gotoxy(70,17);
+			printf("%s",listaAtual->info.elenco.jogador5.nome);
+			gotoxy(70,21);
+			printf("%s",listaAtual->info.elenco.goleiro1.nome);
+			
+			if(listaAtual->info.elenco.presida.gols < 10){
+				gotoxy(95,7);
+				printf("%d",listaAtual->info.elenco.presida.gols);
+			}else{
+				gotoxy(94,7);
+				printf("%d",listaAtual->info.elenco.presida.gols);
+			}
+			if(listaAtual->info.elenco.jogador1.gols < 10){
+				gotoxy(95,9);
+				printf("%d",listaAtual->info.elenco.jogador1.gols);
+			}else{
+				gotoxy(94,9);
+				printf("%d",listaAtual->info.elenco.jogador1.gols);
+			}
+			if(listaAtual->info.elenco.jogador2.gols < 10){
+				gotoxy(95,11);
+				printf("%d",listaAtual->info.elenco.jogador2.gols);
+			}else{
+				gotoxy(94,11);
+				printf("%d",listaAtual->info.elenco.jogador2.gols);
+			}
+			if(listaAtual->info.elenco.jogador3.gols < 10){
+				gotoxy(95,13);
+				printf("%d",listaAtual->info.elenco.jogador3.gols);
+			}else{
+				gotoxy(94,13);
+				printf("%d",listaAtual->info.elenco.jogador3.gols);
+			}
+			if(listaAtual->info.elenco.jogador4.gols < 10){
+				gotoxy(95,15);
+				printf("%d",listaAtual->info.elenco.jogador4.gols);
+			}else{
+				gotoxy(94,15);
+				printf("%d",listaAtual->info.elenco.jogador4.gols);
+			}
+			if(listaAtual->info.elenco.jogador5.gols < 10){
+				gotoxy(95,17);
+				printf("%d",listaAtual->info.elenco.jogador5.gols);
+			}else{
+				gotoxy(94,17);
+				printf("%d",listaAtual->info.elenco.jogador5.gols);
+			}
+			if(listaAtual->info.elenco.goleiro1.defesa < 10){
+				gotoxy(95,21);
+				printf("%d",listaAtual->info.elenco.goleiro1.defesa);
+			}else{
+				gotoxy(94,21);
+				printf("%d",listaAtual->info.elenco.goleiro1.defesa);
+			}
+			
+			
+			
+			if(listaAtual->info.elenco.presida.errou < 10){
+				gotoxy(103,7);
+				printf("%d",listaAtual->info.elenco.presida.errou);
+			}else{
+				gotoxy(102,7);
+				printf("%d",listaAtual->info.elenco.presida.errou);
+			}
+			if(listaAtual->info.elenco.jogador1.errou < 10){
+				gotoxy(103,9);
+				printf("%d",listaAtual->info.elenco.jogador1.errou);
+			}else{
+				gotoxy(102,9);
+				printf("%d",listaAtual->info.elenco.jogador1.errou);
+			}
+			if(listaAtual->info.elenco.jogador2.errou < 10){
+				gotoxy(103,11);
+				printf("%d",listaAtual->info.elenco.jogador2.errou);
+			}else{
+				gotoxy(102,11);
+				printf("%d",listaAtual->info.elenco.jogador2.errou);
+			}
+			if(listaAtual->info.elenco.jogador3.errou < 10){
+				gotoxy(103,13);
+				printf("%d",listaAtual->info.elenco.jogador3.errou);
+			}else{
+				gotoxy(102,13);
+				printf("%d",listaAtual->info.elenco.jogador3.errou);
+			}
+			if(listaAtual->info.elenco.jogador4.errou < 10){
+				gotoxy(103,15);
+				printf("%d",listaAtual->info.elenco.jogador4.errou);
+			}else{
+				gotoxy(102,15);
+				printf("%d",listaAtual->info.elenco.jogador4.errou);
+			}
+			if(listaAtual->info.elenco.jogador5.errou < 10){
+				gotoxy(103,17);
+				printf("%d",listaAtual->info.elenco.jogador5.errou);
+			}else{
+				gotoxy(102,17);
+				printf("%d",listaAtual->info.elenco.jogador5.errou);
+			}
+			if(listaAtual->info.elenco.goleiro1.golsSofridos < 10){
+				gotoxy(103,21);
+				printf("%d",listaAtual->info.elenco.goleiro1.golsSofridos);
+			}else{
+				gotoxy(102,21);
+				printf("%d",listaAtual->info.elenco.goleiro1.golsSofridos);
+			}
+			
+			if(listaAtual->info.partidas < 10){
+				gotoxy(111,7);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,9);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,11);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,13);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,15);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,17);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(111,21);
+				printf("%d",listaAtual->info.partidas);
+			}else{
+				gotoxy(110,7);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,9);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,11);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,13);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,15);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,17);
+				printf("%d",listaAtual->info.partidas);
+				gotoxy(110,21);
+				printf("%d",listaAtual->info.partidas);
+			}			
+			
+	        int tempoEspera = 1500; // em milissegundos
+	        int tempoPassado = 0;
+	        int passo = 10; // 10ms de cada vez
+			if(time == 1){
+    			printCentralizado("        PROXIMA TIME --> [D]",29,15);
+    		}
+    		if(time>1 && time < num){
+    			printCentralizado("[A] <-- PROXIMA TIME --> [D]",29,15);
+    		}
+    		if(time == num){
+    			printCentralizado("[A] <-- PROXIMA TIME        ",29,15);
+    		}
+    		printCentralizado("APERTE [ESC] PARA SAIR DO MENU ESTATISCAS POR TIME",2,12);
+    		printCentralizado("G/F: GOLS FEITOS   E/R: GOLS PERDIDOS   P/J: PARTIDAS JOGADAS   G/S: GOLS SOFRIDOS   D/F DEFESAS FEITAS",25,15);
+    		printCentralizado("$: VALOR DE MERCADO   [??]: OVERALL",26,15);
+			gotoxy(119, 29); 
+	        toggle = !toggle;
+	    		
+	        while (tempoPassado < tempoEspera) {
+	            if (kbhit()) break; // Se alguma tecla for pressionada, sai na hora
+	            Sleep(passo);
+	            tempoPassado += passo;
+	        }
+	    	
+	    	
+	    	
+	    } while(!kbhit());
+	    op = getch();
+		op = toupper(op);
+		switch(op){
+			case 'A':
+    			if(time != 1){
+    				time--;
+    			}
+    		break;
+    		case 'D':
+    			if(time < num){
+    				time++;
+    			}
+    		break;
+    		case 27:
+    			Sleep(1);break;
+    		default:
+    			printCentralizado("TECLA INVALIDA! TECLAS DISPONIVEIS [A] [D] [ESC]",29,15);
+    			gotoxy(119, 29);
+	        	Sleep(1000);
+	        	limparBufferTeclado();
+		}
+		
+	}while(op != 27);
 }
 #endif
